@@ -32,8 +32,8 @@ struct Example1
 			{
 				LOGP(info, "Track {} has pT = {}", track.index(), track.pt());
 			}
-		}
-	}
+		}// Loop over table
+	}//subscription to table
 };
 
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
