@@ -19,13 +19,18 @@
 using namespace o2;
 using namespace o2::framework;
 
+constexpr int each = 1e3;
+
 struct Example1
 {
 	void process(aod::Tracks const& tracks)
 	{
 		for(auto const& track : tracks)
 		{
-			LOGP(info, "Track {} has pT = {}", track.index(), track.pt());
+			if(track.index() % each == 0)
+			{
+				LOGP(info, "Track {} has pT = {}", track.index(), track.pt());
+			}
 		}
 	}
 };
