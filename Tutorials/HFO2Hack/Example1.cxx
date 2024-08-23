@@ -21,7 +21,7 @@ using namespace o2::framework;
 
 struct Example1
 {
-	void process(soa::Tracks const& tracks)
+	void process(aod::Tracks const& tracks)
 	{
 		for(auto const& track : tracks)
 		{
