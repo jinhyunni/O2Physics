@@ -9,7 +9,7 @@
 # granted to it by virtue of its status as an Intergovernmental Organization
 # or submit itself to any jurisdiction.
 
-o2physics_add_dpl_workflow(tutorial
+o2physics_add_dpl_workflow(example1
 					SOURCES Example1.cxx
 					PUBLIC_LINK_LIBRARIES O2::Framework
 					COMPONENT_NAME HFO2HackTut)
