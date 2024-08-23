@@ -1,7 +1,7 @@
 {
     "internal-dpl-clock": "",
     "internal-dpl-aod-reader": {
-        "aod-file-private": "\/Users\/jinhyunpark\/npl\/Analysis\/ALICE\/data\/ao2d\/O2Tutorial3.0\/day1_Introduction\/AO2D.root",
+        "aod-file-private": "",
         "time-limit": "0",
         "orbit-offset-enumeration": "0",
         "orbit-multiplier-enumeration": "0",
@@ -9,7 +9,9 @@
         "end-value-enumeration": "-1",
         "step-value-enumeration": "1"
     },
-    "internal-dpl-aod-spawner": "",
+    "track-propagation": "",
+    "internal-dpl-aod-writer": "",
     "example1": "",
+    "internal-dpl-aod-global-analysis-file-sink": "",
     "internal-dpl-injected-dummy-sink": ""
 }
