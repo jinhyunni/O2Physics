@@ -18,6 +18,7 @@ add_subdirectory(PWGLF)
 add_subdirectory(PWGCF)
 add_subdirectory(PWGMM)
 add_subdirectory(PWGHF)
+add_subdirectory(HFO2Hack)
 
 o2physics_add_dpl_workflow(histogram-track-selection
                     SOURCES src/histogramTrackSelection.cxx
@@ -233,3 +234,10 @@ o2physics_add_dpl_workflow(consume
                   SOURCES src/consume.cxx
                   PUBLIC_LINK_LIBRARIES O2::Framework
                   COMPONENT_NAME AnalysisTutorial)
+
+# Workflow added for HFO2Hackathon-2021
+
+o2physics-add-dpl-workflow(tutorial
+					SOURCES HFO2Hack/Example1.cxx
+					PUBLIC_LINK_LIBRARIES O2::Framework
+					COMPONENT_NAME HFO2HackTut)
