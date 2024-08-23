@@ -15,12 +15,12 @@
 
 #include "Framework/runDataProcessing.h"
 #include "Framework/AnalysisTask.h"
-#include "Common/DataModel/TrackSelectionTables.h"
+//#include "Common/DataModel/TrackSelectionTables.h"
 
 using namespace o2;
 using namespace o2::framework;
 
-constexpr int each = 1e3;
+constexpr int each = 1e4;
 
 struct Example1
 {
