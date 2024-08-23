@@ -10,6 +10,6 @@
 # or submit itself to any jurisdiction.
 
 o2physics_add_dpl_workflow(tutorial
-					SOURCES HFO2Hack/Example1.cxx
+					SOURCES Example1.cxx
 					PUBLIC_LINK_LIBRARIES O2::Framework
 					COMPONENT_NAME HFO2HackTut)
