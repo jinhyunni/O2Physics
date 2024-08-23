@@ -25,7 +25,7 @@ struct Example1
 	{
 		for(auto const& track : tracks)
 		{
-			LOGP(info, "Track {} has pT = {}", track.index(), track.pT());
+			LOGP(info, "Track {} has pT = {}", track.index(), track.pt());
 		}
 	}
 };
