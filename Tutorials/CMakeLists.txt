@@ -235,9 +235,3 @@ o2physics_add_dpl_workflow(consume
                   PUBLIC_LINK_LIBRARIES O2::Framework
                   COMPONENT_NAME AnalysisTutorial)
 
-# Workflow added for HFO2Hackathon-2021
-
-o2physics_add_dpl_workflow(tutorial
-					SOURCES HFO2Hack/Example1.cxx
-					PUBLIC_LINK_LIBRARIES O2::Framework
-					COMPONENT_NAME HFO2HackTut)
