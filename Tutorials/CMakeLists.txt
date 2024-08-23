@@ -237,7 +237,7 @@ o2physics_add_dpl_workflow(consume
 
 # Workflow added for HFO2Hackathon-2021
 
-o2physics-add-dpl-workflow(tutorial
+o2physics_add_dpl_workflow(tutorial
 					SOURCES HFO2Hack/Example1.cxx
 					PUBLIC_LINK_LIBRARIES O2::Framework
 					COMPONENT_NAME HFO2HackTut)
