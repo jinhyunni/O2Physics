@@ -85,7 +85,7 @@ struct usinghistregistrywithpointer
 
 		"histos", 
 		{
-			{"pT_UsingHistPtr", "pT",{ HistType::kTH1F, {{nBins, nStart, nFinish, "p_{T}(GeV/c2)"}}}}
+			{"pT_UsingHistPtr", "pT",{ HistType::kTH1F, {{nBins, nStart, nFinish, "p_{T}(GeV/c2)"}}}} // HistSpec1
 		}
 	};
 	
