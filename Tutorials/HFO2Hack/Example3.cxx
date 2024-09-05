@@ -24,17 +24,26 @@ using namespace o2::framework;
 struct trackperevent1{
 	
 	HistogramRegistry registry{"histos", {}};
-
+	
+	// pT bin
 	Configurable<int> nBins{"nBins", 100, "nBins"};
 	Configurable<float> nMin{"Min", 0., "Min"};
 	Configurable<float> nMax{"Max", 10., "Max"};
+
+	// eta bin
+	Configurable<int> nBinsEta{"nBinsEta", 60, "nBins eta"};
+	Configurable<float> etaMin{"etaMin", -3., "eta min"};
+	Configurable<float> etaMax{"etaMax", 3., "eta max"}; 
+
 	Configurable<int> printRate{"printRate", 50, "printRate"};
 
 	void init(InitContext const&)
 	{
 		AxisSpec pTAxis{nBins, nMin, nMax};
+		AxisSpec etaAxis{nBinsEta, etaMin, etaMax};
 		registry.add("avgpT", "avgpT", HistType::kTH1F, {pTAxis});
 		registry.add("pT", "pT", HistType::kTH1F, {pTAxis});
+		registry.add("eta", "eta", HistType::kTH1F, {etaAxis});
 	}
 
 	// Subscribing to collision iterator and track table!
@@ -46,6 +55,7 @@ struct trackperevent1{
 		{
 			avgpt += track.pt();
 			registry.fill( HIST("pT"), track.pt() );
+			registry.fill( HIST("eta"), track.eta() );
 		}
 
 		// Get the size of tracks table! -> # of tracks per collision!
