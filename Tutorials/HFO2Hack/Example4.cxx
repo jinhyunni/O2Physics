@@ -58,19 +58,22 @@ struct Example4{
 	void processMC(aod::McCollision const& mccollision, soa::Filtered<aod::McParticles> const& particles)
 	{
 		float avgpt = 0.;
+		int count =0;
 
-		if( particles.size())
+		for( auto const& particle : particles)
 		{
-			for( auto const& particle : particles)
-			{
-				avgpt += particle.pt();
-				registry.fill(HIST("hptMC"), particle.pt());
-				registry.fill(HIST("hetaMC"), particle.eta());
-			}
-
-			avgpt /= particles.size();
-			registry.fill( HIST("havgptMC"), avgpt);
+			// In generator-level tracks, we shold check
+			// if the track is physicalprimary tracks
+			if( ! particle.isPhysicalPrimary() ) continue;
+			
+			count++;
+			avgpt += particle.pt();
+			registry.fill(HIST("hptMC"), particle.pt());
+			registry.fill(HIST("hetaMC"), particle.eta());
 		}
+
+		avgpt /= count;
+		registry.fill( HIST("havgptMC"), avgpt);
 	}
 	
 	// Add process switch!
