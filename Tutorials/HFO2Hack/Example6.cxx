@@ -20,7 +20,7 @@ using namespace o2::framework::expressions;
 //   -> DECLARE_SOA_COLUMN(Name, Getter, Type);
 namespace o2::aod::mcmult
 {
-DECLARE_SOA_COLUMN(MULTFV0gen, multfv0m, int);
+DECLARE_SOA_COLUMN(MULTgen, multgen, int);
 }
 
 // 2. Define Table
@@ -32,7 +32,7 @@ DECLARE_SOA_TABLE(
 		MultsGen, 
 		"AOD", 
 		"MultGen", 
-		mcmult::MULTFV0gen);
+		mcmult::MULTgen);
 }
 
 // Fill generated table with a task
@@ -43,8 +43,8 @@ struct PreTask{
 	Produces<aod::MultsGen> mult;
 	
 	// Add filter in certain eta region
-	Filter etaCutMC = 	( aod::mcparticle::eta > 2.7 and aod::mcparticle::eta < 5.1 ) or
-						( aod::mcparticle::eta > -3.7 and aod::mcparticle::eta < -1.7 );
+	Filter etaCutMC = 	( aod::mcparticle::eta > 2.7f and aod::mcparticle::eta < 5.1f ) or
+						( aod::mcparticle::eta > -3.7f and aod::mcparticle::eta < -1.7f );
 
 	// Subscribe to MCcollision iterator, and McParticles table to iterate
 	// Fill each colums of rows by the following way:
@@ -69,7 +69,8 @@ struct PreTask{
 // MC-Collision table will be joint with MultsGen table, created in this analysis task!
 struct Example6{
 		
-	//Histogram registry
+	// Histogram registry
+	// ==================
 	HistogramRegistry registry{
 		"histos",
 		{
@@ -89,6 +90,72 @@ struct Example6{
 
 		}
 	};
+
+	// Subscribe to joined, filterd tables
+	// ===================================
+
+	// apply filter in data file
+	Configurable<float> etaCut{"etaCut", 0.8, "etaCut"};
+	Filter etaFilter = nabs(aod::track::eta) < etaCut;
+
+	using MyCollision = soa::Join<aod::Collisions, aod::Mults>::iterator;
+	using MyTrack = soa::Filtered<aod::Tracks>;
+
+	void process(MyCollision const& collision, MyTrack const& tracks)
+	{
+		float avgpT = 0.;
+
+		for( auto const& track : tracks)
+		{
+			avgpT += track.pt();
+			registry.fill(HIST("h1pT"), track.pt());
+			registry.fill(HIST("h1eta"), track.eta());
+			registry.fill(HIST("h2pTMult"), track.pt(), collision.multFV0M());
+		}
+
+		if(tracks.size() != 0)
+		{
+			avgpT /= tracks.size();
+			registry.fill(HIST("h1avgpT"), avgpT);
+			registry.fill(HIST("h2avgpTMult"), avgpT, collision.multFV0M());
+		}
+	}
+
+	// Subscribe to joined, filtered tables in MC
+	//===========================================
+
+	// apply filter in MC data file
+	Configurable<float> etaCutMC{"etaCutMC", 0.8, "etaCutMC"};
+	Filter etaMCFilter = nabs(aod::mcparticle::eta) < etaCutMC;
+
+	using MyMcCollision = soa::Join<aod::McCollisions, aod::MultsGen>::iterator;
+	using MyMCParticles = soa::Filtered<aod::McParticles>;
+
+	void processMC(MyMcCollision const& mccollision, MyMCParticles const& particles)
+	{
+		float avgpTMC = 0.;
+
+		for( auto const& particle : particles)
+		{
+			if( particle.isPhysicalPrimary())
+			{
+				avgpTMC += particle.pt();
+				registry.fill(HIST("h1pTMC"), particle.pt());
+				registry.fill(HIST("h1etaMC"), particle.pt());
+				registry.fill(HIST("h2pTMultMC"), particle.pt(), mccollision.multgen());	// Used defined column getter : .multfv0m()
+			}
+		}
+
+		if( particles.size() != 0 )
+		{
+			avgpTMC /= particles.size();
+			registry.fill(HIST("h1avgpTMC"), avgpTMC);
+			registry.fill(HIST("h2avgpTMultMC"), avgpTMC, mccollision.multgen());
+		}
+	}
+
+	// Adding process switch
+	PROCESS_SWITCH(Example6, processMC, "processMC", true);
 
 };
 
