@@ -13,27 +13,29 @@ using namespace o2::framework;
 using namespace o2::framework::expressions;
 
 // Define new Table
+// ================
 
-//1. Define Column
+namespace o2
+{
+namespace aod
+{
+// 1. Define Column
+// ================
 //   -> Add multiplicity information to MC Collision table
 //   -> Manually count particles in certain eta region...
 //   -> DECLARE_SOA_COLUMN(Name, Getter, Type);
-namespace o2::aod::mcmult
+namespace mcmult
 {
 DECLARE_SOA_COLUMN(MULTgen, multgen, int);
 }
 
 // 2. Define Table
+// ===============
 //    -> DECLARE_SOA_TABLE(Name, Origin, Description, Column1, Column2, Column3...)
+DECLARE_SOA_TABLE(MultsGen, "AOD", "MultGen", mcmult::MULTgen);
 
-namespace o2::aod
-{
-DECLARE_SOA_TABLE(
-		MultsGen, 
-		"AOD", 
-		"MultGen", 
-		mcmult::MULTgen);
-}
+} // namespace aod
+} // namespace o2
 
 // Fill generated table with a task
 struct PreTask{
@@ -84,9 +86,19 @@ struct Example6{
 			// Histograms based on generated level
 			{"h1pTMC", "MC-Data based pT histogram", {HistType:: kTH1F, {{101, -0.05, 10.05}}}},
 			{"h1avgpTMC", "MC-Data based <pT> histogram", {HistType:: kTH1F, {{21, -0.05, 2.05}}}},
+			{"h1MultMC", "MC-Data based Multiplicity histo", {HistType::kTH1F, {{300, 0, 300}}}},
 			{"h1etaMC", "MC-Data based eta histogram", {HistType:: kTH1F, {{60, -3, 3}}}},
 			{"h2pTMultMC", "MC-Data based pT vs multiplicity  histogram", {HistType:: kTH2F, {{101, -0.05, 10.05}, {201, -0.5, 200.5}}}},
-			{"h2avgpTMultMC", "MC-Data based <pT> vs multiplicity  histogram", {HistType:: kTH2F, {{21, -0.05, 2.05}, {201, -0.5, 200.5}}}}
+			{"h2avgpTMultMC", "MC-Data based <pT> vs multiplicity  histogram", {HistType:: kTH2F, {{21, -0.05, 2.05}, {201, -0.5, 200.5}}}},
+
+			// Histograms based on generated level, applied filter on generated multiplicity
+			{"h1pTMCHigh", "MC-Data based pT histogram", {HistType:: kTH1F, {{101, -0.05, 10.05}}}},
+			{"h1avgpTMCHigh", "MC-Data based <pT> histogram", {HistType:: kTH1F, {{21, -0.05, 2.05}}}},
+			{"h1MultMCHigh", "MC-Data based Multiplicity histo", {HistType::kTH1F, {{300, 0, 300}}}},
+			{"h1etaMCHigh", "MC-Data based eta histogram", {HistType:: kTH1F, {{60, -3, 3}}}},
+			{"h2pTMultMCHigh", "MC-Data based pT vs multiplicity  histogram", {HistType:: kTH2F, {{101, -0.05, 10.05}, {201, -0.5, 200.5}}}},
+			{"h2avgpTMultMCHigh", "MC-Data based <pT> vs multiplicity  histogram", {HistType:: kTH2F, {{21, -0.05, 2.05}, {201, -0.5, 200.5}}}}
+
 
 		}
 	};
@@ -141,7 +153,7 @@ struct Example6{
 			{
 				avgpTMC += particle.pt();
 				registry.fill(HIST("h1pTMC"), particle.pt());
-				registry.fill(HIST("h1etaMC"), particle.pt());
+				registry.fill(HIST("h1etaMC"), particle.eta());
 				registry.fill(HIST("h2pTMultMC"), particle.pt(), mccollision.multgen());	// Used defined column getter : .multfv0m()
 			}
 		}
@@ -152,10 +164,55 @@ struct Example6{
 			registry.fill(HIST("h1avgpTMC"), avgpTMC);
 			registry.fill(HIST("h2avgpTMultMC"), avgpTMC, mccollision.multgen());
 		}
+
+		// Fill generated multiplicity
+		registry.fill(HIST("h1MultMC"), mccollision.multgen());
+	}
+
+	// Subscribe to filtered-Derived table
+	// -> only contain MC particle's in high-multiplicity
+	// -> High-multiplicity cut: 100 counts in new derived table.
+	//===========================================================
+	Configurable<int> highMultCut{"highMultCut", 100, "HighMultiplicityCut"};
+
+	// Filtering Deried table
+	Filter highMultFilterMC = aod::mcmult/*namespace of generated column*/::multgen > highMultCut;
+	
+	// Making a joined table
+	using JoinedTable = soa::Join<aod::McCollisions, aod::MultsGen>;
+	// applying filter to joined table
+	using FilteredJoinedTable = soa::Filtered<JoinedTable>::iterator;
+
+	void processMCHighMult(FilteredJoinedTable const& mccollision, MyMCParticles const& particles)
+	{
+
+		float avgpTMCHigh = 0.;
+
+		for( auto const& particle : particles)
+		{
+			if( particle.isPhysicalPrimary())
+			{
+				avgpTMCHigh += particle.pt();
+				registry.fill(HIST("h1pTMCHigh"), particle.pt());
+				registry.fill(HIST("h1etaMCHigh"), particle.eta());
+				registry.fill(HIST("h2pTMultMCHigh"), particle.pt(), mccollision.multgen());
+			}
+		}
+
+		if( particles.size() != 0 )
+		{
+			avgpTMCHigh /= particles.size();
+			registry.fill(HIST("h1avgpTMCHigh"), avgpTMCHigh);
+			registry.fill(HIST("h2avgpTMultMCHigh"), avgpTMCHigh, mccollision.multgen());
+		}
+
+		// Fill generated multiplicity
+		registry.fill(HIST("h1MultMCHigh"), mccollision.multgen());
 	}
 
 	// Adding process switch
 	PROCESS_SWITCH(Example6, processMC, "processMC", true);
+	PROCESS_SWITCH(Example6, processMCHighMult, "processMC with highMult", true);
 
 };
 

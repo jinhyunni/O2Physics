@@ -222,7 +222,9 @@
     "example6": {
         "etaCut": "0.800000012",
         "etaCutMC": "0.800000012",
-        "processMC": "true"
+        "highMultCut": "100",
+        "processMC": "true",
+        "processMCHighMult": "true"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",
