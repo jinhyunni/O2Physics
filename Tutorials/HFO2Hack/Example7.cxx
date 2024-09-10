@@ -29,13 +29,6 @@ namespace o2
 namespace aod
 {
 
-namespace multrecon
-{
-DECLARE_SOA_COLUMN(MultRecon, multrecon, int);
-}// namespace multrecon
-
-DECLARE_SOA_TABLE(MultsRecon, "AOD", "MultsRecon", multrecon::MultRecon);
-
 namespace multgen
 {
 DECLARE_SOA_COLUMN(MultGen, multgen, int);
@@ -62,7 +55,6 @@ DECLARE_SOA_INDEX_TABLE_USER(MatchedMCRec, aod::McCollisions, "MMCR", idx::McCol
  */
 
 }// namespace aod
-
 }// namespace o2
 
 
@@ -74,11 +66,9 @@ struct Filltable{
 	Builds<aod::MatchedMCRec> idx;
 
 	// Declare Produces<T> fuction
-	Produces<aod::MultsRecon/*Table*/> tableRecon;		// Makes multiplicity table with recon data
 	Produces<aod::MultsGen/*Table*/> tableGen;	// Makes multiplicity table with generated data
 
 	//Define filter for collecting tracks in certain eta region
-	Filter etaFilter = (aod::track::eta/*eta(Column) of each mc pariticle defined under mctrack namespace*/ > -3.7f and aod::track::eta < -1.7f) or (aod::track::eta > 2.7f and aod::track::eta < 5.1f);
 	Filter etaFilterMC = (aod::mcparticle::eta/*eta(Column) of each mc pariticle defined under mctrack namespace*/ > -3.7f and aod::mcparticle::eta < -1.7f) or (aod::mcparticle::eta > 2.7f and aod::mcparticle::eta < 5.1f);
 
 	// Define histogram
@@ -86,32 +76,11 @@ struct Filltable{
 	HistogramRegistry registry{
 		"CheckHistos",
 		{
-
-			{"h1Recon", "h1Recon", {HistType::kTH1F, {{1, 0., 1.}}}},
 			{"h1Gen", "h1Recon", {HistType::kTH1F, {{1, 0., 1.}}}},
-			{"h1etaRecon", "h1etaRecon", {HistType::kTH1F, {{120, -6.0, 6.0}}}},
 			{"h1etaGen", "h1etaGen", {HistType::kTH1F, {{120, -6.0, 6.0}}}}
 		}
 	};
 
-
-	//Calculating multiplicity of mc tracks in certain eta region by collision in reconstructed  data
-
-	using MyTrackRecon = soa::Filtered<aod::Tracks>;
-
-	void processRecon(aod::Collision const& , MyTrackRecon const& tracks)
-	{
-		int multInCertainEta = 0;
-
-		for(auto const& track : tracks)
-		{
-			multInCertainEta++;
-			registry.fill(HIST("h1etaRecon"), track.eta());
-		}
-		
-		registry.fill(HIST("h1Recon"), 0.5);
-		tableRecon(multInCertainEta);
-	}
 
 	//Calculating multiplicity of mc tracks in certain eta region by collision in MC data
 
@@ -135,8 +104,57 @@ struct Filltable{
 	}
 
 	// Make process switch
-	PROCESS_SWITCH(Filltable, processRecon, "processRecon", true);
 	PROCESS_SWITCH(Filltable, processMC, "processMC", true);
+};
+
+// Make Minimum bias distribution
+struct Minimumbias{
+
+	HistogramRegistry registry{
+	
+		"MBHistos",
+		{
+			{"h1pT", "h1pT", {kTH1F, {{101, -0.05, 10.05}}}},
+			{"h1pTFwd", "h1pTFwd", {kTH1F, {{101, -0.05, 10.05}}}},
+			{"h1pTMC", "h1pTMC", {kTH1F, {{101, -0.05, 10.05}}}},
+			{"h1eta", "h1eta", {kTH1F, {{120, -6.0, 6.0}}}},
+			{"h1etaFwd", "h1etaFwd", {kTH1F, {{120, -6.0, 6.0}}}},
+			{"h1etaMC", "h1etaMC", {kTH1F, {{120, -6.0, 6.0}}}}
+		}
+	};
+
+	// Fill minimumbias distrubutions, Reconstructed data
+	void processRecon(aod::Collision const&, aod::Tracks const& tracks, aod::FwdTracks const& fwdtracks)
+	{
+		for(auto const& track : tracks)
+		{
+			registry.fill(HIST("h1pT"), track.pt());
+			registry.fill(HIST("h1eta"), track.eta());
+		}
+
+		for(auto const& fwdtrack : fwdtracks)
+		{
+			registry.fill(HIST("h1pTFwd"), fwdtrack.pt());
+			registry.fill(HIST("h1etaFwd"), fwdtrack.eta());
+		}
+	}
+
+	// Fill minimumbias distribution, Generated data
+	void processGen(aod::McCollision const&, aod::McParticles const& particles)
+	{
+		for(auto const& particle : particles)
+		{
+			if(particle.isPhysicalPrimary())
+			{
+				registry.fill(HIST("h1pTMC"), particle.pt());
+				registry.fill(HIST("h1etaMC"), particle.eta());
+			}
+		}
+	}
+
+	// Add ProcessSwitch
+	PROCESS_SWITCH(Minimumbias, processRecon, "processRecon", true);
+	PROCESS_SWITCH(Minimumbias, processGen, "processGen", true);
 };
 
 // Task, Main analysis
@@ -163,7 +181,6 @@ struct Example7{
 			{"h1multMC", "h1multMC", {HistType::kTH1F, {{201, -0.05, 200.5}}}},
 			{"h2pTmultMC", "h2pTmultMC", {HistType::kTH2F, {{101, -0.05, 10.05}, {201, -0.05, 200.5}}}},
 			{"h2avgpTmultMC", "h2avgpTmultMC", {HistType::kTH2F, {{21, -0.05, 2.05}, {201, -0.05, 200.5}}}}
-
 		}
 	};
 
@@ -173,27 +190,28 @@ struct Example7{
 	Configurable<float> etaCut{"etaCut", 0.8, "etaCut"};
 	Filter etaFilter = nabs(aod::track::eta) < etaCut;
 
-	using RecoCollision = soa::Join<aod::Collisions, aod::MultsRecon>::iterator;
+	using RecoCollision = soa::Join<aod::Collisions, aod::Mults>::iterator;
 	using MyTracks = soa::Filtered<aod::Tracks>;
 
-	void process(RecoCollision const& collision, MyTracks const& tracks)
+	void processRecon(RecoCollision const& collision, MyTracks const& tracks)
 	{
 		float avgpT = 0.;
 		
-		registry.fill(HIST("h1mult"), collision.multrecon());
+		registry.fill(HIST("h1mult"), collision.multFT0M());
 
 		for( auto const& track : tracks)
 		{
 			avgpT += track.pt();
 			registry.fill(HIST("h1pT"), track.pt());
 			registry.fill(HIST("h1eta"), track.eta());
-			registry.fill(HIST("h2pTmult"), track.pt(), collision.multrecon());
+			registry.fill(HIST("h2pTmult"), track.pt(), collision.multFT0M());
 		}
 
 		if(tracks.size() != 0)
 		{
+			avgpT /= tracks.size();
 			registry.fill(HIST("h1avgpT"), avgpT);
-			registry.fill(HIST("h2avgpTmult"), avgpT, collision.multrecon());
+			registry.fill(HIST("h2avgpTmult"), avgpT, collision.multFT0M());
 		}
 	}
 
@@ -203,8 +221,43 @@ struct Example7{
 	// Use derived table -> MC table with multiplicity information
 	//                   -> Only collect data which corresponds to recon data.
 
+	Filter etaCutGen = nabs(aod::mcparticle::eta) < etaCut;
+
+	using MyMcCollision = soa::Join<aod::McCollisions, aod::MultsGen, aod::MatchedMCRec>::iterator; // Matched MC data with reconstructed data
+	using MyParticles = soa::Filtered<aod::McParticles>;
+
+	void processGen(MyMcCollision const& matchedcollision, MyParticles const& particles)
+	{
+		// check if index table have getter
+		if(! matchedcollision.has_collision()){
+			return;
+		}
+
+		float avgpT = 0.;
+
+		for( auto const& particle : particles)
+		{
+			if(particle.isPhysicalPrimary())
+			{
+				avgpT += particle.pt();
+				registry.fill(HIST("h1pTMC"), particle.pt());
+				registry.fill(HIST("h1etaMC"), particle.eta());
+				registry.fill(HIST("h1multMC"), matchedcollision.multgen());
+				registry.fill(HIST("h2pTmultMC"), particle.pt(), matchedcollision.multgen());
+			}
+		}
+
+		if( particles.size() != 0 )
+		{
+			avgpT /= particles.size();
+			registry.fill(HIST("h1avgpTMC"), avgpT);
+			registry.fill(HIST("h2avgpTmultMC"), avgpT, matchedcollision.multgen() );
+		}
+	}
+
 	// Making a process switch
-	// PROCESS_SWITCH(Example7, processMC, "Process GeneratedData", true);
+	PROCESS_SWITCH(Example7, processRecon, "Process ReconstructedData", true);
+	PROCESS_SWITCH(Example7, processGen, "Process GeneratedData", true);
 };
 
 // Define Workflow Spec
@@ -214,6 +267,7 @@ WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 	return WorkflowSpec
 	{
 		adaptAnalysisTask<Filltable>(cfgc),
+		adaptAnalysisTask<Minimumbias>(cfgc),
 		adaptAnalysisTask<Example7>(cfgc)
 	};
 }
