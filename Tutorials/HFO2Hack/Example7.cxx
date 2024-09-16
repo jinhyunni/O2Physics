@@ -70,6 +70,7 @@ struct Filltable{
 
 	//Define filter for collecting tracks in certain eta region
 	Filter etaFilterMC = (aod::mcparticle::eta/*eta(Column) of each mc pariticle defined under mctrack namespace*/ > -3.7f and aod::mcparticle::eta < -1.7f) or (aod::mcparticle::eta > 2.7f and aod::mcparticle::eta < 5.1f);
+	//Filter nonPhysicalParticle = (aod::mcparticle::enums::PhysicalPrimary == true );
 
 	// Define histogram
 	// These histograms are for checking particle's eta distibution, which are used to count multiplicity
@@ -77,6 +78,7 @@ struct Filltable{
 		"CheckHistos",
 		{
 			{"h1Gen", "h1Recon", {HistType::kTH1F, {{1, 0., 1.}}}},
+			{"h1CheckNonPhysical", "h1CheckNonPhysical", {HistType::kTH1F, {{1, 0., 1.}}}},
 			{"h1etaGen", "h1etaGen", {HistType::kTH1F, {{120, -6.0, 6.0}}}}
 		}
 	};
@@ -96,6 +98,11 @@ struct Filltable{
 			{
 				multInCertainEta++;
 				registry.fill(HIST("h1etaGen"), particle.eta());
+			}
+
+			else if( ! particle.isPhysicalPrimary())
+			{
+				registry.fill(HIST("h1CheckNonPhysical"), 0.5);
 			}
 		}// McParticles table loop
 		
