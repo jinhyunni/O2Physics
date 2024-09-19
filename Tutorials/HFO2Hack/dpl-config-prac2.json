@@ -98,7 +98,7 @@
         "processCovariance": "false",
         "processCovarianceWithPID": "false"
     },
-    "practice2sub1": "",
+    "practice2": "",
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",
     "internal-dpl-injected-dummy-sink": ""
