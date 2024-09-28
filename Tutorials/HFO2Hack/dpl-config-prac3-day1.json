@@ -29,83 +29,7 @@
     },
     "tracks-extra-converter": "",
     "tracks-extra-spawner": "",
-    "track-propagation": {
-        "ccdb-url": "http:\/\/alice-ccdb.cern.ch",
-        "lutPath": "GLO\/Param\/MatLUT",
-        "geoPath": "GLO\/Config\/GeometryAligned",
-        "grpmagPath": "GLO\/Config\/GRPMagField",
-        "mVtxPath": "GLO\/Calib\/MeanVertex",
-        "minPropagationDistance": "83.0999985",
-        "useTrackTuner": "false",
-        "fillTrackTunerTable": "false",
-        "trackTunerParams": "debugInfo=0|updateTrackDCAs=1|updateTrackCovMat=1|updateCurvature=0|updateCurvatureIU=0|updatePulls=0|isInputFileFromCCDB=1|pathInputFile=Users\/m\/mfaggin\/test\/inputsTrackTuner\/PbPb2022|nameInputFile=trackTuner_DataLHC22sPass5_McLHC22l1b2_run529397.root|pathFileQoverPt=Users\/h\/hsharma\/qOverPtGraphs|nameFileQoverPt=D0sigma_Data_removal_itstps_MC_LHC22b1b.root|usePvRefitCorrections=0|qOverPtMC=-1.|qOverPtData=-1.",
-        "axisPtQA": {
-            "values": [
-                "0",
-                "0",
-                "0.10000000149011612",
-                "0.20000000298023224",
-                "0.30000001192092896",
-                "0.40000000596046448",
-                "0.5",
-                "0.60000002384185791",
-                "0.69999998807907104",
-                "0.80000001192092896",
-                "0.89999997615814209",
-                "1",
-                "1.1000000238418579",
-                "1.2000000476837158",
-                "1.2999999523162842",
-                "1.3999999761581421",
-                "1.5",
-                "1.6000000238418579",
-                "1.7000000476837158",
-                "1.7999999523162842",
-                "1.8999999761581421",
-                "2",
-                "2.2000000476837158",
-                "2.4000000953674316",
-                "2.5999999046325684",
-                "2.7999999523162842",
-                "3",
-                "3.2000000476837158",
-                "3.4000000953674316",
-                "3.5999999046325684",
-                "3.7999999523162842",
-                "4",
-                "4.4000000953674316",
-                "4.8000001907348633",
-                "5.1999998092651367",
-                "5.5999999046325684",
-                "6",
-                "6.5",
-                "7",
-                "7.5",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "17",
-                "19",
-                "21",
-                "23",
-                "25",
-                "30",
-                "35",
-                "40",
-                "50"
-            ]
-        },
-        "processStandard": "true",
-        "processStandardWithPID": "false",
-        "processCovarianceMc": "false",
-        "processCovariance": "false",
-        "processCovarianceWithPID": "false"
-    },
+    "track-propagation": "",
     "event-selection-task": {
         "syst": "PbPb",
         "muonSelection": "0",
@@ -288,6 +212,123 @@
         "processRun3": "true",
         "processRun2": "false"
     },
+    "tpc-pid-qa": {
+        "logAxis": "1",
+        "nBinsP": "3000",
+        "minP": "0.00999999978",
+        "maxP": "20",
+        "etaBins": {
+            "values": [
+                "100",
+                "-1",
+                "1"
+            ]
+        },
+        "phiBins": {
+            "values": [
+                "100",
+                "0",
+                "6.2831853071795862"
+            ]
+        },
+        "trackLengthBins": {
+            "values": [
+                "100",
+                "0",
+                "1000"
+            ]
+        },
+        "deltaBins": {
+            "values": [
+                "200",
+                "-1000",
+                "1000"
+            ]
+        },
+        "expSigmaBins": {
+            "values": [
+                "200",
+                "0",
+                "200"
+            ]
+        },
+        "nSigmaBins": {
+            "values": [
+                "401",
+                "-10.024999618530273",
+                "10.024999618530273"
+            ]
+        },
+        "dEdxBins": {
+            "values": [
+                "5000",
+                "0",
+                "5000"
+            ]
+        },
+        "binsPForSparse": {
+            "values": [
+                "200",
+                "0",
+                "20"
+            ]
+        },
+        "binsEtaForSparse": {
+            "values": [
+                "50",
+                "-1",
+                "1"
+            ]
+        },
+        "binsnSigmaForSparse": {
+            "values": [
+                "101",
+                "-7.5750000000000002",
+                "7.5750000000000002"
+            ]
+        },
+        "applyEvSel": "2",
+        "trackSelection": "1",
+        "applyRapidityCut": "false",
+        "splitSignalPerCharge": "true",
+        "enableDeDxPlot": "true",
+        "minTPCNcls": "0",
+        "tpcNclsBins": {
+            "values": [
+                "16",
+                "0",
+                "160"
+            ]
+        },
+        "fillTHnSparses": "false",
+        "processElectron": "false",
+        "processMuon": "false",
+        "processPion": "false",
+        "processKaon": "false",
+        "processProton": "false",
+        "processDeuteron": "false",
+        "processTriton": "false",
+        "processHelium3": "false",
+        "processAlpha": "false",
+        "processFullElectron": "false",
+        "processFullMuon": "false",
+        "processFullPion": "false",
+        "processFullKaon": "false",
+        "processFullProton": "false",
+        "processFullDeuteron": "false",
+        "processFullTriton": "false",
+        "processFullHelium3": "false",
+        "processFullAlpha": "false",
+        "processFullWithTOFElectron": "false",
+        "processFullWithTOFMuon": "false",
+        "processFullWithTOFPion": "false",
+        "processFullWithTOFKaon": "false",
+        "processFullWithTOFProton": "false",
+        "processFullWithTOFDeuteron": "false",
+        "processFullWithTOFTriton": "false",
+        "processFullWithTOFHelium3": "false",
+        "processFullWithTOFAlpha": "false"
+    },
     "tof-event-time": {
         "inheritFromBaseTask": "true",
         "ccdb-url": "",
@@ -308,7 +349,7 @@
         "processFT0": "false",
         "processOnlyFT0": "false"
     },
-    "tof-pid-full": {
+    "tof-pid": {
         "inheritFromBaseTask": "true",
         "ccdb-url": "",
         "ccdb-timestamp": "-1",
@@ -377,10 +418,85 @@
         "fatalOnPassNotAvailable": "true",
         "enableTOFParams": "false"
     },
-    "checkpid": {
-        "etaCut": "0.800000012",
+    "practice3": {
         "processTPC": "true",
         "processTOF": "true"
+    },
+    "tof-pid-qa": {
+        "logAxis": "0",
+        "nBinsP": "400",
+        "minP": "0.100000001",
+        "maxP": "5",
+        "etaBins": {
+            "values": [
+                "100",
+                "-1",
+                "1"
+            ]
+        },
+        "phiBins": {
+            "values": [
+                "100",
+                "0",
+                "6.2831853071795862"
+            ]
+        },
+        "trackLengthBins": {
+            "values": [
+                "100",
+                "0",
+                "1000"
+            ]
+        },
+        "deltaBins": {
+            "values": [
+                "200",
+                "-1000",
+                "1000"
+            ]
+        },
+        "expSigmaBins": {
+            "values": [
+                "200",
+                "0",
+                "200"
+            ]
+        },
+        "nSigmaBins": {
+            "values": [
+                "401",
+                "-10.024999618530273",
+                "10.024999618530273"
+            ]
+        },
+        "applyEvSel": "2",
+        "trackSelection": "1",
+        "applyRapidityCut": "false",
+        "enableEvTimeSplitting": "false",
+        "produceDeltaTEtaPhiMap": "false",
+        "ptDeltaTEtaPhiMapMin": "1.45000005",
+        "ptDeltaTEtaPhiMapMax": "1.54999995",
+        "splitSignalPerCharge": "true",
+        "enableVsMomentumHistograms": "false",
+        "requireGoodMatchTracks": "false",
+        "processElectron": "false",
+        "processMuon": "false",
+        "processPion": "false",
+        "processKaon": "false",
+        "processProton": "false",
+        "processDeuteron": "false",
+        "processTriton": "false",
+        "processHelium3": "false",
+        "processAlpha": "false",
+        "processFullElectron": "false",
+        "processFullMuon": "false",
+        "processFullPion": "false",
+        "processFullKaon": "false",
+        "processFullProton": "false",
+        "processFullDeuteron": "false",
+        "processFullTriton": "false",
+        "processFullHelium3": "false",
+        "processFullAlpha": "false"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",

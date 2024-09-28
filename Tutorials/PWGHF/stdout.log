@@ -1,0 +1,1533 @@
+[INFO] Initialising O2 Data Processing Layer. Driver PID: 97511.
+[INFO] Driver listening on port: 15591
+[INFO] Rate limiting set up at 2000MB distributed over 1 readers
+[INFO] O2 Data Processing Layer initialised. We brake for nobody.
+[INFO] Optimised build. O2DEBUG / LOG(debug) / LOGF(debug) / assert statement will not be shown.
+[INFO] Redeployment of configuration asked.
+[INFO] Starting internal-dpl-clock on pid 97513
+[INFO] Starting internal-dpl-aod-reader on pid 97514
+[INFO] Starting internal-dpl-aod-spawner on pid 97515
+[INFO] Starting bc-converter on pid 97516
+[INFO] Starting timestamp-task on pid 97517
+[INFO] Starting tracks-extra-converter on pid 97518
+[INFO] Starting zdc-converter on pid 97519
+[INFO] Starting internal-dpl-aod-index-builder on pid 97520
+[INFO] Starting tracks-extra-spawner on pid 97521
+[INFO] Starting track-propagation on pid 97522
+[INFO] Starting bc-selection-task on pid 97523
+[INFO] Starting event-selection-task on pid 97524
+[INFO] Starting hf-candidate-creator2-prong on pid 97525
+[INFO] Starting pid-multiplicity on pid 97526
+[INFO] Starting tpc-pid on pid 97527
+[INFO] Starting multiplicity-table on pid 97528
+[INFO] Starting hf-candidate-creator2-prong-expressions on pid 97529
+[INFO] Starting tof-signal on pid 97530
+[INFO] Starting tof-event-time on pid 97531
+[INFO] Starting tof-pid-full on pid 97532
+[INFO] Starting hf-candidate-selector-d0 on pid 97533
+[INFO] Starting hf-task-d0 on pid 97534
+[INFO] Starting internal-dpl-aod-writer on pid 97535
+[INFO] Starting internal-dpl-aod-global-analysis-file-sink on pid 97536
+[INFO] Starting internal-dpl-injected-dummy-sink on pid 97537
+[INFO] Redeployment of configuration done.
+[97516:bc-converter]: [INFO] Instrumenting crash signals
+[97516:bc-converter]: [INFO] Spawing new device bc-converter in process with pid 97516
+[97516:bc-converter]: [18:34:14][INFO] 
+[97516:bc-converter]:       ______      _    _______  _________ 
+[97516:bc-converter]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97516:bc-converter]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97516:bc-converter]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97516:bc-converter]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97516:bc-converter]: 
+[97516:bc-converter]: [18:34:14][STATE] Starting FairMQ state machine --> IDLE
+[97516:bc-converter]: [18:34:14][STATE] IDLE ---> INITIALIZING DEVICE
+[97516:bc-converter]: [18:34:14][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97516:bc-converter]: [18:34:14][STATE] INITIALIZED ---> BINDING
+[97516:bc-converter]: [18:34:14][STATE] BINDING ---> BOUND
+[97516:bc-converter]: [18:34:14][STATE] BOUND ---> CONNECTING
+[97516:bc-converter]: [18:34:14][STATE] CONNECTING ---> DEVICE READY
+[97516:bc-converter]: [18:34:14][STATE] DEVICE READY ---> INITIALIZING TASK
+[97516:bc-converter]: [18:34:14][STATE] INITIALIZING TASK ---> READY
+[97516:bc-converter]: [18:34:14][STATE] READY ---> RUNNING
+[97516:bc-converter]: [18:34:14][INFO] fair::mq::Device running...
+[97516:bc-converter]: [18:34:14][INFO] LHCPeriod is not available, using current month SEP
+[97516:bc-converter]: [18:34:14][INFO] Correctly handshaken websocket connection.
+[INFO] Controller for internal-dpl-aod-reader not yet available.
+[97514:internal-dpl-aod-reader]: [INFO] Instrumenting crash signals
+[97518:tracks-extra-converter]: [INFO] Instrumenting crash signals
+[97513:internal-dpl-clock]: [INFO] Instrumenting crash signals
+[97518:tracks-extra-converter]: [INFO] Spawing new device tracks-extra-converter in process with pid 97518
+[97518:tracks-extra-converter]: [18:34:16][INFO] 
+[97518:tracks-extra-converter]:       ______      _    _______  _________ 
+[97518:tracks-extra-converter]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97518:tracks-extra-converter]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97518:tracks-extra-converter]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97518:tracks-extra-converter]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97518:tracks-extra-converter]: 
+[97518:tracks-extra-converter]: [18:34:16][STATE] Starting FairMQ state machine --> IDLE
+[97519:zdc-converter]: [INFO] Instrumenting crash signals
+[97518:tracks-extra-converter]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97518:tracks-extra-converter]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97518:tracks-extra-converter]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97518:tracks-extra-converter]: [18:34:17][STATE] BINDING ---> BOUND
+[97518:tracks-extra-converter]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97518:tracks-extra-converter]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97518:tracks-extra-converter]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97518:tracks-extra-converter]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97518:tracks-extra-converter]: [18:34:17][STATE] READY ---> RUNNING
+[97518:tracks-extra-converter]: [18:34:17][INFO] fair::mq::Device running...
+[97518:tracks-extra-converter]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97518:tracks-extra-converter]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97514:internal-dpl-aod-reader]: [INFO] Spawing new device internal-dpl-aod-reader in process with pid 97514
+[97514:internal-dpl-aod-reader]: [18:34:17][INFO] 
+[97514:internal-dpl-aod-reader]:       ______      _    _______  _________ 
+[97514:internal-dpl-aod-reader]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97514:internal-dpl-aod-reader]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97514:internal-dpl-aod-reader]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97514:internal-dpl-aod-reader]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97514:internal-dpl-aod-reader]: 
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97519:zdc-converter]: [INFO] Spawing new device zdc-converter in process with pid 97519
+[97519:zdc-converter]: [18:34:17][INFO] 
+[97519:zdc-converter]:       ______      _    _______  _________ 
+[97519:zdc-converter]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97519:zdc-converter]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97519:zdc-converter]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97519:zdc-converter]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97519:zdc-converter]: 
+[97519:zdc-converter]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97519:zdc-converter]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97519:zdc-converter]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97519:zdc-converter]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97519:zdc-converter]: [18:34:17][STATE] BINDING ---> BOUND
+[97519:zdc-converter]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97519:zdc-converter]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97519:zdc-converter]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97519:zdc-converter]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97519:zdc-converter]: [18:34:17][STATE] READY ---> RUNNING
+[97519:zdc-converter]: [18:34:17][INFO] fair::mq::Device running...
+[97519:zdc-converter]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97519:zdc-converter]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97521:tracks-extra-spawner]: [INFO] Instrumenting crash signals
+[97515:internal-dpl-aod-spawner]: [INFO] Instrumenting crash signals
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97520:internal-dpl-aod-index-builder]: [INFO] Instrumenting crash signals
+[97513:internal-dpl-clock]: [INFO] Spawing new device internal-dpl-clock in process with pid 97513
+[97513:internal-dpl-clock]: [18:34:17][INFO] 
+[97513:internal-dpl-clock]:       ______      _    _______  _________ 
+[97513:internal-dpl-clock]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97513:internal-dpl-clock]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97513:internal-dpl-clock]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97513:internal-dpl-clock]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97513:internal-dpl-clock]: 
+[97513:internal-dpl-clock]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97521:tracks-extra-spawner]: [INFO] Spawing new device tracks-extra-spawner in process with pid 97521
+[97521:tracks-extra-spawner]: [18:34:17][INFO] 
+[97521:tracks-extra-spawner]:       ______      _    _______  _________ 
+[97521:tracks-extra-spawner]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97521:tracks-extra-spawner]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97521:tracks-extra-spawner]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97521:tracks-extra-spawner]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97521:tracks-extra-spawner]: 
+[97521:tracks-extra-spawner]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97513:internal-dpl-clock]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97513:internal-dpl-clock]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97513:internal-dpl-clock]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97513:internal-dpl-clock]: [18:34:17][STATE] BINDING ---> BOUND
+[97513:internal-dpl-clock]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97513:internal-dpl-clock]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97513:internal-dpl-clock]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97513:internal-dpl-clock]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97513:internal-dpl-clock]: [18:34:17][STATE] READY ---> RUNNING
+[97513:internal-dpl-clock]: [18:34:17][INFO] fair::mq::Device running...
+[97513:internal-dpl-clock]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97513:internal-dpl-clock]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97521:tracks-extra-spawner]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97521:tracks-extra-spawner]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97521:tracks-extra-spawner]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97521:tracks-extra-spawner]: [18:34:17][STATE] BINDING ---> BOUND
+[97521:tracks-extra-spawner]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97521:tracks-extra-spawner]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97521:tracks-extra-spawner]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97517:timestamp-task]: [INFO] Instrumenting crash signals
+[97521:tracks-extra-spawner]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97521:tracks-extra-spawner]: [18:34:17][STATE] READY ---> RUNNING
+[97521:tracks-extra-spawner]: [18:34:17][INFO] fair::mq::Device running...
+[97521:tracks-extra-spawner]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97521:tracks-extra-spawner]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] BINDING ---> BOUND
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[INFO] Controller for internal-dpl-aod-reader now available.
+[97514:internal-dpl-aod-reader]: [18:34:17][STATE] READY ---> RUNNING
+[97514:internal-dpl-aod-reader]: [18:34:17][INFO] fair::mq::Device running...
+[97514:internal-dpl-aod-reader]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97514:internal-dpl-aod-reader]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97515:internal-dpl-aod-spawner]: [INFO] Spawing new device internal-dpl-aod-spawner in process with pid 97515
+[97515:internal-dpl-aod-spawner]: [18:34:17][INFO] 
+[97515:internal-dpl-aod-spawner]:       ______      _    _______  _________ 
+[97515:internal-dpl-aod-spawner]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97515:internal-dpl-aod-spawner]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97515:internal-dpl-aod-spawner]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97515:internal-dpl-aod-spawner]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97515:internal-dpl-aod-spawner]: 
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97520:internal-dpl-aod-index-builder]: [INFO] Spawing new device internal-dpl-aod-index-builder in process with pid 97520
+[97520:internal-dpl-aod-index-builder]: [18:34:17][INFO] 
+[97520:internal-dpl-aod-index-builder]:       ______      _    _______  _________ 
+[97520:internal-dpl-aod-index-builder]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97520:internal-dpl-aod-index-builder]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97520:internal-dpl-aod-index-builder]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97520:internal-dpl-aod-index-builder]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97520:internal-dpl-aod-index-builder]: 
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97525:hf-candidate-creator2-prong]: [INFO] Instrumenting crash signals
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] BINDING ---> BOUND
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97520:internal-dpl-aod-index-builder]: [18:34:17][STATE] READY ---> RUNNING
+[97520:internal-dpl-aod-index-builder]: [18:34:17][INFO] fair::mq::Device running...
+[97520:internal-dpl-aod-index-builder]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97520:internal-dpl-aod-index-builder]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97524:event-selection-task]: [INFO] Instrumenting crash signals
+[97517:timestamp-task]: [INFO] Spawing new device timestamp-task in process with pid 97517
+[97522:track-propagation]: [INFO] Instrumenting crash signals
+[97523:bc-selection-task]: [INFO] Instrumenting crash signals
+[97517:timestamp-task]: [18:34:17][INFO] 
+[97517:timestamp-task]:       ______      _    _______  _________ 
+[97517:timestamp-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97517:timestamp-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97517:timestamp-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97517:timestamp-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97517:timestamp-task]: 
+[97517:timestamp-task]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97517:timestamp-task]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97528:multiplicity-table]: [INFO] Instrumenting crash signals
+[97517:timestamp-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-RJ79hN, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97517:timestamp-task]: [18:34:17][INFO] Initializing TimestampTask
+[97517:timestamp-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-RJ79hN, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97517:timestamp-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516056-1PHft3, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] BINDING ---> BOUND
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97515:internal-dpl-aod-spawner]: [18:34:17][STATE] READY ---> RUNNING
+[97515:internal-dpl-aod-spawner]: [18:34:17][INFO] fair::mq::Device running...
+[97524:event-selection-task]: [INFO] Spawing new device event-selection-task in process with pid 97524
+[97515:internal-dpl-aod-spawner]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97515:internal-dpl-aod-spawner]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97524:event-selection-task]: [18:34:17][INFO] 
+[97524:event-selection-task]:       ______      _    _______  _________ 
+[97524:event-selection-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97524:event-selection-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97524:event-selection-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97524:event-selection-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97524:event-selection-task]: 
+[97524:event-selection-task]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97527:tpc-pid]: [INFO] Instrumenting crash signals
+[97524:event-selection-task]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97526:pid-multiplicity]: [INFO] Instrumenting crash signals
+[97531:tof-event-time]: [INFO] Instrumenting crash signals
+[97524:event-selection-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-9HHu0I, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97524:event-selection-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-9HHu0I, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97522:track-propagation]: [INFO] Spawing new device track-propagation in process with pid 97522
+[97524:event-selection-task]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97524:event-selection-task]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97522:track-propagation]: [18:34:17][INFO] 
+[97522:track-propagation]:       ______      _    _______  _________ 
+[97522:track-propagation]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97522:track-propagation]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97522:track-propagation]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97522:track-propagation]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97522:track-propagation]: 
+[97522:track-propagation]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97525:hf-candidate-creator2-prong]: [INFO] Spawing new device hf-candidate-creator2-prong in process with pid 97525
+[97524:event-selection-task]: [18:34:17][STATE] BINDING ---> BOUND
+[97524:event-selection-task]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97525:hf-candidate-creator2-prong]: [18:34:17][INFO] 
+[97525:hf-candidate-creator2-prong]:       ______      _    _______  _________ 
+[97525:hf-candidate-creator2-prong]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97525:hf-candidate-creator2-prong]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97525:hf-candidate-creator2-prong]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97525:hf-candidate-creator2-prong]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97525:hf-candidate-creator2-prong]: 
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97524:event-selection-task]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97524:event-selection-task]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97522:track-propagation]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97527:tpc-pid]: [INFO] Spawing new device tpc-pid in process with pid 97527
+[97523:bc-selection-task]: [INFO] Spawing new device bc-selection-task in process with pid 97523
+[97527:tpc-pid]: [18:34:17][INFO] 
+[97527:tpc-pid]:       ______      _    _______  _________ 
+[97527:tpc-pid]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97527:tpc-pid]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97527:tpc-pid]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97527:tpc-pid]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97527:tpc-pid]: 
+[97527:tpc-pid]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97523:bc-selection-task]: [18:34:17][INFO] 
+[97523:bc-selection-task]:       ______      _    _______  _________ 
+[97523:bc-selection-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97523:bc-selection-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97523:bc-selection-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97523:bc-selection-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97523:bc-selection-task]: 
+[97523:bc-selection-task]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97524:event-selection-task]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97524:event-selection-task]: [18:34:17][STATE] READY ---> RUNNING
+[97524:event-selection-task]: [18:34:17][INFO] fair::mq::Device running...
+[97524:event-selection-task]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97524:event-selection-task]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97522:track-propagation]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97522:track-propagation]: [18:34:17][INFO] Enabling processCovariance
+[97522:track-propagation]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97527:tpc-pid]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] BINDING ---> BOUND
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97523:bc-selection-task]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97525:hf-candidate-creator2-prong]: [18:34:17][STATE] READY ---> RUNNING
+[97525:hf-candidate-creator2-prong]: [18:34:17][INFO] fair::mq::Device running...
+[97525:hf-candidate-creator2-prong]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97525:hf-candidate-creator2-prong]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97527:tpc-pid]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-jRzHZH, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullEl
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullMu
+[97527:tpc-pid]: [18:34:17][INFO] Auto-enabling table: pidTPCFullPi
+[97527:tpc-pid]: [18:34:17][INFO] Auto-enabling table: pidTPCFullKa
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullPr
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullDe
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullTr
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullHe
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCFullAl
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCEl
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCMu
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCPi
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCKa
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCPr
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCDe
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCTr
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCHe
+[97527:tpc-pid]: [18:34:17][INFO] Auto-disabling table: pidTPCAl
+[97527:tpc-pid]: [18:34:17][INFO] Reco pass not specified; CCDB will take latest available object
+[97527:tpc-pid]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-jRzHZH, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97527:tpc-pid]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97527:tpc-pid]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97523:bc-selection-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97523:bc-selection-task]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97527:tpc-pid]: [18:34:17][STATE] BINDING ---> BOUND
+[97527:tpc-pid]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97523:bc-selection-task]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97523:bc-selection-task]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97527:tpc-pid]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97527:tpc-pid]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97527:tpc-pid]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97527:tpc-pid]: [18:34:17][STATE] READY ---> RUNNING
+[97527:tpc-pid]: [18:34:17][INFO] fair::mq::Device running...
+[97527:tpc-pid]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97527:tpc-pid]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97523:bc-selection-task]: [18:34:17][STATE] BINDING ---> BOUND
+[97523:bc-selection-task]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97523:bc-selection-task]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97523:bc-selection-task]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97523:bc-selection-task]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97523:bc-selection-task]: [18:34:17][STATE] READY ---> RUNNING
+[97523:bc-selection-task]: [18:34:17][INFO] fair::mq::Device running...
+[97528:multiplicity-table]: [INFO] Spawing new device multiplicity-table in process with pid 97528
+[97523:bc-selection-task]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97526:pid-multiplicity]: [INFO] Spawing new device pid-multiplicity in process with pid 97526
+[97523:bc-selection-task]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97526:pid-multiplicity]: [18:34:17][INFO] 
+[97526:pid-multiplicity]:       ______      _    _______  _________ 
+[97526:pid-multiplicity]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97526:pid-multiplicity]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97526:pid-multiplicity]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97526:pid-multiplicity]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97526:pid-multiplicity]: 
+[97526:pid-multiplicity]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97533:hf-candidate-selector-d0]: [INFO] Instrumenting crash signals
+[97528:multiplicity-table]: [18:34:17][INFO] 
+[97528:multiplicity-table]:       ______      _    _______  _________ 
+[97528:multiplicity-table]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97528:multiplicity-table]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97528:multiplicity-table]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97528:multiplicity-table]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97528:multiplicity-table]: 
+[97528:multiplicity-table]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97526:pid-multiplicity]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97526:pid-multiplicity]: [18:34:17][INFO] Initializing PID Mult Task
+[97526:pid-multiplicity]: [18:34:17][INFO] Table TPC PID Multiplicity enabled!
+[97526:pid-multiplicity]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97526:pid-multiplicity]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97531:tof-event-time]: [INFO] Spawing new device tof-event-time in process with pid 97531
+[97531:tof-event-time]: [18:34:17][INFO] 
+[97531:tof-event-time]:       ______      _    _______  _________ 
+[97531:tof-event-time]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97531:tof-event-time]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97531:tof-event-time]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97531:tof-event-time]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97531:tof-event-time]: 
+[97526:pid-multiplicity]: [18:34:17][STATE] BINDING ---> BOUND
+[97526:pid-multiplicity]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97526:pid-multiplicity]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97526:pid-multiplicity]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97531:tof-event-time]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97526:pid-multiplicity]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97526:pid-multiplicity]: [18:34:17][STATE] READY ---> RUNNING
+[97526:pid-multiplicity]: [18:34:17][INFO] fair::mq::Device running...
+[97534:hf-task-d0]: [INFO] Instrumenting crash signals
+[97531:tof-event-time]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97526:pid-multiplicity]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97526:pid-multiplicity]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97533:hf-candidate-selector-d0]: [INFO] Spawing new device hf-candidate-selector-d0 in process with pid 97533
+[97531:tof-event-time]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HNFr5H, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97531:tof-event-time]: [18:34:17][INFO] Checking for option 'ccdb-url' in task 'tof-signal'
+[97531:tof-event-time]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97531:tof-event-time]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97531:tof-event-time]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97531:tof-event-time]: [18:34:17][INFO]  Device 3 bc-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 4 timestamp-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 6 zdc-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97531:tof-event-time]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97531:tof-event-time]: [18:34:17][INFO]  Device 9 track-propagation
+[97531:tof-event-time]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 11 event-selection-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97531:tof-event-time]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97531:tof-event-time]: [18:34:17][INFO]  Device 14 tpc-pid
+[97531:tof-event-time]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97531:tof-event-time]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97531:tof-event-time]: [18:34:17][INFO]  Device 17 tof-signal
+[97531:tof-event-time]: [18:34:17][INFO]   Option 0 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97531:tof-event-time]: [18:34:17][INFO]    Found option 'ccdb-url' with value 'http://alice-ccdb.cern.ch'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 1 ccdb-timestamp = '-1'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 2 timeShiftCCDBPath = ''
+[97531:tof-event-time]: [18:34:17][INFO]   Option 3 distanceForGoodMatch = '999'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 4 distanceForGoodMatchLowMult = '999'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 5 multThreshold = '0'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 6 enableQaHistograms = '0'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 7 processRun3 = '1'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 8 processRun2 = '0'
+[97531:tof-event-time]: [18:34:17][INFO] Checking for option 'ccdb-timestamp' in task 'tof-signal'
+[97531:tof-event-time]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97531:tof-event-time]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97531:tof-event-time]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97531:tof-event-time]: [18:34:17][INFO]  Device 3 bc-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 4 timestamp-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 6 zdc-converter
+[97531:tof-event-time]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97531:tof-event-time]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97531:tof-event-time]: [18:34:17][INFO]  Device 9 track-propagation
+[97531:tof-event-time]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 11 event-selection-task
+[97531:tof-event-time]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97531:tof-event-time]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97531:tof-event-time]: [18:34:17][INFO]  Device 14 tpc-pid
+[97531:tof-event-time]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97531:tof-event-time]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97531:tof-event-time]: [18:34:17][INFO]  Device 17 tof-signal
+[97531:tof-event-time]: [18:34:17][INFO]   Option 0 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 1 ccdb-timestamp = '-1'
+[97531:tof-event-time]: [18:34:17][INFO]    Found option 'ccdb-timestamp' with value '-1'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 2 timeShiftCCDBPath = ''
+[97531:tof-event-time]: [18:34:17][INFO]   Option 3 distanceForGoodMatch = '999'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 4 distanceForGoodMatchLowMult = '999'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 5 multThreshold = '0'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 6 enableQaHistograms = '0'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 7 processRun3 = '1'
+[97531:tof-event-time]: [18:34:17][INFO]   Option 8 processRun2 = '0'
+[97531:tof-event-time]: [18:34:17][INFO] Configuring track sample for TOF ev. time: 0.5 < p < 2
+[97531:tof-event-time]: [18:34:17][INFO] Enabling process function: processNoFT0
+[97531:tof-event-time]: [18:34:17][INFO] Table TOFEvTime enabled!
+[97531:tof-event-time]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HNFr5H, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97531:tof-event-time]: [18:34:17][WARN] Passed autodetect mode for pass, not implemented yet, waiting for metadata. Taking 'unanchored'
+[97531:tof-event-time]: [18:34:17][INFO] Using parameter collection, starting from pass 'unanchored'
+[97531:tof-event-time]: [18:34:17][INFO] Parameters 'TOFResoParamsV2'
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 0/12 TrkRes.Pi.P0 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 1/12 TrkRes.Pi.P1 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 2/12 TrkRes.Pi.P2 is 0.002
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 3/12 TrkRes.Pi.P3 is 40
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 4/12 time_resolution is 60
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 5/12 TrkRes.Ka.P0 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 6/12 TrkRes.Ka.P1 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 7/12 TrkRes.Ka.P2 is 0.002
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 8/12 TrkRes.Ka.P3 is 40
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 9/12 TrkRes.Pr.P0 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 10/12 TrkRes.Pr.P1 is 0.008
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 11/12 TrkRes.Pr.P2 is 0.002
+[97531:tof-event-time]: [18:34:17][INFO] Parameter 12/12 TrkRes.Pr.P3 is 40
+[97531:tof-event-time]: [18:34:17][INFO] eventTimeContainer configuration:
+[97531:tof-event-time]: [18:34:17][INFO]  maxNtracksInSet = 10
+[97531:tof-event-time]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97531:tof-event-time]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97531:tof-event-time]: [18:34:17][STATE] BINDING ---> BOUND
+[97533:hf-candidate-selector-d0]: [18:34:17][INFO] 
+[97533:hf-candidate-selector-d0]:       ______      _    _______  _________ 
+[97533:hf-candidate-selector-d0]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97533:hf-candidate-selector-d0]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97533:hf-candidate-selector-d0]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97533:hf-candidate-selector-d0]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97533:hf-candidate-selector-d0]: 
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97531:tof-event-time]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97531:tof-event-time]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97531:tof-event-time]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97531:tof-event-time]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97531:tof-event-time]: [18:34:17][STATE] READY ---> RUNNING
+[97531:tof-event-time]: [18:34:17][INFO] fair::mq::Device running...
+[97531:tof-event-time]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97531:tof-event-time]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] BINDING ---> BOUND
+[97534:hf-task-d0]: [INFO] Spawing new device hf-task-d0 in process with pid 97534
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97534:hf-task-d0]: [18:34:17][INFO] 
+[97534:hf-task-d0]:       ______      _    _______  _________ 
+[97534:hf-task-d0]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97534:hf-task-d0]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97534:hf-task-d0]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97534:hf-task-d0]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97534:hf-task-d0]: 
+[97534:hf-task-d0]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97533:hf-candidate-selector-d0]: [18:34:17][STATE] READY ---> RUNNING
+[97533:hf-candidate-selector-d0]: [18:34:17][INFO] fair::mq::Device running...
+[97533:hf-candidate-selector-d0]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97533:hf-candidate-selector-d0]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97529:hf-candidate-creator2-prong-expressions]: [INFO] Instrumenting crash signals
+[97534:hf-task-d0]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97534:hf-task-d0]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97534:hf-task-d0]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97534:hf-task-d0]: [18:34:17][STATE] BINDING ---> BOUND
+[97534:hf-task-d0]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97535:internal-dpl-aod-writer]: [INFO] Instrumenting crash signals
+[97534:hf-task-d0]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97534:hf-task-d0]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97536:internal-dpl-aod-global-analysis-file-sink]: [INFO] Instrumenting crash signals
+[97534:hf-task-d0]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97534:hf-task-d0]: [18:34:17][STATE] READY ---> RUNNING
+[97534:hf-task-d0]: [18:34:17][INFO] fair::mq::Device running...
+[97534:hf-task-d0]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97534:hf-task-d0]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97536:internal-dpl-aod-global-analysis-file-sink]: [INFO] Spawing new device internal-dpl-aod-global-analysis-file-sink in process with pid 97536
+[97537:internal-dpl-injected-dummy-sink]: [INFO] Instrumenting crash signals
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][INFO] 
+[97536:internal-dpl-aod-global-analysis-file-sink]:       ______      _    _______  _________ 
+[97536:internal-dpl-aod-global-analysis-file-sink]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97536:internal-dpl-aod-global-analysis-file-sink]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97536:internal-dpl-aod-global-analysis-file-sink]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97536:internal-dpl-aod-global-analysis-file-sink]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97536:internal-dpl-aod-global-analysis-file-sink]: 
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97530:tof-signal]: [INFO] Instrumenting crash signals
+[97529:hf-candidate-creator2-prong-expressions]: [INFO] Spawing new device hf-candidate-creator2-prong-expressions in process with pid 97529
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][INFO] 
+[97529:hf-candidate-creator2-prong-expressions]:       ______      _    _______  _________ 
+[97529:hf-candidate-creator2-prong-expressions]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97529:hf-candidate-creator2-prong-expressions]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97529:hf-candidate-creator2-prong-expressions]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97529:hf-candidate-creator2-prong-expressions]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97529:hf-candidate-creator2-prong-expressions]: 
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97535:internal-dpl-aod-writer]: [INFO] Spawing new device internal-dpl-aod-writer in process with pid 97535
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] BINDING ---> BOUND
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97535:internal-dpl-aod-writer]: [18:34:17][INFO] 
+[97535:internal-dpl-aod-writer]:       ______      _    _______  _________ 
+[97535:internal-dpl-aod-writer]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97535:internal-dpl-aod-writer]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97535:internal-dpl-aod-writer]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97535:internal-dpl-aod-writer]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97535:internal-dpl-aod-writer]: 
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][STATE] READY ---> RUNNING
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][INFO] fair::mq::Device running...
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] BINDING ---> BOUND
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][STATE] READY ---> RUNNING
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][INFO] fair::mq::Device running...
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] BINDING ---> BOUND
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97537:internal-dpl-injected-dummy-sink]: [INFO] Spawing new device internal-dpl-injected-dummy-sink in process with pid 97537
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][INFO] 
+[97537:internal-dpl-injected-dummy-sink]:       ______      _    _______  _________ 
+[97537:internal-dpl-injected-dummy-sink]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97537:internal-dpl-injected-dummy-sink]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97537:internal-dpl-injected-dummy-sink]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97537:internal-dpl-injected-dummy-sink]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97537:internal-dpl-injected-dummy-sink]: 
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97535:internal-dpl-aod-writer]: [18:34:17][STATE] READY ---> RUNNING
+[97535:internal-dpl-aod-writer]: [18:34:17][INFO] fair::mq::Device running...
+[97535:internal-dpl-aod-writer]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97535:internal-dpl-aod-writer]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97530:tof-signal]: [INFO] Spawing new device tof-signal in process with pid 97530
+[97530:tof-signal]: [18:34:17][INFO] 
+[97530:tof-signal]:       ______      _    _______  _________ 
+[97530:tof-signal]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97530:tof-signal]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97530:tof-signal]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97530:tof-signal]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97530:tof-signal]: 
+[97530:tof-signal]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] BINDING ---> BOUND
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][STATE] READY ---> RUNNING
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][INFO] fair::mq::Device running...
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97537:internal-dpl-injected-dummy-sink]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97530:tof-signal]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97530:tof-signal]: [18:34:17][INFO] Table TOFSignal enabled!
+[97530:tof-signal]: [18:34:17][INFO] Configuring selections for good match: 999 low mult 999 mult. threshold 0
+[97530:tof-signal]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97530:tof-signal]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97530:tof-signal]: [18:34:17][STATE] BINDING ---> BOUND
+[97530:tof-signal]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97530:tof-signal]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97530:tof-signal]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97530:tof-signal]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97530:tof-signal]: [18:34:17][STATE] READY ---> RUNNING
+[97530:tof-signal]: [18:34:17][INFO] fair::mq::Device running...
+[97530:tof-signal]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97530:tof-signal]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97532:tof-pid-full]: [INFO] Instrumenting crash signals
+[97532:tof-pid-full]: [INFO] Spawing new device tof-pid-full in process with pid 97532
+[97532:tof-pid-full]: [18:34:17][INFO] 
+[97532:tof-pid-full]:       ______      _    _______  _________ 
+[97532:tof-pid-full]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.8.4
+[97532:tof-pid-full]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[97532:tof-pid-full]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[97532:tof-pid-full]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2023 GSI
+[97532:tof-pid-full]: 
+[97532:tof-pid-full]: [18:34:17][STATE] Starting FairMQ state machine --> IDLE
+[97532:tof-pid-full]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97532:tof-pid-full]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HPHu8I, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'ccdb-url' in task 'tof-signal'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'ccdb-url' with value 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 timeShiftCCDBPath = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 distanceForGoodMatch = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 distanceForGoodMatchLowMult = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 multThreshold = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 enableQaHistograms = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 processRun3 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'ccdb-timestamp' in task 'tof-signal'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'ccdb-timestamp' with value '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 timeShiftCCDBPath = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 distanceForGoodMatch = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 distanceForGoodMatchLowMult = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 multThreshold = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 enableQaHistograms = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 processRun3 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'paramFileName' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'paramFileName' with value ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'parametrizationPath' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'parametrizationPath' with value 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'passName' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'passName' with value ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'timeShiftCCDBPath' in task 'tof-signal'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 timeShiftCCDBPath = ''
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'timeShiftCCDBPath' with value ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 distanceForGoodMatch = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 distanceForGoodMatchLowMult = '999'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 multThreshold = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 enableQaHistograms = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 processRun3 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'loadResponseFromCCDB' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'loadResponseFromCCDB' with value '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'enableTimeDependentResponse' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'enableTimeDependentResponse' with value '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Checking for option 'fatalOnPassNotAvailable' in task 'tof-event-time'
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 0 internal-dpl-clock
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 1 internal-dpl-aod-reader
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 2 internal-dpl-aod-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 3 bc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 4 timestamp-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 5 tracks-extra-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 6 zdc-converter
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 7 internal-dpl-aod-index-builder
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 8 tracks-extra-spawner
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 9 track-propagation
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 10 bc-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 11 event-selection-task
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 12 hf-candidate-creator2-prong
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 13 pid-multiplicity
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 14 tpc-pid
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 15 multiplicity-table
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 16 hf-candidate-creator2-prong-expressions
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 17 tof-signal
+[97532:tof-pid-full]: [18:34:17][INFO]  Device 18 tof-event-time
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 0 inheritFromBaseTask = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 1 ccdb-url = 'http://alice-ccdb.cern.ch'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 2 ccdb-timestamp = '-1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 3 minMomentum = '0.5'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 4 maxMomentum = '2'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 5 maxEvTimeTOF = '100000'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 6 sel8TOFEvTime = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 7 maxNtracksInSet = '10'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 8 paramFileName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 9 parametrizationPath = 'TOF/Calib/Params'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 10 passName = ''
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 11 loadResponseFromCCDB = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 12 enableTimeDependentResponse = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 13 fatalOnPassNotAvailable = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]    Found option 'fatalOnPassNotAvailable' with value '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 14 processRun2 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 15 processNoFT0 = '1'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 16 processFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO]   Option 17 processOnlyFT0 = '0'
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullEl
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullMu
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-enabling table: pidTOFFullPi
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-enabling table: pidTOFFullKa
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullPr
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullDe
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullTr
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullHe
+[97532:tof-pid-full]: [18:34:17][INFO] Auto-disabling table: pidTOFFullAl
+[97532:tof-pid-full]: [18:34:17][INFO] ++ Enabled tables:
+[97532:tof-pid-full]: [18:34:17][INFO] ++  pidTOFFullPi is enabled
+[97532:tof-pid-full]: [18:34:17][INFO] ++  pidTOFFullKa is enabled
+[97532:tof-pid-full]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HPHu8I, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97532:tof-pid-full]: [18:34:17][WARN] Passed autodetect mode for pass, not implemented yet, waiting for metadata. Taking 'unanchored'
+[97532:tof-pid-full]: [18:34:17][INFO] Using parameter collection, starting from pass 'unanchored'
+[97532:tof-pid-full]: [18:34:17][INFO] Parameters 'TOFResoParamsV2'
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 0/12 TrkRes.Pi.P0 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 1/12 TrkRes.Pi.P1 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 2/12 TrkRes.Pi.P2 is 0.002
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 3/12 TrkRes.Pi.P3 is 40
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 4/12 time_resolution is 60
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 5/12 TrkRes.Ka.P0 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 6/12 TrkRes.Ka.P1 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 7/12 TrkRes.Ka.P2 is 0.002
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 8/12 TrkRes.Ka.P3 is 40
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 9/12 TrkRes.Pr.P0 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 10/12 TrkRes.Pr.P1 is 0.008
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 11/12 TrkRes.Pr.P2 is 0.002
+[97532:tof-pid-full]: [18:34:17][INFO] Parameter 12/12 TrkRes.Pr.P3 is 40
+[97532:tof-pid-full]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97532:tof-pid-full]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97532:tof-pid-full]: [18:34:17][STATE] BINDING ---> BOUND
+[97532:tof-pid-full]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97532:tof-pid-full]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97532:tof-pid-full]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97532:tof-pid-full]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97532:tof-pid-full]: [18:34:17][STATE] READY ---> RUNNING
+[97532:tof-pid-full]: [18:34:17][INFO] fair::mq::Device running...
+[97532:tof-pid-full]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97532:tof-pid-full]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97528:multiplicity-table]: Warning in <TDatabasePDG::AddParticle>: Particle with PDGcode=1000030040 already defined
+[97528:multiplicity-table]: [18:34:17][STATE] IDLE ---> INITIALIZING DEVICE
+[97528:multiplicity-table]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HLDq4E, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FV0Mults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FT0Mults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FDDMults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: ZDCMults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: TrackletMults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: TPCMults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-enabling table: PVMults
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: MultsExtra
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: MultSelections
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FV0MultZeqs
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FT0MultZeqs
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: FDDMultZeqs
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: PVMultZeqs
+[97528:multiplicity-table]: [18:34:17][INFO] Auto-disabling table: MultsExtraMC
+[97528:multiplicity-table]: [18:34:17][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1727516057-HLDq4E, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[97528:multiplicity-table]: [18:34:17][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97528:multiplicity-table]: [18:34:17][STATE] INITIALIZED ---> BINDING
+[97528:multiplicity-table]: [18:34:17][STATE] BINDING ---> BOUND
+[97528:multiplicity-table]: [18:34:17][STATE] BOUND ---> CONNECTING
+[97528:multiplicity-table]: [18:34:17][STATE] CONNECTING ---> DEVICE READY
+[97528:multiplicity-table]: [18:34:17][STATE] DEVICE READY ---> INITIALIZING TASK
+[97528:multiplicity-table]: [18:34:17][STATE] INITIALIZING TASK ---> READY
+[97528:multiplicity-table]: [18:34:17][STATE] READY ---> RUNNING
+[97528:multiplicity-table]: [18:34:17][INFO] fair::mq::Device running...
+[97528:multiplicity-table]: [18:34:17][INFO] LHCPeriod is not available, using current month SEP
+[97528:multiplicity-table]: [18:34:17][INFO] Correctly handshaken websocket connection.
+[97514:internal-dpl-aod-reader]: [18:34:17][INFO] Opening parent file /Users/jinhyunpark/npl/Analysis/ALICE/data/ao2d/O2Tutorial3.0/HFTut/AO2D.root for DF DF_2835049532001
+[97515:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97515:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97515:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97517:timestamp-task]: [18:34:18][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97517:timestamp-task]: [18:34:18][STATE] INITIALIZED ---> BINDING
+[97517:timestamp-task]: [18:34:18][STATE] BINDING ---> BOUND
+[97517:timestamp-task]: [18:34:18][STATE] BOUND ---> CONNECTING
+[97517:timestamp-task]: [18:34:18][STATE] CONNECTING ---> DEVICE READY
+[97517:timestamp-task]: [18:34:18][STATE] DEVICE READY ---> INITIALIZING TASK
+[97517:timestamp-task]: [18:34:18][STATE] INITIALIZING TASK ---> READY
+[97517:timestamp-task]: [18:34:18][STATE] READY ---> RUNNING
+[97517:timestamp-task]: [18:34:18][INFO] fair::mq::Device running...
+[97517:timestamp-task]: [18:34:18][INFO] LHCPeriod is not available, using current month SEP
+[97522:track-propagation]: Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+[97522:track-propagation]: Info in <TJAlienConnectionManager>: Opening connection to 128.142.249.31
+[97514:internal-dpl-aod-reader]: [18:34:18][WARN] Timed out sending after 1s. Downstream backpressure detected on from_internal-dpl-aod-reader_to_track-propagation[0].
+[97515:internal-dpl-aod-spawner]: [18:34:19][WARN] Timed out sending after 1s. Downstream backpressure detected on from_internal-dpl-aod-spawner_to_track-propagation[0].
+[97517:timestamp-task]: [18:34:20][WARN] Missing STF/EFT -> use SOX/EOX; Missing/invalid SOX -> use SOR | Missing/invalid EOX -> use EOR
+[97517:timestamp-task]: [18:34:20][INFO] Add new run number 302022 with orbit-reset timestamp 1547170260000000 to cache
+[97522:track-propagation]: Info in <TJAlienConnectionManager>: Successfully connected to 128.142.249.31
+[97517:timestamp-task]: [18:34:21][WARN] Timed out sending after 1s. Downstream backpressure detected on from_timestamp-task_to_track-propagation[0].
+[97522:track-propagation]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/GLO/Param/MatLUT/06/29739/3f0d0f81-99d9-11ee-b9a2-200114580202 in SE <ALICE::KISTI_GSDC::EOS>
+[97522:track-propagation]: [18:34:22][INFO] ccdb reads http://alice-ccdb.cern.ch/GLO/Param/MatLUT/1546300800000/3f0d0f81-99d9-11ee-b9a2-200114580202 for 1727516057193 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD), 
+[97522:track-propagation]: [18:34:22][INFO] Initializing voxel layer lookup
+[97522:track-propagation]: [18:34:22][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[97522:track-propagation]: [18:34:22][STATE] INITIALIZED ---> BINDING
+[97522:track-propagation]: [18:34:22][STATE] BINDING ---> BOUND
+[97522:track-propagation]: [18:34:22][STATE] BOUND ---> CONNECTING
+[97522:track-propagation]: [18:34:22][STATE] CONNECTING ---> DEVICE READY
+[97522:track-propagation]: [18:34:22][STATE] DEVICE READY ---> INITIALIZING TASK
+[97514:internal-dpl-aod-reader]: [18:34:22][INFO] Downstream backpressure on from_internal-dpl-aod-reader_to_track-propagation[0] recovered.
+[97515:internal-dpl-aod-spawner]: [18:34:22][INFO] Downstream backpressure on from_internal-dpl-aod-spawner_to_track-propagation[0] recovered.
+[97517:timestamp-task]: [18:34:22][INFO] Downstream backpressure on from_timestamp-task_to_track-propagation[0] recovered.
+[97517:timestamp-task]: [18:34:22][INFO] Correctly handshaken websocket connection.
+[97522:track-propagation]: [18:34:22][STATE] INITIALIZING TASK ---> READY
+[97522:track-propagation]: [18:34:22][STATE] READY ---> RUNNING
+[97522:track-propagation]: [18:34:22][INFO] fair::mq::Device running...
+[97522:track-propagation]: [18:34:22][INFO] LHCPeriod is not available, using current month SEP
+[97521:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97521:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97521:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] No input files left to read for reader 0!
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Read info: lfn=/Users/jinhyunpark/npl/Analysis/ALICE/data/ao2d/O2Tutorial3.0/HFTut/AO2D.root,size=445329100,total_df=5,read_df=5,read_bytes=50072216,read_calls=583,io_time=0.2,wait_time=5.1,level=1
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Read info: lfn=AnalysisResults_trees.root,size=70206,total_df=5,read_df=5,read_bytes=70834,read_calls=34,io_time=0.0,wait_time=5.3,level=0
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_internal-dpl-aod-spawner
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_bc-converter
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_zdc-converter
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_internal-dpl-aod-index-builder
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_track-propagation
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_hf-candidate-creator2-prong
+[97514:internal-dpl-aod-reader]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-reader_to_internal-dpl-aod-writer
+[97516:bc-converter]: [18:34:23][INFO] Sending end-of-stream message to channel from_bc-converter_to_timestamp-task
+[97517:timestamp-task]: [18:34:23][INFO] CCDBManager summary: 1 queries, 0 bytes for 1 objects, 0 good fetches (and 0 failed ones) in 0 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-RJ79hN
+[97517:timestamp-task]: [18:34:23][INFO] CCDB cache miss/hit/failures
+[97517:timestamp-task]: [18:34:23][INFO]   RCT-Run-Info HeaderOnly: 1/0/0 (0-0 bytes)
+[97517:timestamp-task]: [18:34:23][INFO] Sending end-of-stream message to channel from_timestamp-task_to_zdc-converter
+[97517:timestamp-task]: [18:34:23][INFO] Sending end-of-stream message to channel from_timestamp-task_to_track-propagation
+[97519:zdc-converter]: [18:34:23][INFO] Sending end-of-stream message to channel from_zdc-converter_to_internal-dpl-aod-index-builder
+[97520:internal-dpl-aod-index-builder]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-index-builder_to_track-propagation
+[97520:internal-dpl-aod-index-builder]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-index-builder_to_bc-selection-task
+[97515:internal-dpl-aod-spawner]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-spawner_to_tracks-extra-converter
+[97515:internal-dpl-aod-spawner]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-spawner_to_track-propagation
+[97515:internal-dpl-aod-spawner]: [18:34:23][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-spawner_to_event-selection-task
+[97518:tracks-extra-converter]: [18:34:23][INFO] Sending end-of-stream message to channel from_tracks-extra-converter_to_tracks-extra-spawner
+[97521:tracks-extra-spawner]: [18:34:23][INFO] Sending end-of-stream message to channel from_tracks-extra-spawner_to_event-selection-task
+[97522:track-propagation]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/GLO/Config/GRPMagField/14/57551/d18fdbd2-efda-11ec-841e-2a010e0a0b16 in SE <ALICE::KISTI_GSDC::EOS>
+[97522:track-propagation]: [18:34:24][INFO] ccdb reads http://alice-ccdb.cern.ch/GLO/Config/GRPMagField/1547160800000/d18fdbd2-efda-11ec-841e-2a010e0a0b16 for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD), 
+[97522:track-propagation]: [18:34:24][INFO] Setting magnetic field to current -30000 A for run 302022 from its GRPMagField CCDB object
+[97522:track-propagation]: [18:34:24][INFO] MagneticField::Print: MagneticFieldMap:
+[97522:track-propagation]: [18:34:24][INFO] MagneticField::Print: Solenoid (-1*)5 kG, Dipole ON (-1) 
+[97522:track-propagation]: [18:34:24][INFO] MagneticField::Print: Machine B fields for p-p  beam (7000 GeV): QGrad: 22.0002 Dipole: 37.8781
+[97522:track-propagation]: [18:34:24][INFO] MagneticField::Print: Uses Sol30_Dip6_Hole  of /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/osx_arm64/O2/daily-20240809-0200-local1/share/Common/maps/mfchebKGI_sym.root
+[97522:track-propagation]: Info in <TGeoGlobalMagField::SetField>: Global magnetic field set to <MagneticFieldMap>
+[97522:track-propagation]: Info in <TGeoGlobalMagField::Lock>: Global magnetic field <MagneticFieldMap> is now locked
+[97522:track-propagation]: [18:34:24][INFO] Loaded 440 params from $(O2_ROOT)/share/Common/maps/sol5k.txt
+[97522:track-propagation]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/GLO/Calib/MeanVertex/01/00675/2fa9c153-327e-11ed-8727-200114580202 in SE <ALICE::KISTI_GSDC::EOS>
+[97522:track-propagation]: [18:34:25][INFO] ccdb reads http://alice-ccdb.cern.ch/GLO/Calib/MeanVertex/1547160800000/2fa9c153-327e-11ed-8727-200114580202 for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD), 
+[97522:track-propagation]: [18:34:26][INFO] Correctly handshaken websocket connection.
+[97523:bc-selection-task]: Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+[97523:bc-selection-task]: Info in <TJAlienConnectionManager>: Opening connection to 128.142.249.17
+[97523:bc-selection-task]: Info in <TJAlienConnectionManager>: Successfully connected to 128.142.249.17
+[97523:bc-selection-task]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/ITS/Config/AlpideParam/02/10715/76f24ad5-e339-11ec-9e90-200114580204 in SE <ALICE::KISTI_GSDC::EOS>
+[97523:bc-selection-task]: [18:34:30][INFO] ccdb reads http://alice-ccdb.cern.ch/ITS/Config/AlpideParam/1546300800000/76f24ad5-e339-11ec-9e90-200114580204 for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH), 
+[97522:track-propagation]: [18:34:31][INFO] CCDBManager summary: 3 queries, 21,441,594 bytes for 3 objects, 3 good fetches (and 0 failed ones) in 8,360 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-iMvHZD
+[97522:track-propagation]: [18:34:31][INFO] CCDB cache miss/hit/failures
+[97522:track-propagation]: [18:34:31][INFO]   GLO/Calib/MeanVertex: 1/0/0 (1609-1609 bytes)
+[97522:track-propagation]: [18:34:31][INFO]   GLO/Config/GRPMagField: 1/0/0 (989-989 bytes)
+[97522:track-propagation]: [18:34:31][INFO]   GLO/Param/MatLUT: 1/0/0 (21438996-21438996 bytes)
+[97522:track-propagation]: [18:34:31][INFO] Sending end-of-stream message to channel from_track-propagation_to_bc-selection-task
+[97522:track-propagation]: [18:34:31][INFO] Sending end-of-stream message to channel from_track-propagation_to_event-selection-task
+[97522:track-propagation]: [18:34:31][INFO] Sending end-of-stream message to channel from_track-propagation_to_hf-candidate-creator2-prong
+[97522:track-propagation]: [18:34:31][INFO] Sending end-of-stream message to channel from_track-propagation_to_internal-dpl-aod-global-analysis-file-sink
+[97522:track-propagation]: [18:34:31][INFO] Sending end-of-stream message to channel from_track-propagation_to_internal-dpl-aod-writer
+[97523:bc-selection-task]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/EventSelection/EventSelectionParams/05/07443/5f880452-f6ff-11ee-82dc-90ce809b250c in SE <ALICE::KISTI_GSDC::EOS>
+[97523:bc-selection-task]: [18:34:31][INFO] ccdb reads http://alice-ccdb.cern.ch/EventSelection/EventSelectionParams/1543767116001/5f880452-f6ff-11ee-82dc-90ce809b250c for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH), 
+[97523:bc-selection-task]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/EventSelection/TriggerAliases/13/01265/5d79c029-dac8-11ed-9692-90ce809b250c in SE <ALICE::KISTI_GSDC::EOS>
+[97523:bc-selection-task]: [18:34:32][INFO] ccdb reads http://alice-ccdb.cern.ch/EventSelection/TriggerAliases/1543767116001/5d79c029-dac8-11ed-9692-90ce809b250c for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH), 
+[97523:bc-selection-task]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/GLO/Config/GRPLHCIF/04/60609/b3296373-efea-11ec-b9c0-2a010e0a0b16 in SE <ALICE::KISTI_GSDC::EOS>
+[97523:bc-selection-task]: [18:34:33][INFO] ccdb reads http://alice-ccdb.cern.ch/GLO/Config/GRPLHCIF/1546300800000/b3296373-efea-11ec-b9c0-2a010e0a0b16 for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH), 
+[97523:bc-selection-task]: [18:34:33][INFO] CCDBManager summary: 273350 queries, 5,597 bytes for 4 objects, 4 good fetches (and 0 failed ones) in 6,919 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-9FFrxH
+[97523:bc-selection-task]: [18:34:33][INFO] CCDB cache miss/hit/failures
+[97523:bc-selection-task]: [18:34:33][INFO]   EventSelection/TriggerAliases: 1/91114/0 (940-940 bytes)
+[97523:bc-selection-task]: [18:34:33][INFO]   EventSelection/EventSelectionParams: 1/91114/0 (1610-1610 bytes)
+[97523:bc-selection-task]: [18:34:33][INFO]   GLO/Config/GRPLHCIF: 1/91114/0 (1712-1712 bytes)
+[97523:bc-selection-task]: [18:34:33][INFO]   ITS/Config/AlpideParam: 1/4/0 (1335-1335 bytes)
+[97523:bc-selection-task]: [18:34:33][INFO] Sending end-of-stream message to channel from_bc-selection-task_to_event-selection-task
+[97523:bc-selection-task]: [18:34:33][INFO] Sending end-of-stream message to channel from_bc-selection-task_to_multiplicity-table
+[97523:bc-selection-task]: [18:34:33][INFO] Sending end-of-stream message to channel from_bc-selection-task_to_internal-dpl-aod-global-analysis-file-sink
+[97529:hf-candidate-creator2-prong-expressions]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97529:hf-candidate-creator2-prong-expressions]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97529:hf-candidate-creator2-prong-expressions]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97526:pid-multiplicity]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97526:pid-multiplicity]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97526:pid-multiplicity]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97527:tpc-pid]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97527:tpc-pid]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97527:tpc-pid]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97524:event-selection-task]: [18:34:34][INFO] CCDBManager summary: 0 queries, 0 bytes for 0 objects, 0 good fetches (and 0 failed ones) in 0 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-9HHu0I
+[97524:event-selection-task]: [18:34:34][INFO] CCDB cache miss/hit/failures
+[97524:event-selection-task]: [18:34:34][INFO] Sending end-of-stream message to channel from_event-selection-task_to_hf-candidate-creator2-prong
+[97524:event-selection-task]: [18:34:34][INFO] Sending end-of-stream message to channel from_event-selection-task_to_pid-multiplicity
+[97524:event-selection-task]: [18:34:34][INFO] Sending end-of-stream message to channel from_event-selection-task_to_tpc-pid
+[97524:event-selection-task]: [18:34:34][INFO] Sending end-of-stream message to channel from_event-selection-task_to_multiplicity-table
+[97524:event-selection-task]: [18:34:34][INFO] Sending end-of-stream message to channel from_event-selection-task_to_internal-dpl-aod-global-analysis-file-sink
+[97527:tpc-pid]: [18:34:34][INFO] Retrieving latest TPC response object for timestamp 1547170260056:
+[97525:hf-candidate-creator2-prong]: [18:34:34][INFO] Sending end-of-stream message to channel from_hf-candidate-creator2-prong_to_pid-multiplicity
+[97525:hf-candidate-creator2-prong]: [18:34:34][INFO] Sending end-of-stream message to channel from_hf-candidate-creator2-prong_to_hf-candidate-creator2-prong-expressions
+[97525:hf-candidate-creator2-prong]: [18:34:34][INFO] Sending end-of-stream message to channel from_hf-candidate-creator2-prong_to_internal-dpl-aod-global-analysis-file-sink
+[97526:pid-multiplicity]: [18:34:34][INFO] Sending end-of-stream message to channel from_pid-multiplicity_to_tpc-pid
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:34][INFO] Sending end-of-stream message to channel from_hf-candidate-creator2-prong-expressions_to_hf-candidate-selector-d0
+[97527:tpc-pid]: Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+[97527:tpc-pid]: Info in <TJAlienConnectionManager>: Opening connection to 128.142.249.54
+[97527:tpc-pid]: Info in <TJAlienConnectionManager>: Successfully connected to 128.142.249.54
+[97527:tpc-pid]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/Analysis/PID/TPC/Response/12/53196/5f762f87-277a-11ed-a788-8cb53d0d24ee in SE <ALICE::KISTI_GSDC::EOS>
+[97527:tpc-pid]: [18:34:37][INFO] ccdb reads http://alice-ccdb.cern.ch/Analysis/PID/TPC/Response/1547168970000/5f762f87-277a-11ed-a788-8cb53d0d24ee for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-jRzHZH), 
+[97527:tpc-pid]: [18:34:37][INFO] ==== TPC PID response parameters: ====
+[97527:tpc-pid]: [18:34:37][INFO] BB param [0] = 0.036768675
+[97527:tpc-pid]: [18:34:37][INFO] BB param [1] = 22.193758
+[97527:tpc-pid]: [18:34:37][INFO] BB param [2] = 4.2918166e-10
+[97527:tpc-pid]: [18:34:37][INFO] BB param [3] = 2.3444448
+[97527:tpc-pid]: [18:34:37][INFO] BB param [4] = 3.358891
+[97527:tpc-pid]: [18:34:37][INFO] use default resolution parametrization = true
+[97527:tpc-pid]: [18:34:37][INFO] Default Resolution parametrization: 
+[97527:tpc-pid]: [18:34:37][INFO] Resolution param [0] = 0.07
+[97527:tpc-pid]: [18:34:37][INFO] Resolution param [1] = 0
+[97527:tpc-pid]: [18:34:37][INFO] mMIP = 50
+[97527:tpc-pid]: [18:34:37][INFO] mChargeFactor = 2.3
+[97527:tpc-pid]: [18:34:37][INFO] mMultNormalization = 11000
+[97527:tpc-pid]: [18:34:37][INFO] nClNorm = 152
+[97528:multiplicity-table]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97528:multiplicity-table]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97528:multiplicity-table]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97527:tpc-pid]: [18:34:39][INFO] CCDBManager summary: 1 queries, 1,212 bytes for 1 objects, 1 good fetches (and 0 failed ones) in 3,443 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-jRzHZH
+[97527:tpc-pid]: [18:34:39][INFO] CCDB cache miss/hit/failures
+[97527:tpc-pid]: [18:34:39][INFO]   Analysis/PID/TPC/Response: 1/0/0 (1212-1212 bytes)
+[97527:tpc-pid]: [18:34:39][INFO] Sending end-of-stream message to channel from_tpc-pid_to_multiplicity-table
+[97527:tpc-pid]: [18:34:39][INFO] Sending end-of-stream message to channel from_tpc-pid_to_tof-pid-full
+[97527:tpc-pid]: [18:34:39][INFO] Sending end-of-stream message to channel from_tpc-pid_to_hf-candidate-selector-d0
+[97527:tpc-pid]: [18:34:39][INFO] Sending end-of-stream message to channel from_tpc-pid_to_internal-dpl-aod-writer
+[97528:multiplicity-table]: Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+[97528:multiplicity-table]: Info in <TJAlienConnectionManager>: Opening connection to 128.142.249.32
+[97528:multiplicity-table]: Info in <TJAlienConnectionManager>: Successfully connected to 128.142.249.32
+[97528:multiplicity-table]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/Centrality/Calibration/09/13101/b68b3ca1-f318-11ec-841e-533d7ebf24ee in SE <ALICE::KISTI_GSDC::EOS>
+[97528:multiplicity-table]: [18:34:41][INFO] ccdb reads http://alice-ccdb.cern.ch/Centrality/Calibration/1546300800000/b68b3ca1-f318-11ec-841e-533d7ebf24ee for 1547170260056 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1727516057-HLDq4E), 
+[97528:multiplicity-table]: [18:34:41][ERROR] Problem loading CCDB objects! Please check
+[97528:multiplicity-table]: [18:34:41][INFO] CCDBManager summary: 1 queries, 603 bytes for 1 objects, 1 good fetches (and 0 failed ones) in 3,235 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-HLDq4E
+[97528:multiplicity-table]: [18:34:41][INFO] CCDB cache miss/hit/failures
+[97528:multiplicity-table]: [18:34:41][INFO]   Centrality/Calibration: 1/0/0 (603-603 bytes)
+[97528:multiplicity-table]: [18:34:41][INFO] Sending end-of-stream message to channel from_multiplicity-table_to_tof-signal
+[97528:multiplicity-table]: [18:34:41][INFO] Sending end-of-stream message to channel from_multiplicity-table_to_tof-event-time
+[97528:multiplicity-table]: [18:34:41][INFO] Sending end-of-stream message to channel from_multiplicity-table_to_tof-pid-full
+[97528:multiplicity-table]: [18:34:41][INFO] Sending end-of-stream message to channel from_multiplicity-table_to_internal-dpl-aod-global-analysis-file-sink
+[97528:multiplicity-table]: [18:34:41][INFO] Sending end-of-stream message to channel from_multiplicity-table_to_internal-dpl-aod-writer
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:41][ERROR] Cannot read class info from buffer.
+[97530:tof-signal]: [18:34:42][INFO] Sending end-of-stream message to channel from_tof-signal_to_tof-event-time
+[97530:tof-signal]: [18:34:42][INFO] Sending end-of-stream message to channel from_tof-signal_to_internal-dpl-aod-global-analysis-file-sink
+[97530:tof-signal]: [18:34:42][INFO] Sending end-of-stream message to channel from_tof-signal_to_internal-dpl-aod-writer
+[97535:internal-dpl-aod-writer]: [18:34:42][INFO] No AODs to be saved.
+[97534:hf-task-d0]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/cache.cc:50: Creating gandiva cache with capacity of 500
+[97534:hf-task-d0]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:127: Detected CPU Name : apple-m1
+[97534:hf-task-d0]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/5059ad3cea57c89f7bb182217e5bd362fea0b3fa/arrow/src_tmp/cpp/src/gandiva/engine.cc:128: Detected CPU Features:
+[97531:tof-event-time]: [18:34:45][INFO] CCDBManager summary: 0 queries, 0 bytes for 0 objects, 0 good fetches (and 0 failed ones) in 0 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-HNFr5H
+[97531:tof-event-time]: [18:34:45][INFO] CCDB cache miss/hit/failures
+[97531:tof-event-time]: [18:34:45][INFO] Sending end-of-stream message to channel from_tof-event-time_to_tof-pid-full
+[97531:tof-event-time]: [18:34:45][INFO] Sending end-of-stream message to channel from_tof-event-time_to_internal-dpl-aod-writer
+[97532:tof-pid-full]: [18:34:45][INFO] CCDBManager summary: 0 queries, 0 bytes for 0 objects, 0 good fetches (and 0 failed ones) in 0 ms, instance: jinhyun-MacBook-Pro-2.local-1727516057-HPHu8I
+[97532:tof-pid-full]: [18:34:45][INFO] CCDB cache miss/hit/failures
+[97532:tof-pid-full]: [18:34:45][INFO] Sending end-of-stream message to channel from_tof-pid-full_to_hf-candidate-selector-d0
+[97532:tof-pid-full]: [18:34:45][INFO] Sending end-of-stream message to channel from_tof-pid-full_to_internal-dpl-aod-writer
+[97535:internal-dpl-aod-writer]: [18:34:45][INFO] Sending end-of-stream message to channel from_internal-dpl-aod-writer_to_internal-dpl-injected-dummy-sink
+[97533:hf-candidate-selector-d0]: [18:34:45][INFO] Sending end-of-stream message to channel from_hf-candidate-selector-d0_to_hf-task-d0
+[97534:hf-task-d0]: [18:34:45][INFO] Sending end-of-stream message to channel from_hf-task-d0_to_internal-dpl-aod-global-analysis-file-sink
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][ERROR] DPL internal error - oldestPossibleOutput decreased from 5 to 4
+[INFO] Quitting
+[INFO] QUIT_REQUESTED
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] RUNNING ---> READY
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] IDLE ---> EXITING
+[97513:internal-dpl-clock]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97513:internal-dpl-clock]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97513:internal-dpl-clock]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97513:internal-dpl-clock]: [18:34:45][INFO] Sending end-of-stream message to channel from_internal-dpl-clock_to_internal-dpl-aod-reader
+[97513:internal-dpl-clock]: [18:34:45][STATE] RUNNING ---> READY
+[97513:internal-dpl-clock]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97513:internal-dpl-clock]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97513:internal-dpl-clock]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97513:internal-dpl-clock]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97513:internal-dpl-clock]: [18:34:45][STATE] IDLE ---> EXITING
+[97534:hf-task-d0]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97534:hf-task-d0]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97533:hf-candidate-selector-d0]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97533:hf-candidate-selector-d0]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97533:hf-candidate-selector-d0]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97534:hf-task-d0]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] RUNNING ---> READY
+[97534:hf-task-d0]: [18:34:45][STATE] RUNNING ---> READY
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97534:hf-task-d0]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97534:hf-task-d0]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97534:hf-task-d0]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97534:hf-task-d0]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97534:hf-task-d0]: [18:34:45][STATE] IDLE ---> EXITING
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] IDLE ---> EXITING
+[97520:internal-dpl-aod-index-builder]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97520:internal-dpl-aod-index-builder]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97525:hf-candidate-creator2-prong]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97525:hf-candidate-creator2-prong]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97520:internal-dpl-aod-index-builder]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97525:hf-candidate-creator2-prong]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] RUNNING ---> READY
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] RUNNING ---> READY
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97518:tracks-extra-converter]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97518:tracks-extra-converter]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97515:internal-dpl-aod-spawner]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97515:internal-dpl-aod-spawner]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97518:tracks-extra-converter]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97518:tracks-extra-converter]: [18:34:45][STATE] RUNNING ---> READY
+[97515:internal-dpl-aod-spawner]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97518:tracks-extra-converter]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] RUNNING ---> READY
+[97518:tracks-extra-converter]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97518:tracks-extra-converter]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97521:tracks-extra-spawner]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97521:tracks-extra-spawner]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97521:tracks-extra-spawner]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97526:pid-multiplicity]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97526:pid-multiplicity]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97521:tracks-extra-spawner]: [18:34:45][STATE] RUNNING ---> READY
+[97521:tracks-extra-spawner]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97521:tracks-extra-spawner]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97526:pid-multiplicity]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97526:pid-multiplicity]: [18:34:45][STATE] RUNNING ---> READY
+[97521:tracks-extra-spawner]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97526:pid-multiplicity]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97526:pid-multiplicity]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97526:pid-multiplicity]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] IDLE ---> EXITING
+[97518:tracks-extra-converter]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97518:tracks-extra-converter]: [18:34:45][STATE] IDLE ---> EXITING
+[97521:tracks-extra-spawner]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97521:tracks-extra-spawner]: [18:34:45][STATE] IDLE ---> EXITING
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] IDLE ---> EXITING
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] IDLE ---> EXITING
+[97526:pid-multiplicity]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97526:pid-multiplicity]: [18:34:45][STATE] IDLE ---> EXITING
+[97531:tof-event-time]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97531:tof-event-time]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97535:internal-dpl-aod-writer]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97535:internal-dpl-aod-writer]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97535:internal-dpl-aod-writer]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97519:zdc-converter]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97519:zdc-converter]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97531:tof-event-time]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] RUNNING ---> READY
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97518:tracks-extra-converter]: [18:34:45][STATE] Exiting FairMQ state machine
+[97531:tof-event-time]: [18:34:45][STATE] RUNNING ---> READY
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] RUNNING ---> READY
+[97531:tof-event-time]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97531:tof-event-time]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97519:zdc-converter]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97531:tof-event-time]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97519:zdc-converter]: [18:34:45][STATE] RUNNING ---> READY
+[97519:zdc-converter]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97519:zdc-converter]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97519:zdc-converter]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97524:event-selection-task]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97523:bc-selection-task]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97523:bc-selection-task]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97524:event-selection-task]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97523:bc-selection-task]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97524:event-selection-task]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97523:bc-selection-task]: [18:34:45][STATE] RUNNING ---> READY
+[97524:event-selection-task]: [18:34:45][STATE] RUNNING ---> READY
+[97523:bc-selection-task]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97523:bc-selection-task]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97523:bc-selection-task]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97524:event-selection-task]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97524:event-selection-task]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97524:event-selection-task]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97519:zdc-converter]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97519:zdc-converter]: [18:34:45][STATE] IDLE ---> EXITING
+[97531:tof-event-time]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97531:tof-event-time]: [18:34:45][STATE] IDLE ---> EXITING
+[97514:internal-dpl-aod-reader]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97514:internal-dpl-aod-reader]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97532:tof-pid-full]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97532:tof-pid-full]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97514:internal-dpl-aod-reader]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] RUNNING ---> READY
+[97532:tof-pid-full]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97532:tof-pid-full]: [18:34:45][STATE] RUNNING ---> READY
+[97532:tof-pid-full]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97532:tof-pid-full]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97532:tof-pid-full]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] IDLE ---> EXITING
+[97519:zdc-converter]: [18:34:45][STATE] Exiting FairMQ state machine
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] IDLE ---> EXITING
+[97523:bc-selection-task]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97523:bc-selection-task]: [18:34:45][STATE] IDLE ---> EXITING
+[97524:event-selection-task]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97524:event-selection-task]: [18:34:45][STATE] IDLE ---> EXITING
+[97532:tof-pid-full]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97532:tof-pid-full]: [18:34:45][STATE] IDLE ---> EXITING
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] IDLE ---> EXITING
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97532:tof-pid-full]: [18:34:45][STATE] Exiting FairMQ state machine
+[97536:internal-dpl-aod-global-analysis-file-sink]: [18:34:45][STATE] Exiting FairMQ state machine
+[97535:internal-dpl-aod-writer]: [18:34:45][STATE] Exiting FairMQ state machine
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] RUNNING ---> READY
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] IDLE ---> EXITING
+[97520:internal-dpl-aod-index-builder]: [18:34:45][STATE] Exiting FairMQ state machine
+[97522:track-propagation]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97522:track-propagation]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97530:tof-signal]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97530:tof-signal]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97522:track-propagation]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97522:track-propagation]: [18:34:45][STATE] RUNNING ---> READY
+[97530:tof-signal]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97530:tof-signal]: [18:34:45][STATE] RUNNING ---> READY
+[97530:tof-signal]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97522:track-propagation]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97522:track-propagation]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97522:track-propagation]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97530:tof-signal]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97515:internal-dpl-aod-spawner]: [18:34:45][STATE] Exiting FairMQ state machine
+[97530:tof-signal]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97524:event-selection-task]: [18:34:45][STATE] Exiting FairMQ state machine
+[97530:tof-signal]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97530:tof-signal]: [18:34:45][STATE] IDLE ---> EXITING
+[97522:track-propagation]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97522:track-propagation]: [18:34:45][STATE] IDLE ---> EXITING
+[97516:bc-converter]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97516:bc-converter]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97517:timestamp-task]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97517:timestamp-task]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97527:tpc-pid]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97527:tpc-pid]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97517:timestamp-task]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97527:tpc-pid]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97516:bc-converter]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97517:timestamp-task]: [18:34:45][STATE] RUNNING ---> READY
+[97527:tpc-pid]: [18:34:45][STATE] RUNNING ---> READY
+[97516:bc-converter]: [18:34:45][STATE] RUNNING ---> READY
+[97516:bc-converter]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97513:internal-dpl-clock]: [18:34:45][STATE] Exiting FairMQ state machine
+[97516:bc-converter]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97517:timestamp-task]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97527:tpc-pid]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97527:tpc-pid]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97527:tpc-pid]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97516:bc-converter]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97517:timestamp-task]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97517:timestamp-task]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97516:bc-converter]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97516:bc-converter]: [18:34:45][STATE] IDLE ---> EXITING
+[97517:timestamp-task]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97517:timestamp-task]: [18:34:45][STATE] IDLE ---> EXITING
+[97527:tpc-pid]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97527:tpc-pid]: [18:34:45][STATE] IDLE ---> EXITING
+[97517:timestamp-task]: [18:34:45][STATE] Exiting FairMQ state machine
+[97516:bc-converter]: [18:34:45][STATE] Exiting FairMQ state machine
+[97528:multiplicity-table]: [18:34:45][INFO] Received device shutdown request (signal 15).
+[97528:multiplicity-table]: [18:34:45][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[97528:multiplicity-table]: [18:34:45][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[97533:hf-candidate-selector-d0]: [18:34:45][STATE] Exiting FairMQ state machine
+[97528:multiplicity-table]: [18:34:45][STATE] RUNNING ---> READY
+[97529:hf-candidate-creator2-prong-expressions]: [18:34:45][STATE] Exiting FairMQ state machine
+[97528:multiplicity-table]: [18:34:45][STATE] READY ---> RESETTING TASK
+[97528:multiplicity-table]: [18:34:45][STATE] RESETTING TASK ---> DEVICE READY
+[97528:multiplicity-table]: [18:34:45][STATE] DEVICE READY ---> RESETTING DEVICE
+[97528:multiplicity-table]: [18:34:45][INFO] Cleaning up for shared memory id '5a559b20'...
+[97528:multiplicity-table]: [18:34:45][INFO] Found 0 unmanaged regions...
+[97528:multiplicity-table]: [18:34:45][INFO] Found 1 managed segments...
+[97528:multiplicity-table]: [18:34:45][INFO] Successfully removed 'fmq_5a559b20_m_0'.
+[97528:multiplicity-table]: [18:34:45][INFO] Successfully removed 'fmq_5a559b20_mng'.
+[97525:hf-candidate-creator2-prong]: [18:34:45][STATE] Exiting FairMQ state machine
+[97528:multiplicity-table]: [18:34:45][STATE] RESETTING DEVICE ---> IDLE
+[97528:multiplicity-table]: [18:34:45][STATE] IDLE ---> EXITING
+[97522:track-propagation]: [18:34:45][STATE] Exiting FairMQ state machine
+[97534:hf-task-d0]: [18:34:45][STATE] Exiting FairMQ state machine
+[97521:tracks-extra-spawner]: [18:34:45][STATE] Exiting FairMQ state machine
+[97530:tof-signal]: [18:34:45][STATE] Exiting FairMQ state machine
+[97514:internal-dpl-aod-reader]: [18:34:45][STATE] Exiting FairMQ state machine
+[97526:pid-multiplicity]: [18:34:45][STATE] Exiting FairMQ state machine
+[97537:internal-dpl-injected-dummy-sink]: [18:34:45][STATE] Exiting FairMQ state machine
+[97531:tof-event-time]: [18:34:45][STATE] Exiting FairMQ state machine
+[97523:bc-selection-task]: [18:34:45][STATE] Exiting FairMQ state machine
+[97528:multiplicity-table]: [18:34:45][STATE] Exiting FairMQ state machine
+[97527:tpc-pid]: [18:34:45][STATE] Exiting FairMQ state machine
+[INFO] Dumping performance metrics to performanceMetrics.json file
+[INFO] ## Processes completed. Run summary:
+[INFO] ### Devices started: 25
+[INFO]  - Device internal-dpl-clock: pid 97513 (exit 0)
+[INFO]  - Device internal-dpl-aod-reader: pid 97514 (exit 0)
+[INFO]  - Device internal-dpl-aod-spawner: pid 97515 (exit 0)
+[INFO]  - Device bc-converter: pid 97516 (exit 0)
+[INFO]  - Device timestamp-task: pid 97517 (exit 0)
+[INFO]  - Device tracks-extra-converter: pid 97518 (exit 0)
+[INFO]  - Device zdc-converter: pid 97519 (exit 0)
+[INFO]  - Device internal-dpl-aod-index-builder: pid 97520 (exit 0)
+[INFO]  - Device tracks-extra-spawner: pid 97521 (exit 0)
+[INFO]  - Device track-propagation: pid 97522 (exit 0)
+[INFO]  - Device bc-selection-task: pid 97523 (exit 0)
+[INFO]  - Device event-selection-task: pid 97524 (exit 0)
+[INFO]  - Device hf-candidate-creator2-prong: pid 97525 (exit 0)
+[INFO]  - Device pid-multiplicity: pid 97526 (exit 0)
+[INFO]  - Device tpc-pid: pid 97527 (exit 0)
+[INFO]  - Device multiplicity-table: pid 97528 (exit 0)
+[INFO]  - Device hf-candidate-creator2-prong-expressions: pid 97529 (exit 0)
+[INFO]  - Device tof-signal: pid 97530 (exit 0)
+[INFO]  - Device tof-event-time: pid 97531 (exit 0)
+[INFO]  - Device tof-pid-full: pid 97532 (exit 0)
+[INFO]  - Device hf-candidate-selector-d0: pid 97533 (exit 0)
+[INFO]  - Device hf-task-d0: pid 97534 (exit 0)
+[INFO]  - Device internal-dpl-aod-writer: pid 97535 (exit 0)
+[INFO]  - Device internal-dpl-aod-global-analysis-file-sink: pid 97536 (exit 0)
+[INFO]  - Device internal-dpl-injected-dummy-sink: pid 97537 (exit 0)
+[INFO] ## Analysis Run Summary ##
+[INFO] ### Files read stats ###
+[INFO] lfn=/Users/jinhyunpark/npl/Analysis/ALICE/data/ao2d/O2Tutorial3.0/HFTut/AO2D.root,size=445329100,total_df=5,read_df=5,read_bytes=50072216,read_calls=583,io_time=0.2,wait_time=5.1,level=1
+[INFO] lfn=AnalysisResults_trees.root,size=70206,total_df=5,read_df=5,read_bytes=70834,read_calls=34,io_time=0.0,wait_time=5.3,level=0
+[INFO] Dumping used configuration in dpl-config.json
+[ERROR] SEVERE: Device multiplicity-table (97528) had at least one message above severity 4: Problem loading CCDB objects! Please check
