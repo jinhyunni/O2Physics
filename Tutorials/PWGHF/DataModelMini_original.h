@@ -18,11 +18,9 @@
 #define TUTORIALS_PWGHF_DATAMODELMINI_H_
 
 #include "Framework/AnalysisDataModel.h"
-#include "Common/Core/RecoDecay.h"
 
 namespace o2::aod
 {
-
 namespace hf_seltrack
 {
 // Track selection columns
@@ -71,10 +69,6 @@ DECLARE_SOA_DYNAMIC_COLUMN(PtProng1, ptProng1, //! pt of prong 1
 // candidate properties
 DECLARE_SOA_DYNAMIC_COLUMN(DecayLength, decayLength, //! decay length of candidate
                            [](float xVtxP, float yVtxP, float zVtxP, float xVtxS, float yVtxS, float zVtxS) -> float { return RecoDecay::distance(std::array{xVtxP, yVtxP, zVtxP}, std::array{xVtxS, yVtxS, zVtxS}); });
-DECLARE_SOA_DYNAMIC_COLUMN(DecayLengthXYver1,  decayLengthXYver1, //! decay length in XY plane  of candidate
-                           [](float xVtxP, float yVtxP, float xVtxS, float yVtxS) -> float { return RecoDecay::distance(std::array{xVtxP, yVtxP}, std::array{xVtxS, yVtxS}); });
-DECLARE_SOA_DYNAMIC_COLUMN(DecayLengthXYver2, decayLengthXYver2, //! decay length in XY plane
-						   [](float xVtxP, float yVtxP, float zVtxP, float xVtxS, float yVtxS, float zVtxS) -> float{ return RecoDecay::distanceXY( std::array{xVtxP, yVtxP, zVtxP}, std::array{xVtxS, yVtxS, zVtxS}); });
 DECLARE_SOA_DYNAMIC_COLUMN(Pt, pt, //! pt of candidate
                            [](float px, float py) -> float { return RecoDecay::pt(px, py); });
 DECLARE_SOA_EXPRESSION_COLUMN(Px, px, //! px of candidate
@@ -96,8 +90,6 @@ DECLARE_SOA_TABLE(HfCandProng2Base, "AOD", "HFCANDP2BASE", //! 2-prong candidate
                   hf_cand_prong2::XSecondaryVertex, hf_cand_prong2::YSecondaryVertex, hf_cand_prong2::ZSecondaryVertex,
                   /* dynamic columns */ hf_cand_prong2::RSecondaryVertex<hf_cand_prong2::XSecondaryVertex, hf_cand_prong2::YSecondaryVertex>,
                   hf_cand_prong2::DecayLength<collision::PosX, collision::PosY, collision::PosZ, hf_cand_prong2::XSecondaryVertex, hf_cand_prong2::YSecondaryVertex, hf_cand_prong2::ZSecondaryVertex>,
-                  hf_cand_prong2::DecayLengthXYver1<collision::PosX, collision::PosY, hf_cand_prong2::XSecondaryVertex, hf_cand_prong2::YSecondaryVertex>,
-                  hf_cand_prong2::DecayLengthXYver2<collision::PosX, collision::PosY, collision::PosZ, hf_cand_prong2::XSecondaryVertex, hf_cand_prong2::YSecondaryVertex, hf_cand_prong2::ZSecondaryVertex>,
                   /* prong 0 */ hf_cand_prong2::PtProng0<hf_cand_prong2::PxProng0, hf_cand_prong2::PyProng0>,
                   hf_cand_prong2::PxProng0, hf_cand_prong2::PyProng0, hf_cand_prong2::PzProng0,
                   /* prong 1 */ hf_cand_prong2::PtProng1<hf_cand_prong2::PxProng1, hf_cand_prong2::PyProng1>,

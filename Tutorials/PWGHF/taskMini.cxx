@@ -140,6 +140,7 @@ struct HfCandidateSelectorD0 {
   // topological cuts
   Configurable<double> cpaMin{"cpaMin", 0.98, "Min. cosine of pointing angle"};
   Configurable<double> massWindow{"massWindow", 0.4, "Half-width of the invariant-mass window"};
+  Configurable<double> dlenMin{"dlenMin", 0.01, "Minimum decay length"};
 
   HfHelper hfHelper;
   TrackSelectorPi selectorPion;
@@ -170,6 +171,10 @@ struct HfCandidateSelectorD0 {
     if (candidate.cpa() < cpaMin) {
       return false;
     }
+	// decay length
+	if(candidate.decayLength() > dlenMin) {
+		return false;
+	}
     return true;
   }
 
@@ -293,6 +298,9 @@ struct HfTaskD0 {
     registry.add("hPtCand", strTitle + ";" + strPt + ";" + strEntries, {HistType::kTH1F, {{100, 0., 10.}}});
     registry.add("hMass", strTitle + ";" + "inv. mass (#pi K) (GeV/#it{c}^{2})" + ";" + strEntries, {HistType::kTH1F, {{500, 0., 5.}}});
     registry.add("hCpaVsPtCand", strTitle + ";" + "cosine of pointing angle" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{110, -1.1, 1.1}, {100, 0., 10.}}});
+	registry.add("hDlenVsPtCand", strTitle + ";" + "decay length" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
+	registry.add("hDlenXYVsPtCand1", strTitle + ";" + "decay length XY" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
+	registry.add("hDlenXYVsPtCand2", strTitle + ";" + "decay length XY" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
   }
 
   void process(soa::Join<aod::HfCandProng2, aod::HfSelCandidateD0> const& /*candidates*/)
@@ -306,6 +314,10 @@ struct HfTaskD0 {
       }
       registry.fill(HIST("hPtCand"), candidate.pt());
       registry.fill(HIST("hCpaVsPtCand"), candidate.cpa(), candidate.pt());
+	  registry.fill(HIST("hDlenVsPtCand"), candidate.decayLength(), candidate.pt());
+	  registry.fill(HIST("hDlenXYVsPtCand1"), candidate.decayLengthXYver1(), candidate.pt());
+	  registry.fill(HIST("hDlenXYVsPtCand2"), candidate.decayLengthXYver2(), candidate.pt());
+	  LOGP(info, "DecayLengthXY1: {}, DecayLengthXY2: {}", candidate.decayLengthXYver1(), candidate.decayLengthXYver2());
     }
   }
 };
