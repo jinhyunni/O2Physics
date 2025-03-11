@@ -3,7 +3,7 @@
 
 struct example1{
 
-	const int rate = 1e3;
+	o2::framework::Configurable<int> rate={"rate", 1e6, "rate"};
 
 	/*
 	 *	Subscription to 'Tracks' table
@@ -22,7 +22,7 @@ struct example1{
 
 };
 
-WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
+o2::framework::WorkflowSpec defineDataProcessing(o2::framework::ConfigContext const& cfgc)
 {
-	return WorkflowSpec{ adaptAnalysisTask<example1>(cfgc) };
+	return o2::framework::WorkflowSpec{ adaptAnalysisTask<example1>(cfgc) };
 }
