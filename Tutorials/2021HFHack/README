@@ -5,3 +5,23 @@ Recap HFHackTut exampels and practices
 Example1.cxx
 	- Printing out particle id and momentum
 	- Know how to subscribe to table
+	- Know how to make a configurable
+
+Example2.cxx
+	- Know how to make and fill histogram
+	- Use HistogramRegistry in a straight way
+
+	HistogramRegistry( "name", vector<HistogramSpec> histSpec{} );
+
+	HistSpec{"HistName", vector<AxisSpec>{}}
+
+	AxisSpec{HistType::kTH~, {nBins, rangeMin, rangeMax, "Title(Optional)"}}
+
+Example2_1.cxx
+	- Use grouping -> 'Subscription to table iterator'
+	- Know how to make and fill histogram
+	- Use HistogramRegistry with certain procedures
+		-- Define AxisSpec
+		-- Use defined AxisSpec to define histogram at init() functin
+	- Use get<T> method to get the histogram pointer
+

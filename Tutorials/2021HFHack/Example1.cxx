@@ -3,7 +3,7 @@
 
 struct example1{
 
-	o2::framework::Configurable<int> rate={"rate", 1e6, "rate"};
+	o2::framework::Configurable<int> printrate={"printrate", 2e5, "printrate"};
 
 	/*
 	 *	Subscription to 'Tracks' table
@@ -13,9 +13,9 @@ struct example1{
 		// Loop over track table
 		for(auto const& track : tracks)
 		{
-			if( track.index() % rate == 0)
+			if( track.index() % printrate == 0)
 			{
-				LOGP(info, "Track {} has pT {}", track.index(), track.pt());
+				LOGP(info, "Track {} has pT: {}, eta: {}, phi: {}", track.index(), track.pt(), track.eta(), track.phi());
 			}
 		}
 	}
