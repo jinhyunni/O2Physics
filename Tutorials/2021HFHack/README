@@ -11,11 +11,16 @@ Example2.cxx
 	- Know how to make and fill histogram
 	- Use HistogramRegistry in a straight way
 
-	HistogramRegistry( "name", vector<HistogramSpec> histSpec{} );
+	[[ Histogram definition ]]
 
-	HistSpec{"HistName", vector<AxisSpec>{}}
+	AxisSpec{nBins, rangeMin, rangeMax, "HistName(Option)"};	// -> Make axis( x-axis, y-axis...)
+	HistogramConfigSpec{HistType, vector<AxisSpec>{}}; 			// -> Make histogram spec, hist type and axis definition
+																//    This Histogram spec can be used in several individual histogram definition
+	HistogramSpec{"Name", "Title", HistogramConfigSpec};		// -> Define individual histogram spec
+																//    Histogram spec represents individual hist
 
-	AxisSpec{HistType::kTH~, {nBins, rangeMin, rangeMax, "Title(Optional)"}}
+	HistogramRegistry{"registry name", vector<HistogramSpec>{}};
+
 
 Example2_1.cxx
 	- Use grouping -> 'Subscription to table iterator'
