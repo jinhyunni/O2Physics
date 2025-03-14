@@ -15,10 +15,12 @@
 
 #include "Framework/runDataProcessing.h"
 #include "Framework/AnalysisTask.h"
+#include "Framework/ASoAHelpers.h"	// -> To use Filter on tracks table
 #include "Common/DataModel/TrackSelectionTables.h"
 
 using namespace o2;
 using namespace o2::framework;
+using namespace o2::framework::expressions;
 
 struct o2tuthandson2{
   // Histogram registry: an object to hold your histograms
@@ -50,8 +52,48 @@ struct o2tuthandson2{
   }
 };
 
+struct crosscheck{
+	
+  // Histogram registry: an object to hold your histograms
+  HistogramRegistry registry=
+  {
+	"histoscrosscheck",
+	{
+		{"eventCounterCC", "eventCounterCC", {kTH1F, {{1, 0, 1}}}},
+		{"eta", "eta", {kTH1F, {{30, -1.5, 1.5}}}},
+		{"pt", "pt", {kTH1F, {{100, 0, 10}}}}
+	}
+  };
+
+  using JoinedTracks = soa::Join<aod::Tracks, aod::TracksExtra, aod::TracksDCA>;
+  using FilteredJoinedTracks = soa::Filtered<JoinedTracks>;
+
+  // Filter 1: TPC cluster filter
+  // Filter TPCFilter = (aod::track::TPCNClsCrossedRows) > 70; // -> Using a daynamic column directly may caused the problem
+  Filter TPCFilter = ( aod::track::tpcNClsFindable - aod::track::tpcNClsFindableMinusCrossedRows) > 70;
+
+  // Filter 2: DCA filter
+  Filter DCAFilter = nabs(aod::track::dcaXY) < 0.2;
+
+  void process(aod::Collision const& collision, FilteredJoinedTracks const& tracks)
+  {
+	  registry.fill(HIST("eventCounterCC"), 0.5);
+
+	  for(auto const& track : tracks) 
+	  {
+        registry.fill(HIST("eta"), track.eta());
+        registry.fill(HIST("pt"), track.pt());
+	  }
+  }
+
+};
+
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
-  return WorkflowSpec{
-    adaptAnalysisTask<o2tuthandson2>(cfgc)};
+  return WorkflowSpec
+  {
+	  adaptAnalysisTask<o2tuthandson2>(cfgc),
+	  adaptAnalysisTask<crosscheck>(cfgc)
+
+  };
 }
