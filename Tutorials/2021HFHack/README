@@ -30,3 +30,13 @@ Example2_1.cxx
 		-- Use defined AxisSpec to define histogram at init() functin
 	- Use get<T> method to get the histogram pointer
 
+Example3.cxx
+	- Use filtering
+	- Fill pT histogram of particles within certain eta range
+		-- Use of alias for filtered table
+		-- Group filtered tracks with same collision index, and calculated average pT
+
+Example4.cxx
+	- Use table joining
+	- Draw pT vs event multiplicity
+	- To use event multiplicity table, helper task is needed
