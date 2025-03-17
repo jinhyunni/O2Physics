@@ -1,13 +1,13 @@
-Practice folder
+# Practice folder
 
 Recap HFHackTut exampels and practices
 
-Example1.cxx
+## Example1.cxx
 	- Printing out particle id and momentum
 	- Know how to subscribe to table
 	- Know how to make a configurable
 
-Example2.cxx
+## Example2.cxx
 	- Know how to make and fill histogram
 	- Use HistogramRegistry in a straight way
 
@@ -22,7 +22,7 @@ Example2.cxx
 	HistogramRegistry{"registry name", vector<HistogramSpec>{}};
 
 
-Example2_1.cxx
+## Example2-1.cxx
 	- Use grouping -> 'Subscription to table iterator'
 	- Know how to make and fill histogram
 	- Use HistogramRegistry with certain procedures
@@ -30,20 +30,28 @@ Example2_1.cxx
 		-- Use defined AxisSpec to define histogram at init() functin
 	- Use get<T> method to get the histogram pointer
 
-Example3.cxx
+## Example3.cxx
 	- Use filtering
 	- Fill pT histogram of particles within certain eta range
 		-- Use of alias for filtered table
 		-- Group filtered tracks with same collision index, and calculated average pT
 
-Example4.cxx
+## Example4.cxx
 	- Use table joining
 	- Draw pT vs event multiplicity
 	- To use event multiplicity table, helper task is needed
 
-o2-tutorial-handson2.cxx
+## o2-tutorial-handson2.cxx
 	- Handson of O2Tutorial4.0
 	- Apply quality cuts on Tracks table.
 	  To do this, joining some tables to Tracks table is needed
 
 	- Do the same task with Filter method
+
+## Example5.cxx
+	- Use Filter to Joined table
+	- To apply quality cut to tracks, Join 'aod::Tracks' with 'aod::TracksExtra', 'aod::TracksDCA'
+	- Apply filter to tracks: tpcNClsCrossedRows() 
+	- Apply filter to tracks: dcaXY()
+	
+	- Do this with multiplicity at Example4.cxx

@@ -97,7 +97,7 @@ struct HfSkimCreatorMiniTagSelTracks {
       if (statusProng) {
         registry.fill(HIST("hPtCuts2Prong"), ptTrack);
         registry.fill(HIST("hEtaCuts2Prong"), etaTrack);
-        registry.fill(HIST("hPtVsDcaXYToPvCuts2Prong"), ptTrack, dcaXY);
+        //registry.fill(HIST("hPtVsDcaXYToPvCuts2Prong"), ptTrack, dcaXY);
       }
 
       // fill table row
@@ -110,6 +110,7 @@ struct HfSkimCreatorMiniTagSelTracks {
 
 /// Track index skim creator
 /// Pre-selection of 2-prong secondary vertices
+#if 1
 struct HfSkimCreatorMini {
   Produces<aod::HfT2Prongs> rowTrackIndexProng2;
 
@@ -197,11 +198,13 @@ struct HfSkimCreatorMini {
     }
   }
 };
+#endif
 
 // Add all tasks in the workflow specification.
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
   return WorkflowSpec{
     adaptAnalysisTask<HfSkimCreatorMiniTagSelTracks>(cfgc),
-    adaptAnalysisTask<HfSkimCreatorMini>(cfgc)};
+    adaptAnalysisTask<HfSkimCreatorMini>(cfgc)
+  };
 }

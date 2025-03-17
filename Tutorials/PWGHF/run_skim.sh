@@ -43,8 +43,8 @@ o2-analysistutorial-hf-skim-creator-mini "${OPTIONS[@]}" | \
 o2-analysis-timestamp "${OPTIONS[@]}" | \
 o2-analysis-trackselection "${OPTIONS[@]}" | \
 o2-analysis-track-propagation "${OPTIONS[@]}" | \
-o2-analysis-bc-converter "${OPTIONS[@]}" | \
-o2-analysis-tracks-extra-converter "${OPTIONS[@]}" \
+#o2-analysis-bc-converter "${OPTIONS[@]}"| \
+o2-analysis-tracks-extra-v002-converter "${OPTIONS[@]}" \
 > "$LOGFILE" 2>&1
 
 # report status

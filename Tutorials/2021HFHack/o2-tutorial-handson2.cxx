@@ -52,7 +52,7 @@ struct o2tuthandson2{
   }
 };
 
-struct crosscheck{
+struct crosscheck1{
 	
   // Histogram registry: an object to hold your histograms
   HistogramRegistry registry=
@@ -61,7 +61,8 @@ struct crosscheck{
 	{
 		{"eventCounterCC", "eventCounterCC", {kTH1F, {{1, 0, 1}}}},
 		{"eta", "eta", {kTH1F, {{30, -1.5, 1.5}}}},
-		{"pt", "pt", {kTH1F, {{100, 0, 10}}}}
+		{"pt", "pt", {kTH1F, {{100, 0, 10}}}},
+		{"tpcNClsCrossedRows", "tpcNClsCrossedRows", {kTH1F, {{1000, 0, 1000}}}}
 	}
   };
 
@@ -70,10 +71,10 @@ struct crosscheck{
 
   // Filter 1: TPC cluster filter
   // Filter TPCFilter = (aod::track::TPCNClsCrossedRows) > 70; // -> Using a daynamic column directly may caused the problem
-  Filter TPCFilter = ( aod::track::tpcNClsFindable - aod::track::tpcNClsFindableMinusCrossedRows) > 70;
+  // Filter TPCFilter = ( aod::track::tpcNClsFindable - aod::track::tpcNClsFindableMinusCrossedRows) > 70;
 
   // Filter 2: DCA filter
-  Filter DCAFilter = nabs(aod::track::dcaXY) < 0.2;
+  Filter DCAFilter = nabs(aod::track::dcaXY) < 0.2f;
 
   void process(aod::Collision const& collision, FilteredJoinedTracks const& tracks)
   {
@@ -81,6 +82,10 @@ struct crosscheck{
 
 	  for(auto const& track : tracks) 
 	  {
+		registry.fill(HIST("tpcNClsCrossedRows"), track.tpcNClsCrossedRows());
+
+		if( track.tpcNClsCrossedRows() < 70 ) continue;
+
         registry.fill(HIST("eta"), track.eta());
         registry.fill(HIST("pt"), track.pt());
 	  }
@@ -88,12 +93,54 @@ struct crosscheck{
 
 };
 
+#if 0
+struct crosscheck2{
+	
+	HistogramRegistry registry=
+	{
+		"histos",
+		{
+			{"eventCounter", "eventCounter", {kTH1F, {{1, 0, 1}}}},
+			{"eta", "eta", {kTH1F, {{30, -1.5, 1.5}}}},
+			{"pt", "pt", {kTH1F, {{100, 0, 10}}}},
+			{"tpcNClsCrossedRows", "tpcNClsCrossedRows", {kTH1F, {{1000, 0, 1000}}}}
+		}
+	};
+
+	using JoinedTracks			= soa::Join< aod::Tracks, aod::TracksExtra, aod::TracksDCA>;
+	using FilteredJoinedTracks	= soa::Filtered<JoinedTracks>;
+
+	Configurable<float> DcaCut{"MaxDCA", 0.2f, "MaxDCA"};
+	Configurable<float> TpcCut{"MaxTPC", 70, "MaxTPC"};
+
+	// Filter1 : DCA
+	Filter DcaFilter = aod::track::dcaXY < DcaCut;
+
+	// Filter2 : TPC Crossed rows
+	Filter TpcFilter = (aod::track::tpcNClsFindable - aod::track::tpcNClsFindableMinusCrossedRows) > TpcCut; // -> Not working...
+
+	void process( aod::Collision const& collision, FilteredJoinedTracks const& tracks)
+	{
+		registry.fill(HIST("eventCounter"), 0.5);
+
+		for( auto const& track : tracks )
+		{
+			registry.fill(HIST("tpcNClsCrossedRows"), track.tpcNClsCrossedRows());
+			registry.fill(HIST("eta"), track.eta());
+			registry.fill(HIST("pt"), track.pt());
+		}
+	}
+
+};
+#endif
+
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
   return WorkflowSpec
   {
 	  adaptAnalysisTask<o2tuthandson2>(cfgc),
-	  adaptAnalysisTask<crosscheck>(cfgc)
+	  adaptAnalysisTask<crosscheck1>(cfgc)
+	  //adaptAnalysisTask<crosscheck2>(cfgc),
 
   };
 }
