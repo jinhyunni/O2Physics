@@ -110,7 +110,6 @@ struct HfSkimCreatorMiniTagSelTracks {
 
 /// Track index skim creator
 /// Pre-selection of 2-prong secondary vertices
-#if 1
 struct HfSkimCreatorMini {
   Produces<aod::HfT2Prongs> rowTrackIndexProng2;
 
@@ -198,7 +197,6 @@ struct HfSkimCreatorMini {
     }
   }
 };
-#endif
 
 // Add all tasks in the workflow specification.
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)

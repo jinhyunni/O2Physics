@@ -11,9 +11,9 @@
 # granted to it by virtue of its status as an Intergovernmental Organization
 # or submit itself to any jurisdiction.
 
-# @brief Bash script to produce derived data AnalysisResults_trees.root with 2-prong mini skims from Run 3 real-data input for the D0 mini task
+# @brief Bash script to execute the D0 mini task on Run 3 real-data input
 #
-# The input AO2D.root file is expected in the working directory.
+# The input AO2D.root, AnalysisResults_trees.root files are expected in the working directory.
 #
 # @author Vít Kučera <vit.kucera@cern.ch>, Inha University
 # @date 2023-10-25
@@ -25,7 +25,7 @@ LOGFILE="stdout.log"
 DIR_THIS="$(dirname "$(realpath "$0")")"
 
 # O2 configuration file (in the same directory)
-JSON="$DIR_THIS/dpl-config_skim.json"
+JSON="$DIR_THIS/dpl-config_task.json"
 
 # command line options of O2 workflows
 OPTIONS=(
@@ -34,17 +34,24 @@ OPTIONS=(
   --aod-memory-rate-limit 2000000000
   --shm-segment-size 16000000000
   --resources-monitoring 2
-  --aod-writer-keep "AOD/HFT2PRONG/0"
+  #--aod-parent-base-path-replacement "old-path-to-parent;new-path-to-parent"
+  --aod-parent-access-level 1
 )
 
 # execute the mini task workflow and its dependencies
 # shellcheck disable=SC2086 # Ignore unquoted options.
-o2-analysistutorial-hf-skim-creator-mini "${OPTIONS[@]}" | \
+o2-analysistutorial-hf-task-mini "${OPTIONS[@]}" | \
 o2-analysis-timestamp "${OPTIONS[@]}" | \
-o2-analysis-trackselection "${OPTIONS[@]}" | \
 o2-analysis-track-propagation "${OPTIONS[@]}" | \
-o2-analysis-bc-converter "${OPTIONS[@]}" | \
-o2-analysis-tracks-extra-converter "${OPTIONS[@]}" \
+o2-analysis-event-selection "${OPTIONS[@]}" | \
+o2-analysis-pid-tpc-base "${OPTIONS[@]}" | \
+o2-analysis-pid-tpc "${OPTIONS[@]}" | \
+o2-analysis-pid-tof-base "${OPTIONS[@]}" | \
+o2-analysis-pid-tof-full "${OPTIONS[@]}" | \
+o2-analysis-ft0-corrected-table "${OPTIONS[@]}" | \
+#o2-analysis-bc-converter "${OPTIONS[@]}" | \
+o2-analysis-tracks-extra-v002-converter "${OPTIONS[@]}" \
+#o2-analysis-zdc-converter "${OPTIONS[@]}" \
 > "$LOGFILE" 2>&1
 
 # report status
