@@ -21,7 +21,6 @@ Recap HFHackTut exampels and practices
 
 	HistogramRegistry{"registry name", vector<HistogramSpec>{}};
 
-
 ## Example2-1.cxx
 	- Use grouping -> 'Subscription to table iterator'
 	- Know how to make and fill histogram
@@ -55,3 +54,28 @@ Recap HFHackTut exampels and practices
 	- Apply filter to tracks: dcaXY()
 	
 	- Do this with multiplicity at Example4.cxx
+
+## Example6.cxx
+	- Use Partition table
+		-- Partitonined tables are not grouped by iterator consumed at process input
+		-- For Partitioned tables, grouping must be done manually
+			a) Using SliceCache
+			b) Declaring Partition inside process function, and add matching of collision index as partitioning condition -> (Will be)Tested at Example6-0.cxx
+
+	- Make Joined table for the events
+	- Group particles with the collision iterator
+		-- At this stage, partition particles with two sup-group
+
+			a) Particles at mid-rapidity( -1.0 < eta < 1.0 )
+			original plan:
+				b) Particles at forward-rapidity - V0C
+				c) Particles at forward-rapidity - V0A
+				=> I think particles within this area are defined at another table aod::FwdTracks
+			Revised:
+			b)Particles outsie mid-rapidity
+			c)MB( without adding any eta cut )
+
+		-- Also, apply quality cuts on tracks( DCA cuts, and tpcNClsCrossedRows cut)
+
+	- Fill histogram of pT and eta corresponds to each table
+		

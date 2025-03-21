@@ -233,12 +233,18 @@
         "processMC2Mults": "false",
         "processRun3MFT": "false"
     },
-    "example5": {
-        "nBinEC": "1",
-        "nBinEvtMult": "10000",
+    "example6a": {
+        "nBinEta": "120",
+        "etaMin": "-6",
+        "etaMax": "6",
         "nBinDca": "100",
-        "nBinPt": "1000",
-        "nBinEta": "100"
+        "dcaMin": "-5",
+        "dcaMax": "5",
+        "nBinTpc": "1000",
+        "tpcMin": "0",
+        "tpcMax": "500",
+        "etaCutLow": "-0.800000012",
+        "etaCutMax": "0.800000012"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",

@@ -43,3 +43,9 @@ o2physics_add_dpl_workflow(example5
                     SOURCES Example5.cxx 
                     PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
                     COMPONENT_NAME HFO2HackTut)
+
+o2physics_add_dpl_workflow(example6
+                    SOURCES Example6.cxx 
+                    PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
+                    COMPONENT_NAME HFO2HackTut)
+
