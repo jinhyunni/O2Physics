@@ -57,7 +57,7 @@ Recap HFHackTut exampels and practices
 
 ## Example6.cxx
 	- Use Partition table
-		-- Partitonined tables are not grouped by iterator consumed at process input
+		-- Partitoned tables are not grouped by iterator consumed at process input
 		-- For Partitioned tables, grouping must be done manually
 			a) Using SliceCache
 			b) Declaring Partition inside process function, and add matching of collision index as partitioning condition -> (Will be)Tested at Example6-0.cxx
@@ -78,4 +78,12 @@ Recap HFHackTut exampels and practices
 		-- Also, apply quality cuts on tracks( DCA cuts, and tpcNClsCrossedRows cut)
 
 	- Fill histogram of pT and eta corresponds to each table
+
+## Example6-1.cxx
+	- Use Partition table
+		-- Partioned tables are not grouped by iterator at process input
+		-- To grput partitioned tables, manual grouping is needed
+			a) Using SliceCache -> See Example6.cxx
+			b) Using .bindTable() method -> This method fills partioned table!
+
 		

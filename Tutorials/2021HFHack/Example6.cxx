@@ -9,13 +9,13 @@
 #include "Common/DataModel/TrackSelectionTables.h"
 #include "Common/DataModel/Multiplicity.h"
 
+// For STL
 #include <iostream>
 
 using namespace o2;
 using namespace o2::aod;
 using namespace o2::framework;
 using namespace o2::framework::expressions;
-
 
 struct example6a{
 
@@ -35,19 +35,10 @@ struct example6a{
 	Configurable<float> tpcMin{"tpcMin", 0.0, "tpcMin"};
 	Configurable<float> tpcMax{"tpcMax", 500.0, "tpcMax"};
 
-	HistogramRegistry histos{"histos",{}};
+	Configurable<bool> printInfo{"printInfo", true, "printInfo"};
+	Configurable<bool> eventScale{"eventScal", true, "eventScale"};
 
-	// Initialize
-	void init(InitContext const&)
-	{
-		histos.add("etaMB", "etaMB", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
-		histos.add("etaFwd", "etaFwd", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
-		histos.add("etaMid", "etaMid", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
-		histos.add("dcaFwd", "dcaFwd", {kTH1F, {{nBinDca, dcaMin, dcaMax}}});		
-		histos.add("dcaMid", "dcaMid", {kTH1F, {{nBinDca, dcaMin, dcaMax}}});		
-		histos.add("tpcFwd", "tpcFwd", {kTH1F, {{nBinTpc, tpcMin, tpcMax}}});		
-		histos.add("tpcMid", "tpcMid", {kTH1F, {{nBinTpc, tpcMin, tpcMax}}});	
-	}
+	HistogramRegistry histos{"histos",{}};
 
 	// Define tables to consume
 	using JoinedCollisions = soa::Join<aod::Collisions, aod::Mults>;
@@ -67,20 +58,27 @@ struct example6a{
 	Partition<FilteredJoinedTracks> TracksAtFwd = (aod::track::eta > etaCutMax) or (aod::track::eta < etaCutLow);
 	Partition<FilteredJoinedTracks> TracksAtMid = (aod::track::eta <= etaCutMax) and (aod::track::eta >= etaCutLow);
 
-	#if 0
-	LOGP(info, "Type of JoinedCollisions: {}", std::typeid(JoinedCollisions.name()));
-	LOGP(info, "Type of JoinedCollision: {}", std::typeid(JoinedCollision.name()));
-	LOGP(info, "Type of JoinedTracks: {}", std::typeid(JoinedTracks.name()));
-	LOGP(info, "Type of FilteredJoinedTracks: {}", std::typeid(FilteredJoinedTracks.name()));
-	LOGP(info, "Type of TracksFwd: {}", std::typeid(TracksFwd.name()));
-	LOGP(info, "Type of TracksMid: {}", std::typeid(TracksMid.name()));
-	#endif	
+	// Initialize
+	void init(InitContext const&)
+	{
+		histos.add("eventCounter", "eventCounter", {kTH1F, {{1, 0, 1}}});		
+		histos.add("etaMB", "etaMB", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
+		histos.add("etaFwd", "etaFwd", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
+		histos.add("etaMid", "etaMid", {kTH1F, {{nBinEta, etaMin, etaMax}}});		
+		histos.add("dcaFwd", "dcaFwd", {kTH1F, {{nBinDca, dcaMin, dcaMax}}});		
+		histos.add("dcaMid", "dcaMid", {kTH1F, {{nBinDca, dcaMin, dcaMax}}});		
+		histos.add("tpcFwd", "tpcFwd", {kTH1F, {{nBinTpc, tpcMin, tpcMax}}});		
+		histos.add("tpcMid", "tpcMid", {kTH1F, {{nBinTpc, tpcMin, tpcMax}}});	
+	}
 
-	// Loop
+	// Process Loop 
 	void process( JoinedCollision const& collision, FilteredJoinedTracks const& tracks )
 	{
 		auto MidTracks = TracksAtMid->sliceByCached( aod::track::collisionId, collision.globalIndex(), cache );
 		auto FwdTracks = TracksAtFwd->sliceByCached( aod::track::collisionId, collision.globalIndex(), cache );
+
+		// Fill event counter
+		histos.get<TH1>(HIST("eventCounter")) -> Fill(0.5);
 
 		// Looping over MB tracks
 		for( auto const& track : tracks)
@@ -111,7 +109,9 @@ struct example6a{
 			histos.get<TH1>(HIST("dcaFwd")) -> Fill(track.dcaXY());
 			histos.get<TH1>(HIST("tpcFwd")) -> Fill(track.tpcNClsCrossedRows());
 		}
-	}
+
+	} 
+
 };
 
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)

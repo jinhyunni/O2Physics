@@ -12,7 +12,14 @@
     },
     "internal-dpl-aod-spawner": "",
     "internal-dpl-aod-index-builder": "",
-    "timestamp-task": "",
+    "timestamp-task": {
+        "fatalOnInvalidTimestamp": "false",
+        "verbose": "false",
+        "rct-path": "RCT\/Info\/RunInformation",
+        "orbit-reset-path": "CTP\/Calib\/OrbitReset",
+        "ccdb-url": "http:\/\/alice-ccdb.cern.ch",
+        "isRun2MC": "-1"
+    },
     "bc-selection-task": {
         "triggerBcShift": "0",
         "ITSROFrameStartBorderMargin": "-1",
@@ -243,6 +250,8 @@
         "nBinTpc": "1000",
         "tpcMin": "0",
         "tpcMax": "500",
+        "printInfo": "true",
+        "eventScal": "true",
         "etaCutLow": "-0.800000012",
         "etaCutMax": "0.800000012"
     },
