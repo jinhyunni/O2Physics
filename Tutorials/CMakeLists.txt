@@ -18,7 +18,8 @@ add_subdirectory(PWGLF)
 add_subdirectory(PWGCF)
 add_subdirectory(PWGMM)
 add_subdirectory(PWGHF)
-add_subdirectory(2021HFHack)
+add_subdirectory(FromHFHack)
+add_subdirectory(O2Tut2024)
 
 o2physics_add_dpl_workflow(histogram-track-selection
                     SOURCES src/histogramTrackSelection.cxx

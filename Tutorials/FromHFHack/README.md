@@ -86,4 +86,7 @@ Recap HFHackTut exampels and practices
 			a) Using SliceCache -> See Example6.cxx
 			b) Using .bindTable() method -> This method fills partioned table!
 
+## Example7.css
+	- Using MC data
+
 		
