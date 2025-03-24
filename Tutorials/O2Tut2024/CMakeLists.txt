@@ -12,3 +12,8 @@ o2physics_add_dpl_workflow(tutorial2
                     SOURCES o2-tutorial-handson2.cxx
                     PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
                     COMPONENT_NAME tutorial2024)
+
+o2physics_add_dpl_workflow(tutorial3
+                    SOURCES o2-tutorial-handson3.cxx
+                    PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
+                    COMPONENT_NAME tutorial2024)

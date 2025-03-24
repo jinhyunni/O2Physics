@@ -40,13 +40,6 @@ Recap HFHackTut exampels and practices
 	- Draw pT vs event multiplicity
 	- To use event multiplicity table, helper task is needed
 
-## o2-tutorial-handson2.cxx
-	- Handson of O2Tutorial4.0
-	- Apply quality cuts on Tracks table.
-	  To do this, joining some tables to Tracks table is needed
-
-	- Do the same task with Filter method
-
 ## Example5.cxx
 	- Use Filter to Joined table
 	- To apply quality cut to tracks, Join 'aod::Tracks' with 'aod::TracksExtra', 'aod::TracksDCA'

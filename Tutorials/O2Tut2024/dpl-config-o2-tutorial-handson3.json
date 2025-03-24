@@ -1,0 +1,27 @@
+{
+    "internal-dpl-clock": "",
+    "internal-dpl-aod-reader": {
+        "aod-file-private": "\/Users\/jinhyunpark\/npl\/Analysis\/ALICE\/data\/ao2d\/O2Tutorial4.0\/AO2D-PbPb-derived-small.root",
+        "aod-max-io-rate": "0",
+        "time-limit": "0",
+        "orbit-offset-enumeration": "0",
+        "orbit-multiplier-enumeration": "0",
+        "start-value-enumeration": "0",
+        "end-value-enumeration": "-1",
+        "step-value-enumeration": "1"
+    },
+    "handson3": {
+        "nBinCollisionZ": "400",
+        "collisionZMin": "-20",
+        "collisionZMax": "20",
+        "nBinPt": "400",
+        "ptMin": "0",
+        "ptMax": "0",
+        "nBinDelPhi": "100",
+        "delPhiMin": "-1.57079995",
+        "delPhiMax": "4.71238995",
+        "collisionZCut": "10"
+    },
+    "internal-dpl-aod-global-analysis-file-sink": "",
+    "internal-dpl-injected-dummy-sink": ""
+}

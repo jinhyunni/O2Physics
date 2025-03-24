@@ -93,47 +93,6 @@ struct crosscheck1{
 
 };
 
-#if 0
-struct crosscheck2{
-	
-	HistogramRegistry registry=
-	{
-		"histos",
-		{
-			{"eventCounter", "eventCounter", {kTH1F, {{1, 0, 1}}}},
-			{"eta", "eta", {kTH1F, {{30, -1.5, 1.5}}}},
-			{"pt", "pt", {kTH1F, {{100, 0, 10}}}},
-			{"tpcNClsCrossedRows", "tpcNClsCrossedRows", {kTH1F, {{1000, 0, 1000}}}}
-		}
-	};
-
-	using JoinedTracks			= soa::Join< aod::Tracks, aod::TracksExtra, aod::TracksDCA>;
-	using FilteredJoinedTracks	= soa::Filtered<JoinedTracks>;
-
-	Configurable<float> DcaCut{"MaxDCA", 0.2f, "MaxDCA"};
-	Configurable<float> TpcCut{"MaxTPC", 70, "MaxTPC"};
-
-	// Filter1 : DCA
-	Filter DcaFilter = aod::track::dcaXY < DcaCut;
-
-	// Filter2 : TPC Crossed rows
-	Filter TpcFilter = (aod::track::tpcNClsFindable - aod::track::tpcNClsFindableMinusCrossedRows) > TpcCut; // -> Not working...
-
-	void process( aod::Collision const& collision, FilteredJoinedTracks const& tracks)
-	{
-		registry.fill(HIST("eventCounter"), 0.5);
-
-		for( auto const& track : tracks )
-		{
-			registry.fill(HIST("tpcNClsCrossedRows"), track.tpcNClsCrossedRows());
-			registry.fill(HIST("eta"), track.eta());
-			registry.fill(HIST("pt"), track.pt());
-		}
-	}
-
-};
-#endif
-
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
   return WorkflowSpec
