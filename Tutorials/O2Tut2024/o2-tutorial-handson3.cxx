@@ -3,222 +3,127 @@
 #include "Framework/AnalysisTask.h"
 #include "Framework/AnalysisDataModel.h"
 
+// DataModels
+#include "Common/DataModel/TrackSelectionTables.h"
+
 // Expressions
 #include "Framework/ASoAHelpers.h"
 
-// For consuming derived table
-#include "Tutorials/Skimming/DataModel/DerivedExampleTable.h"
-
+// namspaces
 using namespace o2;
 using namespace o2::aod;
 using namespace o2::framework;
 using namespace o2::framework::expressions;
 
-// Define partition outside process loop
-// Use SliceCache
-struct handson3ver0{
+struct handson3{
 
-	// Slice cache to perform table partitioning
+	/*
+	 *	Handson3 : Use MC file to calculate...
+	 *	
+	 * 		Add dcaXY, eta, TPC cut
+	 *
+	 *		a) pT Resolution
+	 *		b) Efficiency(of what?)
+	 *		c) Collision reconstruction efficiency
+	 */
+
+	// SliceCache
 	SliceCache cache;
 
-	// Declaing configurable
-	Configurable<int>	nBinCollisionZ{"nBinCollisionZ", 400, "nBinCollisionZ"};
-	Configurable<float> collisionZMin{"collisionZMin", -20, "collisionZMin"};
-	Configurable<float> collisionZMax{"collisionZMax", +20, "collisionZMax"};
-	
+	// Configurable
+	Configurable<int> nBinPt{"nBinPt", 100, "nBinPt"};
+	Configurable<float> ptMin{"ptMin", 0.0, "ptMin"};
+	Configurable<float> ptMax{"ptMax", 10.0, "ptMax"};
 
-	Configurable<int>	nBinPt{"nBinPt", 400, "nBinPt"};
-	Configurable<float>	ptMin{"ptMin", 0, "ptMin"};
-	Configurable<float>	ptMax{"ptMax", 0, "ptMax"};
+	Configurable<int> nBinDeltaPt{"nBinDeltaPt", 100, "nBinDeltaPt"};
+	Configurable<float> deltaPtMin{"deltaPtMin", -1.0, "deltaPtMin"};
+	Configurable<float> deltaPtMax{"deltaPtMax", +1.0, "deltaPtMax"};
 
-	Configurable<int> nBinDelPhi{"nBinDelPhi", 100, "nBinDelPhi"};
-	Configurable<float> delPhiMin{"delPhiMin", -0.5*TMath::Pi(), "delPhiMin"};
-	Configurable<float> delPhiMax{"delPhiMax", +1.5*TMath::Pi(), "delPhiMax"};
-
-	Configurable<int> nBinDelEta{"nBinDelEta", 100, "nBinDelEta"};
-	Configurable<float> delEtaMin{"delEtaMin", -1.0, "delEtaMin"};
-	Configurable<float> delEtaMax{"delEtaMax", +1.0, "delEtaMax"};
-
-	Configurable<float> collisionZCut{"collisionZCut", 10.0f, "collisionZCut"};
-
-	// Histogram registry
+	// HistogramRegistry
 	HistogramRegistry histos{"histos", {}};
 
-	// Define table alias to consume
-	using FilteredDrCollisions = soa::Filtered<aod::DrCollisions>;
-	using FilteredDrCollision  = FilteredDrCollisions::iterator;
-	Filter CollZFilter = nabs(aod::collision::posZ) < collisionZCut;
+	// Making table aliases
+	Filter dcaFilter = nabs(aod::track::dcaXY) < 0.2f;
 
-	Partition<aod::DrTracks> AssoTracks = (aod::exampleTrackSpace::pt > 4.0f) and (aod::exampleTrackSpace::pt < 6.0f);
-	Partition<aod::DrTracks> TrigTracks = (aod::exampleTrackSpace::pt >= 6.0f);
+	//using CompleteTracks = soa::Join<aod::Tracks, aod::TracksExtra, aod::TracksDCA, aod::McTrackLabels, aod::McParticles>;
+	// -> This will cause compile error : Becayse aod::Tracks and aod::McParticles have the same column 'pt'
+	using CompleteTracks = soa::Join<aod::Tracks, aod::TracksExtra, aod::TracksDCA, aod::McTrackLabels>;
+	using FilteredCompleteTracks = soa::Filtered<CompleteTracks>;
 
-	// Initialization
-	void init(InitContext const& cfgc)
+
+	// Init
+	void init(InitContext const&)
 	{
+		AxisSpec axisPt{nBinPt, ptMin, ptMax, "p_{T}"};
+		AxisSpec axisDeltaPt{nBinDeltaPt, deltaPtMin, deltaPtMax, "#Delta p_{T}"};
+
+		histos.add("PtResolution", "PtResolution", kTH2F, {{axisPt, axisDeltaPt}});
+
+		// Pt histogram of identified tracks 
+		histos.add("PtPionTrack", "PtPionTrack", kTH1F, {{axisPt}});
+		histos.add("PtKaonTrack", "PtKaonTrack", kTH1F, {{axisPt}});
+		histos.add("PtProtonTrack", "PtProtonTrack", kTH1F, {{axisPt}});
 	
-		AxisSpec axisCollisionZ{nBinCollisionZ, collisionZMin, collisionZMax, "Z(cm)"};
-		AxisSpec axisPt{nBinPt, ptMin, ptMax, "p_{T}(GeV/c)"};
-		AxisSpec axisDelPhi{nBinDelPhi, delPhiMin, delPhiMax, "#Delta#Phi"};
-		AxisSpec axisDelEta{nBinDelEta, delEtaMin, delEtaMax, "#Delta#eta"};
+		// Pt histogram of identified generated tracks
+		histos.add("PtPionGen", "PtPionGen", kTH1F, {{axisPt}});
+		histos.add("PtKaonGen", "PtKaonGen", kTH1F, {{axisPt}});
+		histos.add("PtProtonGen", "PtProtonGen", kTH1F, {{axisPt}});
 
-		histos.add("correlationFunction", "correlationFunction", kTH1F, {axisDelPhi});
-		histos.add("h2CorrelationFunction", "h2CorrelationFunction", kTH2F, {axisDelPhi, axisDelEta});
-
-		histos.add("collisionZ", "collisionZ", kTH1F, {axisCollisionZ});
-		histos.add("pTAsso", "pTAsso", kTH1F, {axisPt});
-		histos.add("pTTrig", "pTTrig", kTH1F, {axisPt});
 	}
 
-	// Process function
-	void process(FilteredDrCollision const& collision, aod::DrTracks const& tracks)
+	// ProcessReco
+	// -> FilteredCompletedTracks, aodMcParticle table will be grouped by aod::Collisions::iterator
+	void processReco( aod::Collision const& collision, FilteredCompleteTracks const& tracks, aod::McParticles const&)
 	{
-		// Manually connect partioned table to corresponding collision idx
-		auto AssoTracksThisCollision = AssoTracks -> sliceByCached( aod::exampleTrackSpace::drCollisionId, collision.globalIndex(), cache);
-		auto TrigTracksThisCollision = TrigTracks -> sliceByCached( aod::exampleTrackSpace::drCollisionId, collision.globalIndex(), cache);
-
-		// Make correlation
-		for( auto const& trig : TrigTracksThisCollision )
+		for( auto const& track : tracks)
 		{
-			for( auto const& asso : AssoTracksThisCollision )
+			// Track quality cut
+			if( track.tpcNClsCrossedRows() < 70 ) continue;
+
+			if( ! track.has_mcParticle() ) continue;
+	
+			auto mcParticle = track.mcParticle();
+			histos.fill(HIST("PtResolution"), track.pt(), track.pt() - mcParticle.pt());
+
+			if( mcParticle.isPhysicalPrimary() and fabs(mcParticle.y())<0.5 )
 			{
-				histos.fill(HIST("pTAsso"), asso.pt()); // -> Filling this histogram here returns differnet resutl...unexpected result
-				// Calculation of DeltaPhi
-				double deltaPhi = trig.phi() - asso.phi();
-				double deltaEta = trig.eta() - asso.eta();
+				int id = abs(mcParticle.pdgCode());
 
-				if( deltaPhi < -TMath::Pi()/2 ){	
-					deltaPhi += 2*TMath::Pi();
-				}else if( deltaPhi > 3*TMath::Pi()/2 ){
-					deltaPhi -= 2*TMath::Pi();
-				}
-
-				histos.fill(HIST("correlationFunction"), deltaPhi);
-				histos.fill(HIST("h2CorrelationFunction"), deltaPhi, deltaEta);
+				if( id == 211 ) histos.fill(HIST("PtPionTrack"), mcParticle.pt());
+				else if( id == 321 ) histos.fill(HIST("PtKaonTrack"), mcParticle.pt());
+				else if( id == 2212 ) histos.fill(HIST("PtProtonTrack"), mcParticle.pt());
 			}
-		}
-
-		//!Fill in QA histos
-		histos.fill(HIST("collisionZ"), collision.posZ());
-
-		for( auto const& track : AssoTracksThisCollision )
-		{
-			//histos.fill(HIST("pTAsso"), track.pt());	
-		}
-
-		for( auto const& track : TrigTracksThisCollision )
-		{
-			histos.fill(HIST("pTTrig"), track.pt());	
+		
 		}
 	}
 
-};
-
-// Declare partition inside process loop
-// Use .bindTable
-struct handson3ver1{
-	// Declaing configurable
-	Configurable<int>	nBinCollisionZ{"nBinCollisionZ", 400, "nBinCollisionZ"};
-	Configurable<float> collisionZMin{"collisionZMin", -20, "collisionZMin"};
-	Configurable<float> collisionZMax{"collisionZMax", +20, "collisionZMax"};
-	
-	Configurable<int>	nBinPt{"nBinPt", 400, "nBinPt"};
-	Configurable<float>	ptMin{"ptMin", 0, "ptMin"};
-	Configurable<float>	ptMax{"ptMax", 0, "ptMax"};
-
-	Configurable<int> nBinDelPhi{"nBinDelPhi", 100, "nBinDelPhi"};
-	Configurable<float> delPhiMin{"delPhiMin", -0.5*TMath::Pi(), "delPhiMin"};
-	Configurable<float> delPhiMax{"delPhiMax", +1.5*TMath::Pi(), "delPhiMax"};
-
-	Configurable<int> nBinDelEta{"nBinDelEta", 100, "nBinDelEta"};
-	Configurable<float> delEtaMin{"delEtaMin", -1.0, "delEtaMin"};
-	Configurable<float> delEtaMax{"delEtaMax", +1.0, "delEtaMax"};
-
-	Configurable<float> collisionZCut{"collisionZCut", 10.0f, "collisionZCut"};
-
-	// Histogram registry
-	HistogramRegistry histos{"histos", {}};
-
-	// Define table alias to consume
-	using FilteredDrCollisions = soa::Filtered<aod::DrCollisions>;
-	using FilteredDrCollision  = FilteredDrCollisions::iterator;
-	Filter CollZFilter = nabs(aod::collision::posZ) < collisionZCut;
-
-	// Initialization
-	void init(InitContext const& cfgc)
+	// ProcessGen
+	void processGen( aod::McParticles const& particles )
 	{
-	
-		AxisSpec axisCollisionZ{nBinCollisionZ, collisionZMin, collisionZMax, "Z(cm)"};
-		AxisSpec axisPt{nBinPt, ptMin, ptMax, "p_{T}(GeV/c)"};
-		AxisSpec axisDelPhi{nBinDelPhi, delPhiMin, delPhiMax, "#Delta#Phi"};
-		AxisSpec axisDelEta{nBinDelEta, delEtaMin, delEtaMax, "#Delta#eta"};
-
-		histos.add("correlationFunction", "correlationFunction", kTH1F, {axisDelPhi});
-		histos.add("h2CorrelationFunction", "h2CorrelationFunction", kTH2F, {axisDelPhi, axisDelEta});
-
-		histos.add("collisionZ", "collisionZ", kTH1F, {axisCollisionZ});
-		histos.add("pTAsso", "pTAsso", kTH1F, {axisPt});
-		histos.add("pTTrig", "pTTrig", kTH1F, {axisPt});
-	}
-
-	// Process
-	void process( FilteredDrCollisions const& collisions, aod::DrTracks const& drTracks)
-	{
-		for( auto const& collision : collisions)
+		for( auto const& particle : particles )
 		{
-			// Define Partition
-			Partition<aod::DrTracks> AssoTracksThisCollision
-				= (aod::exampleTrackSpace::drCollisionId == collision.globalIndex()) and ((aod::exampleTrackSpace::pt > 4.0f) and (aod::exampleTrackSpace::pt < 6.0f));
-
-			Partition<aod::DrTracks> TrigTracksThisCollision
-				= (aod::exampleTrackSpace::drCollisionId == collision.globalIndex()) and (aod::exampleTrackSpace::pt >= 6.0f);
-
-			// Fill Partition with .bindTable()
-			AssoTracksThisCollision.bindTable(drTracks);
-			TrigTracksThisCollision.bindTable(drTracks);
-
-			histos.get<TH1>(HIST("collisionZ")) -> Fill(collision.posZ());
-
-			// Fill in correlation
-			for( auto const& TrigTrack : TrigTracksThisCollision )
+			if( particle.isPhysicalPrimary() and fabs(particle.y())<0.5 )
 			{
-				for( auto const& AssoTrack : AssoTracksThisCollision )
-				{
-					histos.get<TH1>(HIST("pTAsso")) -> Fill(AssoTrack.pt()); // -> Filling this histogram at seperate loop returns different filling
+				int id = abs(particle.pdgCode());
 
-					double deltaEta = TrigTrack.eta() - AssoTrack.eta();
-					double deltaPhi = TrigTrack.phi() - AssoTrack.phi();
-
-					if( deltaPhi < -TMath::Pi()/2 ){	
-						deltaPhi += 2*TMath::Pi();
-					} else if( deltaPhi > 3*TMath::Pi()/2 ){
-						deltaPhi -= 2*TMath::Pi();
-					}
-					
-					histos.get<TH2>(HIST("h2CorrelationFunction")) -> Fill(deltaPhi, deltaEta);
-					histos.get<TH1>(HIST("correlationFunction")) -> Fill(deltaPhi);
-				}
+				if( id == 211 )	histos.fill(HIST("PtPionGen"), particle.pt());
+				else if( id == 321)	histos.fill(HIST("PtKaonGen"), particle.pt());
+				else if( id == 2212) histos.fill(HIST("PtProtonGen"), particle.pt());
+				else continue;
 			}
-
-			// QA
-			for( auto const& TrigTrack : TrigTracksThisCollision )
-			{
-				histos.get<TH1>(HIST("pTTrig")) -> Fill(TrigTrack.pt());
-			}
-
-			for( auto const& AssoTrack : AssoTracksThisCollision )
-			{
-				//histos.get<TH1>(HIST("pTAsso")) -> Fill(AssoTrack.pt());
-			}
-
-		} // collision loop
+		}
 	}
+
+	// Process switch
+	PROCESS_SWITCH(handson3, processReco, "processReco", true);
+	PROCESS_SWITCH(handson3, processGen, "processGen", true);
+
 };
 
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
 	return WorkflowSpec
 	{
-		adaptAnalysisTask<handson3ver0>(cfgc),
-		adaptAnalysisTask<handson3ver1>(cfgc),
+		adaptAnalysisTask<handson3>(cfgc),
 	};
 }

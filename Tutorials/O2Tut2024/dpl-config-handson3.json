@@ -119,14 +119,13 @@
         "processCovarianceWithPID": "false"
     },
     "handson3": {
-        "nBinPt": "100",
+        "nBinPt": "1000",
         "ptMin": "0",
         "ptMax": "10",
-        "nBinDeltaPt": "100",
+        "nBinDeltaPt": "200",
         "deltaPtMin": "-1",
         "deltaPtMax": "1",
-        "processReco": "true",
-        "processGen": "true"
+        "process_pt_resolution": "true"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",

@@ -8,6 +8,11 @@
 # In applying this license CERN does not waive the privileges and immunities
 # granted to it by virtue of its status as an Intergovernmental Organization
 # or submit itself to any jurisdiction.
+o2physics_add_dpl_workflow(tutorial1
+                    SOURCES o2-tutorial-handson1.cxx
+                    PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
+                    COMPONENT_NAME tutorial2024)
+
 o2physics_add_dpl_workflow(tutorial2
                     SOURCES o2-tutorial-handson2.cxx
                     PUBLIC_LINK_LIBRARIES O2Physics::AnalysisCore
