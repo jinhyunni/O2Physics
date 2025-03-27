@@ -12,7 +12,7 @@ o2-tutorial2024-tutorial3 "${OPTIONS[@]}" | \
 	o2-analysis-timestamp "${OPTIONS[@]}" | \
 	o2-analysis-track-propagation "${OPTIONS[@]}" | \
 	o2-analysis-tracks-extra-v002-converter "${OPTIONS[@]}" \
-	> "${LOGFILE}" 2>&1
+#> "${LOGFILE}" 2>&1
 
 rc=$?
 

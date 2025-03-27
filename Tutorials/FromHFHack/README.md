@@ -79,7 +79,24 @@ Recap HFHackTut exampels and practices
 			a) Using SliceCache -> See Example6.cxx
 			b) Using .bindTable() method -> This method fills partioned table!
 
-## Example7.css
+## Example7.cxx
 	- Using MC data
+	- To use anchord MC information, join additional table : aod::McTrackLabel
+	- By using McTrackLabel index, aod::McParticles can be used
+	- Joining aod::Tracks and aod::McParitcles are not joiniable, because they share getter with same name. This causes compile error
 
-		
+## Example8.cxx
+	- Making derived table and consuming them
+	- Objective : Make a joinable table with aod::McCollisions which contains information about multiplicity
+	- Declared table name will be aod::MultsGen -> Multiplicity measured with generated particles
+
+	- How to make tables
+		-- Make namspaces to declare table and column( it is conventional that columns are defined at designated namespaces, and tables should be declared at o2::aod )
+		-- Declare column with `DECLARE_SOA_COLUMN(Name, getter, type)` method to declare static column
+		-- Declare table with `DECLARE_SOA_TABLE(Name, Origin, Description, column1, column2,...)`
+			--- Origin is typically written as "AOD"
+			--- Description can be a short sentence
+			--- For column, specify getters with namespaces
+
+## Example9.cxx
+	- Making derived table and consuming them
