@@ -1,0 +1,659 @@
+[INFO] Initialising O2 Data Processing Layer. Driver PID: 78186.
+[INFO] Driver listening on port: 26266
+[INFO] Rate limiting set up at 2000MB distributed over 1 readers
+[INFO] O2 Data Processing Layer initialised. We brake for nobody.
+[INFO] Optimised build. O2DEBUG / LOG(debug) / LOGF(debug) / assert statement will not be shown.
+[INFO] Redeployment of configuration asked.
+[INFO] Starting internal-dpl-clock on pid 78187
+[INFO] Starting internal-dpl-aod-reader on pid 78188
+[INFO] Starting internal-dpl-aod-spawner on pid 78189
+[INFO] Starting internal-dpl-aod-index-builder on pid 78190
+[INFO] Starting mc-collision-converter on pid 78191
+[INFO] Starting timestamp-task on pid 78192
+[INFO] Starting bc-selection-task on pid 78193
+[INFO] Starting pre-task on pid 78194
+[INFO] Starting tracks-extra-v002-converter on pid 78195
+[INFO] Starting tracks-extra-spawner on pid 78196
+[INFO] Starting track-propagation on pid 78197
+[INFO] Starting event-selection-task on pid 78198
+[INFO] Starting multiplicity-table on pid 78199
+[INFO] Starting example-seven on pid 78200
+[INFO] Starting internal-dpl-aod-writer on pid 78201
+[INFO] Starting internal-dpl-aod-global-analysis-file-sink on pid 78202
+[INFO] Starting internal-dpl-injected-dummy-sink on pid 78203
+[INFO] Redeployment of configuration done.
+[78191:mc-collision-converter]: [INFO] Instrumenting crash signals
+[78191:mc-collision-converter]: [INFO] Spawing new device mc-collision-converter in process with pid 78191
+[78191:mc-collision-converter]: [16:27:30][INFO] 
+[78191:mc-collision-converter]:       ______      _    _______  _________ 
+[78191:mc-collision-converter]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78191:mc-collision-converter]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78191:mc-collision-converter]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78191:mc-collision-converter]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78191:mc-collision-converter]: 
+[78191:mc-collision-converter]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78188:internal-dpl-aod-reader]: [INFO] Instrumenting crash signals
+[78189:internal-dpl-aod-spawner]: [INFO] Instrumenting crash signals
+[78191:mc-collision-converter]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78190:internal-dpl-aod-index-builder]: [INFO] Instrumenting crash signals
+[78192:timestamp-task]: [INFO] Instrumenting crash signals
+[78191:mc-collision-converter]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78191:mc-collision-converter]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78191:mc-collision-converter]: [16:27:30][STATE] BINDING ---> BOUND
+[78191:mc-collision-converter]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78191:mc-collision-converter]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78191:mc-collision-converter]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78191:mc-collision-converter]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78191:mc-collision-converter]: [16:27:30][STATE] READY ---> RUNNING
+[78191:mc-collision-converter]: [16:27:30][INFO] fair::mq::Device running...
+[78191:mc-collision-converter]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78191:mc-collision-converter]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[INFO] Controller for internal-dpl-aod-reader not yet available.
+[78195:tracks-extra-v002-converter]: [INFO] Instrumenting crash signals
+[78196:tracks-extra-spawner]: [INFO] Instrumenting crash signals
+[78192:timestamp-task]: [INFO] Spawing new device timestamp-task in process with pid 78192
+[78192:timestamp-task]: [16:27:30][INFO] 
+[78192:timestamp-task]:       ______      _    _______  _________ 
+[78192:timestamp-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78192:timestamp-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78192:timestamp-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78192:timestamp-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78192:timestamp-task]: 
+[78192:timestamp-task]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78195:tracks-extra-v002-converter]: [INFO] Spawing new device tracks-extra-v002-converter in process with pid 78195
+[78195:tracks-extra-v002-converter]: [16:27:30][INFO] 
+[78195:tracks-extra-v002-converter]:       ______      _    _______  _________ 
+[78195:tracks-extra-v002-converter]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78195:tracks-extra-v002-converter]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78195:tracks-extra-v002-converter]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78195:tracks-extra-v002-converter]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78195:tracks-extra-v002-converter]: 
+[78189:internal-dpl-aod-spawner]: [INFO] Spawing new device internal-dpl-aod-spawner in process with pid 78189
+[78192:timestamp-task]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78189:internal-dpl-aod-spawner]: [16:27:30][INFO] 
+[78189:internal-dpl-aod-spawner]:       ______      _    _______  _________ 
+[78189:internal-dpl-aod-spawner]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78189:internal-dpl-aod-spawner]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78189:internal-dpl-aod-spawner]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78189:internal-dpl-aod-spawner]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78189:internal-dpl-aod-spawner]: 
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78192:timestamp-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-0q1vjZ, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[78192:timestamp-task]: [16:27:30][INFO] Initializing TimestampTask
+[78192:timestamp-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-0q1vjZ, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78192:timestamp-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-bZ5eeq, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78196:tracks-extra-spawner]: [INFO] Spawing new device tracks-extra-spawner in process with pid 78196
+[78196:tracks-extra-spawner]: [16:27:30][INFO] 
+[78196:tracks-extra-spawner]:       ______      _    _______  _________ 
+[78196:tracks-extra-spawner]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78196:tracks-extra-spawner]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78196:tracks-extra-spawner]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78196:tracks-extra-spawner]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78196:tracks-extra-spawner]: 
+[78196:tracks-extra-spawner]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] BINDING ---> BOUND
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78187:internal-dpl-clock]: [INFO] Instrumenting crash signals
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78195:tracks-extra-v002-converter]: [16:27:30][STATE] READY ---> RUNNING
+[78195:tracks-extra-v002-converter]: [16:27:30][INFO] fair::mq::Device running...
+[78195:tracks-extra-v002-converter]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78195:tracks-extra-v002-converter]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78196:tracks-extra-spawner]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78196:tracks-extra-spawner]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78196:tracks-extra-spawner]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78196:tracks-extra-spawner]: [16:27:30][STATE] BINDING ---> BOUND
+[78196:tracks-extra-spawner]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78196:tracks-extra-spawner]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78196:tracks-extra-spawner]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78196:tracks-extra-spawner]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78196:tracks-extra-spawner]: [16:27:30][STATE] READY ---> RUNNING
+[78196:tracks-extra-spawner]: [16:27:30][INFO] fair::mq::Device running...
+[78196:tracks-extra-spawner]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78196:tracks-extra-spawner]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78193:bc-selection-task]: [INFO] Instrumenting crash signals
+[78199:multiplicity-table]: [INFO] Instrumenting crash signals
+[78197:track-propagation]: [INFO] Instrumenting crash signals
+[78200:example-seven]: [INFO] Instrumenting crash signals
+[78201:internal-dpl-aod-writer]: [INFO] Instrumenting crash signals
+[78187:internal-dpl-clock]: [INFO] Spawing new device internal-dpl-clock in process with pid 78187
+[78187:internal-dpl-clock]: [16:27:30][INFO] 
+[78187:internal-dpl-clock]:       ______      _    _______  _________ 
+[78187:internal-dpl-clock]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78187:internal-dpl-clock]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78187:internal-dpl-clock]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78187:internal-dpl-clock]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78187:internal-dpl-clock]: 
+[78187:internal-dpl-clock]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78188:internal-dpl-aod-reader]: [INFO] Spawing new device internal-dpl-aod-reader in process with pid 78188
+[78188:internal-dpl-aod-reader]: [16:27:30][INFO] 
+[78188:internal-dpl-aod-reader]:       ______      _    _______  _________ 
+[78188:internal-dpl-aod-reader]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78188:internal-dpl-aod-reader]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78188:internal-dpl-aod-reader]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78188:internal-dpl-aod-reader]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78188:internal-dpl-aod-reader]: 
+[78188:internal-dpl-aod-reader]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78188:internal-dpl-aod-reader]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78198:event-selection-task]: [INFO] Instrumenting crash signals
+[78193:bc-selection-task]: [INFO] Spawing new device bc-selection-task in process with pid 78193
+[78193:bc-selection-task]: [16:27:30][INFO] 
+[78193:bc-selection-task]:       ______      _    _______  _________ 
+[78193:bc-selection-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78193:bc-selection-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78193:bc-selection-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78193:bc-selection-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78193:bc-selection-task]: 
+[78193:bc-selection-task]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78202:internal-dpl-aod-global-analysis-file-sink]: [INFO] Instrumenting crash signals
+[78190:internal-dpl-aod-index-builder]: [INFO] Spawing new device internal-dpl-aod-index-builder in process with pid 78190
+[78190:internal-dpl-aod-index-builder]: [16:27:30][INFO] 
+[78190:internal-dpl-aod-index-builder]:       ______      _    _______  _________ 
+[78190:internal-dpl-aod-index-builder]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78190:internal-dpl-aod-index-builder]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78190:internal-dpl-aod-index-builder]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78190:internal-dpl-aod-index-builder]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78190:internal-dpl-aod-index-builder]: 
+[78197:track-propagation]: [INFO] Spawing new device track-propagation in process with pid 78197
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78199:multiplicity-table]: [INFO] Spawing new device multiplicity-table in process with pid 78199
+[78200:example-seven]: [INFO] Spawing new device example-seven in process with pid 78200
+[78199:multiplicity-table]: [16:27:30][INFO] 
+[78199:multiplicity-table]:       ______      _    _______  _________ 
+[78199:multiplicity-table]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78199:multiplicity-table]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78199:multiplicity-table]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78199:multiplicity-table]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78199:multiplicity-table]: 
+[78199:multiplicity-table]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78200:example-seven]: [16:27:30][INFO] 
+[78200:example-seven]:       ______      _    _______  _________ 
+[78200:example-seven]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78200:example-seven]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78200:example-seven]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78200:example-seven]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78200:example-seven]: 
+[78200:example-seven]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78201:internal-dpl-aod-writer]: [INFO] Spawing new device internal-dpl-aod-writer in process with pid 78201
+[78187:internal-dpl-clock]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78201:internal-dpl-aod-writer]: [16:27:30][INFO] 
+[78201:internal-dpl-aod-writer]:       ______      _    _______  _________ 
+[78201:internal-dpl-aod-writer]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78201:internal-dpl-aod-writer]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78201:internal-dpl-aod-writer]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78201:internal-dpl-aod-writer]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78201:internal-dpl-aod-writer]: 
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78187:internal-dpl-clock]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78187:internal-dpl-clock]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78197:track-propagation]: [16:27:30][INFO] 
+[78197:track-propagation]:       ______      _    _______  _________ 
+[78197:track-propagation]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78197:track-propagation]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78197:track-propagation]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78197:track-propagation]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78197:track-propagation]: 
+[78197:track-propagation]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78187:internal-dpl-clock]: [16:27:30][STATE] BINDING ---> BOUND
+[78187:internal-dpl-clock]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78187:internal-dpl-clock]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] BINDING ---> BOUND
+[78187:internal-dpl-clock]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78187:internal-dpl-clock]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78187:internal-dpl-clock]: [16:27:30][STATE] READY ---> RUNNING
+[78187:internal-dpl-clock]: [16:27:30][INFO] fair::mq::Device running...
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78187:internal-dpl-clock]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78189:internal-dpl-aod-spawner]: [16:27:30][STATE] READY ---> RUNNING
+[78189:internal-dpl-aod-spawner]: [16:27:30][INFO] fair::mq::Device running...
+[78187:internal-dpl-clock]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] BINDING ---> BOUND
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78189:internal-dpl-aod-spawner]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78189:internal-dpl-aod-spawner]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78190:internal-dpl-aod-index-builder]: [16:27:30][STATE] READY ---> RUNNING
+[78190:internal-dpl-aod-index-builder]: [16:27:30][INFO] fair::mq::Device running...
+[78200:example-seven]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78190:internal-dpl-aod-index-builder]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78190:internal-dpl-aod-index-builder]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78200:example-seven]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78200:example-seven]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78203:internal-dpl-injected-dummy-sink]: [INFO] Instrumenting crash signals
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78197:track-propagation]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78200:example-seven]: [16:27:30][STATE] BINDING ---> BOUND
+[78200:example-seven]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] BINDING ---> BOUND
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78200:example-seven]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78200:example-seven]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78200:example-seven]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78200:example-seven]: [16:27:30][STATE] READY ---> RUNNING
+[78200:example-seven]: [16:27:30][INFO] fair::mq::Device running...
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78201:internal-dpl-aod-writer]: [16:27:30][STATE] READY ---> RUNNING
+[78201:internal-dpl-aod-writer]: [16:27:30][INFO] fair::mq::Device running...
+[78193:bc-selection-task]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78200:example-seven]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78200:example-seven]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78201:internal-dpl-aod-writer]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78201:internal-dpl-aod-writer]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78198:event-selection-task]: [INFO] Spawing new device event-selection-task in process with pid 78198
+[78197:track-propagation]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-1v5vjd, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[78197:track-propagation]: [16:27:30][INFO] Enabling processStandard
+[78197:track-propagation]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-1v5vjd, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78197:track-propagation]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78197:track-propagation]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78198:event-selection-task]: [16:27:30][INFO] 
+[78198:event-selection-task]:       ______      _    _______  _________ 
+[78198:event-selection-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78198:event-selection-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78198:event-selection-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78198:event-selection-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78198:event-selection-task]: 
+[78198:event-selection-task]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78197:track-propagation]: [16:27:30][STATE] BINDING ---> BOUND
+[78197:track-propagation]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78197:track-propagation]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78197:track-propagation]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78197:track-propagation]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78197:track-propagation]: [16:27:30][STATE] READY ---> RUNNING
+[78193:bc-selection-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-bZ5ffr, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[78197:track-propagation]: [16:27:30][INFO] fair::mq::Device running...
+[78194:pre-task]: [INFO] Instrumenting crash signals
+[78197:track-propagation]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78197:track-propagation]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78193:bc-selection-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-bZ5ffr, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78193:bc-selection-task]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78193:bc-selection-task]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78198:event-selection-task]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78202:internal-dpl-aod-global-analysis-file-sink]: [INFO] Spawing new device internal-dpl-aod-global-analysis-file-sink in process with pid 78202
+[78193:bc-selection-task]: [16:27:30][STATE] BINDING ---> BOUND
+[78193:bc-selection-task]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][INFO] 
+[78202:internal-dpl-aod-global-analysis-file-sink]:       ______      _    _______  _________ 
+[78202:internal-dpl-aod-global-analysis-file-sink]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78202:internal-dpl-aod-global-analysis-file-sink]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78202:internal-dpl-aod-global-analysis-file-sink]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78202:internal-dpl-aod-global-analysis-file-sink]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78202:internal-dpl-aod-global-analysis-file-sink]: 
+[78193:bc-selection-task]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78193:bc-selection-task]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78193:bc-selection-task]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78193:bc-selection-task]: [16:27:30][STATE] READY ---> RUNNING
+[78193:bc-selection-task]: [16:27:30][INFO] fair::mq::Device running...
+[78193:bc-selection-task]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78193:bc-selection-task]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78203:internal-dpl-injected-dummy-sink]: [INFO] Spawing new device internal-dpl-injected-dummy-sink in process with pid 78203
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][INFO] 
+[78203:internal-dpl-injected-dummy-sink]:       ______      _    _______  _________ 
+[78203:internal-dpl-injected-dummy-sink]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78203:internal-dpl-injected-dummy-sink]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78203:internal-dpl-injected-dummy-sink]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78203:internal-dpl-injected-dummy-sink]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78203:internal-dpl-injected-dummy-sink]: 
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78198:event-selection-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-bfBiiw, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[78198:event-selection-task]: [16:27:30][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146850-bfBiiw, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78198:event-selection-task]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78198:event-selection-task]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78198:event-selection-task]: [16:27:30][STATE] BINDING ---> BOUND
+[78198:event-selection-task]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] BINDING ---> BOUND
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78198:event-selection-task]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78198:event-selection-task]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78198:event-selection-task]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78198:event-selection-task]: [16:27:30][STATE] READY ---> RUNNING
+[78198:event-selection-task]: [16:27:30][INFO] fair::mq::Device running...
+[78198:event-selection-task]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78198:event-selection-task]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][STATE] READY ---> RUNNING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][INFO] fair::mq::Device running...
+[78194:pre-task]: [INFO] Spawing new device pre-task in process with pid 78194
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] BINDING ---> BOUND
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78194:pre-task]: [16:27:30][INFO] 
+[78194:pre-task]:       ______      _    _______  _________ 
+[78194:pre-task]:      / ____/___ _(_)_______   |/  /_  __ \    version 1.9.2
+[78194:pre-task]:     / /_  / __ `/ / ___/__  /|_/ /_  / / /    build RELWITHDEBINFO
+[78194:pre-task]:    / __/ / /_/ / / /    _  /  / / / /_/ /     https://github.com/FairRootGroup/FairMQ
+[78194:pre-task]:   /_/    \__,_/_/_/     /_/  /_/  \___\_\     LGPL-3.0  © 2012-2025 GSI
+[78194:pre-task]: 
+[78194:pre-task]: [16:27:30][STATE] Starting FairMQ state machine --> IDLE
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][STATE] READY ---> RUNNING
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][INFO] fair::mq::Device running...
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78203:internal-dpl-injected-dummy-sink]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78194:pre-task]: [16:27:30][STATE] IDLE ---> INITIALIZING DEVICE
+[78194:pre-task]: [16:27:30][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78194:pre-task]: [16:27:30][STATE] INITIALIZED ---> BINDING
+[78194:pre-task]: [16:27:30][STATE] BINDING ---> BOUND
+[78194:pre-task]: [16:27:30][STATE] BOUND ---> CONNECTING
+[78194:pre-task]: [16:27:30][STATE] CONNECTING ---> DEVICE READY
+[78194:pre-task]: [16:27:30][STATE] DEVICE READY ---> INITIALIZING TASK
+[78194:pre-task]: [16:27:30][STATE] INITIALIZING TASK ---> READY
+[78194:pre-task]: [16:27:30][STATE] READY ---> RUNNING
+[78194:pre-task]: [16:27:30][INFO] fair::mq::Device running...
+[78194:pre-task]: [16:27:30][INFO] LHCPeriod is not available, using current month MAR
+[78194:pre-task]: [16:27:30][INFO] Correctly handshaken websocket connection.
+[78199:multiplicity-table]: Warning in <TDatabasePDG::AddParticle>: Particle with PDGcode=1000030040 already defined
+[78199:multiplicity-table]: [16:27:31][STATE] IDLE ---> INITIALIZING DEVICE
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] INITIALIZED ---> BINDING
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] BINDING ---> BOUND
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] BOUND ---> CONNECTING
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] CONNECTING ---> DEVICE READY
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] DEVICE READY ---> INITIALIZING TASK
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] INITIALIZING TASK ---> READY
+[78188:internal-dpl-aod-reader]: [16:27:31][STATE] READY ---> RUNNING
+[78188:internal-dpl-aod-reader]: [16:27:31][INFO] fair::mq::Device running...
+[78199:multiplicity-table]: [16:27:31][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146851-bfBjjx, Host: http://alice-ccdb.cern.ch/, Curl timeouts: upload:20 download:1
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: FV0Mults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: FT0Mults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: FDDMults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: ZDCMults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: TrackletMults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: TPCMults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-enabling table: PVMults
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: MultsExtra
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: MultSelections
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: FV0MultZeqs
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: FT0MultZeqs
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: FDDMultZeqs
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: PVMultZeqs
+[78199:multiplicity-table]: [16:27:31][INFO] Auto-disabling table: MultMCExtras
+[78199:multiplicity-table]: [16:27:31][INFO] Init CcdApi with UserAgentID: jinhyun-MacBook-Pro-2.local-1743146851-bfBjjx, Host: http://alice-ccdb.cern.ch, Curl timeouts: upload:20 download:1
+[78188:internal-dpl-aod-reader]: [16:27:31][INFO] LHCPeriod is not available, using current month MAR
+[INFO] Controller for internal-dpl-aod-reader now available.
+[78188:internal-dpl-aod-reader]: [16:27:31][INFO] Correctly handshaken websocket connection.
+[78199:multiplicity-table]: [16:27:31][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78199:multiplicity-table]: [16:27:31][STATE] INITIALIZED ---> BINDING
+[78199:multiplicity-table]: [16:27:31][STATE] BINDING ---> BOUND
+[78199:multiplicity-table]: [16:27:31][STATE] BOUND ---> CONNECTING
+[78199:multiplicity-table]: [16:27:31][STATE] CONNECTING ---> DEVICE READY
+[78199:multiplicity-table]: [16:27:31][STATE] DEVICE READY ---> INITIALIZING TASK
+[78199:multiplicity-table]: [16:27:31][STATE] INITIALIZING TASK ---> READY
+[78199:multiplicity-table]: [16:27:31][STATE] READY ---> RUNNING
+[78199:multiplicity-table]: [16:27:31][INFO] fair::mq::Device running...
+[78199:multiplicity-table]: [16:27:31][INFO] LHCPeriod is not available, using current month MAR
+[78199:multiplicity-table]: [16:27:31][INFO] Correctly handshaken websocket connection.
+[78192:timestamp-task]: [16:27:31][INFO] From metadata this data is from Run 2
+[78192:timestamp-task]: [16:27:31][INFO] From metadata this data is from Data
+[78192:timestamp-task]: [16:27:31][STATE] INITIALIZING DEVICE ---> INITIALIZED
+[78192:timestamp-task]: [16:27:31][STATE] INITIALIZED ---> BINDING
+[78192:timestamp-task]: [16:27:31][STATE] BINDING ---> BOUND
+[78192:timestamp-task]: [16:27:31][STATE] BOUND ---> CONNECTING
+[78192:timestamp-task]: [16:27:31][STATE] CONNECTING ---> DEVICE READY
+[78192:timestamp-task]: [16:27:31][STATE] DEVICE READY ---> INITIALIZING TASK
+[78192:timestamp-task]: [16:27:31][STATE] INITIALIZING TASK ---> READY
+[78192:timestamp-task]: [16:27:31][STATE] READY ---> RUNNING
+[78192:timestamp-task]: [16:27:31][INFO] fair::mq::Device running...
+[78192:timestamp-task]: [16:27:31][INFO] LHCPeriod is not available, using current month MAR
+[78192:timestamp-task]: [16:27:31][INFO] Correctly handshaken websocket connection.
+[78189:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/cache.cc:61: Creating gandiva cache with capacity of 5000
+[78189:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:276: Detected CPU Name : apple-m1
+[78189:internal-dpl-aod-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:277: Detected CPU Features: []
+[78194:pre-task]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/cache.cc:61: Creating gandiva cache with capacity of 5000
+[78194:pre-task]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:276: Detected CPU Name : apple-m1
+[78194:pre-task]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:277: Detected CPU Features: []
+[78196:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/cache.cc:61: Creating gandiva cache with capacity of 5000
+[78196:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:276: Detected CPU Name : apple-m1
+[78196:tracks-extra-spawner]: /Users/jinhyunpark/npl/Analysis/ALICE/O2Framework/sw/BUILD/ebe931092991c73b783db87bf10f90696bc78a66/arrow/src_tmp/cpp/src/gandiva/engine.cc:277: Detected CPU Features: []
+[78194:pre-task]: *** Program crashed (Segmentation fault: 11)
+[78194:pre-task]: Backtrace by DPL:
+[78194:pre-task]:     1   libsystem_platform.dylib            0x0000000190e13584: _sigtramp
+[78194:pre-task]:     2   o2-hfo2hacktut-example9-ans         0x00000001023dec0c: bool o2::framework::analysis_task_parsers::finalizeOutput<o2::framework::Builds<o2::soa::IndexTable<o2::aod::Hash<488704767u>, o2::aod::Hash<1882923301u>, o2::aod::Hash<2286545062u>, o2::soa::Table<o2::aod::Hash<412502005u>, o2::aod::Hash<545027608u>, o2::aod::Hash<2286545062u>>, o2::aod::idx::McCollisionId, o2::aod::idx::CollisionsWLabelId>>>(o2::framework::ProcessingContext&, o2::framework::Builds<o2::soa::IndexTable<o2::aod::Hash<488704767u>, o2::aod::Hash<1882923301u>, o2::aod::Hash<2286545062u>, o2::soa::Table<o2::aod::Hash<412502005u>, o2::aod::Hash<545027608u>, o2::aod::Hash<2286545062u>>, o2::aod::idx::McCollisionId, o2::aod::idx::CollisionsWLabelId>>&)
+[78194:pre-task]:     3   o2-hfo2hacktut-example9-ans         0x00000001023cf404: o2::framework::DataProcessorSpec o2::framework::adaptAnalysisTask<PreTask>(o2::framework::ConfigContext const&)::'lambda'(o2::framework::InitContext&)::operator()(o2::framework::InitContext&)::'lambda'(o2::framework::ProcessingContext&)::operator()(o2::framework::ProcessingContext&)
+[78194:pre-task]:     4   libO2Framework.dylib                0x000000010492bab8: o2::framework::DataProcessingDevice::tryDispatchComputation(o2::framework::ServiceRegistryRef, std::__1::vector<o2::framework::DataRelayer::RecordAction, std::__1::allocator<o2::framework::DataRelayer::RecordAction>>&)::$_9::operator()(o2::framework::DataRelayer::RecordAction&)
+[78194:pre-task]:     5   libO2Framework.dylib                0x0000000104928864: o2::framework::DataProcessingDevice::tryDispatchComputation(o2::framework::ServiceRegistryRef, std::__1::vector<o2::framework::DataRelayer::RecordAction, std::__1::allocator<o2::framework::DataRelayer::RecordAction>>&)
+[78194:pre-task]:     6   libO2Framework.dylib                0x0000000104919c54: o2::framework::DataProcessingDevice::doRun(o2::framework::ServiceRegistryRef)
+[78194:pre-task]:     7   libO2Framework.dylib                0x0000000104917f6c: o2::framework::run_callback(uv_work_s*)
+[78194:pre-task]:     8   libO2Framework.dylib                0x0000000104923eb8: o2::framework::DataProcessingDevice::Run()
+[78194:pre-task]:     9   libfairmq.1.9.2.dylib               0x0000000106418210: fair::mq::Device::RunWrapper()
+[78194:pre-task]:     10  libfairmq.1.9.2.dylib               0x000000010641d65c: std::__1::__function::__func<fair::mq::Device::Device(fair::mq::ProgOptions*, fair::mq::tools::Version)::$_2, std::__1::allocator<fair::mq::Device::Device(fair::mq::ProgOptions*, fair::mq::tools::Version)::$_2>, void (fair::mq::State)>::operator()(fair::mq::State&&)
+[78194:pre-task]:     11  libfairmq.1.9.2.dylib               0x00000001064d9618: boost::detail::function::void_function_obj_invoker1<std::__1::function<void (fair::mq::State)>, void, fair::mq::State>::invoke(boost::detail::function::function_buffer&, fair::mq::State)
+[78194:pre-task]:     12  libfairmq.1.9.2.dylib               0x00000001064ca6d4: boost::signals2::detail::slot_call_iterator_t<boost::signals2::detail::variadic_slot_invoker<boost::signals2::detail::void_type, fair::mq::Transition>, std::__1::__list_iterator<boost::shared_ptr<boost::signals2::detail::connection_body<std::__1::pair<boost::signals2::detail::slot_meta_group, boost::optional<int>>, boost::signals2::slot<void (fair::mq::Transition), boost::function<void (fair::mq::Transition)>>, boost::signals2::mutex>>, void*>, boost::signals2::detail::connection_body<std::__1::pair<boost::signals2::detail::slot_meta_group, boost::optional<int>>, boost::signals2::slot<void (fair::mq::Transition), boost::function<void (fair::mq::Transition)>>, boost::signals2::mutex>>::dereference() const
+[78194:pre-task]:     13  libfairmq.1.9.2.dylib               0x00000001064ca468: boost::signals2::detail::signal_impl<void (fair::mq::State), boost::signals2::optional_last_value<void>, int, std::__1::less<int>, boost::function<void (fair::mq::State)>, boost::function<void (boost::signals2::connection const&, fair::mq::State)>, boost::signals2::mutex>::operator()(fair::mq::State)
+[78194:pre-task]:     14  libfairmq.1.9.2.dylib               0x00000001064ca070: fair::mq::fsm::Machine_::ProcessWork()
+[78194:pre-task]:     15  libfairmq.1.9.2.dylib               0x00000001064c9da4: fair::mq::StateMachine::ProcessWork()
+[78194:pre-task]:     16  libfairmq.1.9.2.dylib               0x0000000106421c0c: fair::mq::DeviceRunner::Run()
+[78194:pre-task]:     17  libO2Framework.dylib                0x0000000104ab6e4c: doChild(int, char**, o2::framework::ServiceRegistry&, o2::framework::RunningWorkflowInfo const&, o2::framework::RunningDeviceRef, o2::framework::DriverConfig const&, o2::framework::ProcessingPolicies, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, uv_loop_s*)
+[78194:pre-task]:     18  libO2Framework.dylib                0x0000000104ac02b4: runStateMachine(std::__1::vector<o2::framework::DataProcessorSpec, std::__1::allocator<o2::framework::DataProcessorSpec>> const&, WorkflowInfo const&, std::__1::vector<o2::framework::DataProcessorInfo, std::__1::allocator<o2::framework::DataProcessorInfo>> const&, o2::framework::CommandInfo const&, o2::framework::DriverControl&, o2::framework::DriverInfo&, o2::framework::DriverConfig&, std::__1::vector<o2::framework::DeviceMetricsInfo, std::__1::allocator<o2::framework::DeviceMetricsInfo>>&, std::__1::vector<o2::framework::ConfigParamSpec, std::__1::allocator<o2::framework::ConfigParamSpec>> const&, boost::program_options::variables_map&, std::__1::vector<o2::framework::ServiceSpec, std::__1::allocator<o2::framework::ServiceSpec>>&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)
+[78194:pre-task]:     19  libO2Framework.dylib                0x0000000104accf18: doMain(int, char**, std::__1::vector<o2::framework::DataProcessorSpec, std::__1::allocator<o2::framework::DataProcessorSpec>> const&, std::__1::vector<o2::framework::ChannelConfigurationPolicy, std::__1::allocator<o2::framework::ChannelConfigurationPolicy>> const&, std::__1::vector<o2::framework::CompletionPolicy, std::__1::allocator<o2::framework::CompletionPolicy>> const&, std::__1::vector<o2::framework::DispatchPolicy, std::__1::allocator<o2::framework::DispatchPolicy>> const&, std::__1::vector<o2::framework::ResourcePolicy, std::__1::allocator<o2::framework::ResourcePolicy>> const&, std::__1::vector<o2::framework::CallbacksPolicy, std::__1::allocator<o2::framework::CallbacksPolicy>> const&, std::__1::vector<o2::framework::SendingPolicy, std::__1::allocator<o2::framework::SendingPolicy>> const&, std::__1::vector<o2::framework::ConfigParamSpec, std::__1::allocator<o2::framework::ConfigParamSpec>> const&, std::__1::vector<o2::framework::ConfigParamSpec, std::__1::allocator<o2::framework::ConfigParamSpec>> const&, o2::framework::ConfigContext&)
+[78194:pre-task]:     20  o2-hfo2hacktut-example9-ans         0x00000001023b649c: mainNoCatch(int, char**)
+[78194:pre-task]:     21  libO2Framework.dylib                0x0000000104ab16c4: callMain(int, char**, int (*)(int, char**))
+[78194:pre-task]:     22  o2-hfo2hacktut-example9-ans         0x00000001023b7680: main
+[78194:pre-task]:     23  dyld                                0x0000000190a5a0e0: start
+[78194:pre-task]: Backtrace complete.
+[ERROR] Workflow crashed - PID 78194 (pre-task) did not exit correctly however it's not clear why. Exit code forced to 128.
+[INFO] QUIT_REQUESTED
+[78188:internal-dpl-aod-reader]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78188:internal-dpl-aod-reader]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78189:internal-dpl-aod-spawner]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78189:internal-dpl-aod-spawner]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78190:internal-dpl-aod-index-builder]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78190:internal-dpl-aod-index-builder]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78187:internal-dpl-clock]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78187:internal-dpl-clock]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78200:example-seven]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78200:example-seven]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78187:internal-dpl-clock]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78190:internal-dpl-aod-index-builder]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78200:example-seven]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78187:internal-dpl-clock]: [16:27:31][INFO] Sending end-of-stream message to channel from_internal-dpl-clock_to_internal-dpl-aod-reader
+[78187:internal-dpl-clock]: [16:27:31][STATE] RUNNING ---> READY
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] RUNNING ---> READY
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78200:example-seven]: [16:27:31][STATE] RUNNING ---> READY
+[78200:example-seven]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78187:internal-dpl-clock]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78187:internal-dpl-clock]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78187:internal-dpl-clock]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78200:example-seven]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78200:example-seven]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78187:internal-dpl-clock]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78187:internal-dpl-clock]: [16:27:31][STATE] IDLE ---> EXITING
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] IDLE ---> EXITING
+[78200:example-seven]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78200:example-seven]: [16:27:31][STATE] IDLE ---> EXITING
+[78201:internal-dpl-aod-writer]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78201:internal-dpl-aod-writer]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78200:example-seven]: [16:27:31][STATE] Exiting FairMQ state machine
+[78201:internal-dpl-aod-writer]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] RUNNING ---> READY
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78197:track-propagation]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78197:track-propagation]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78197:track-propagation]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78197:track-propagation]: [16:27:31][STATE] RUNNING ---> READY
+[78197:track-propagation]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78197:track-propagation]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78197:track-propagation]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] IDLE ---> EXITING
+[78197:track-propagation]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78197:track-propagation]: [16:27:31][STATE] IDLE ---> EXITING
+[78193:bc-selection-task]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78193:bc-selection-task]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78193:bc-selection-task]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78193:bc-selection-task]: [16:27:31][STATE] RUNNING ---> READY
+[78193:bc-selection-task]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78193:bc-selection-task]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78193:bc-selection-task]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78193:bc-selection-task]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78193:bc-selection-task]: [16:27:31][STATE] IDLE ---> EXITING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78198:event-selection-task]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78198:event-selection-task]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78191:mc-collision-converter]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78191:mc-collision-converter]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78198:event-selection-task]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78191:mc-collision-converter]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78198:event-selection-task]: [16:27:31][STATE] RUNNING ---> READY
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] RUNNING ---> READY
+[78198:event-selection-task]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78198:event-selection-task]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78198:event-selection-task]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78191:mc-collision-converter]: [16:27:31][STATE] RUNNING ---> READY
+[78191:mc-collision-converter]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78191:mc-collision-converter]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78191:mc-collision-converter]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] RUNNING ---> READY
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] IDLE ---> EXITING
+[78191:mc-collision-converter]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78191:mc-collision-converter]: [16:27:31][STATE] IDLE ---> EXITING
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] IDLE ---> EXITING
+[78198:event-selection-task]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78198:event-selection-task]: [16:27:31][STATE] IDLE ---> EXITING
+[78191:mc-collision-converter]: [16:27:31][STATE] Exiting FairMQ state machine
+[78202:internal-dpl-aod-global-analysis-file-sink]: [16:27:31][STATE] Exiting FairMQ state machine
+[78203:internal-dpl-injected-dummy-sink]: [16:27:31][STATE] Exiting FairMQ state machine
+[78192:timestamp-task]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78192:timestamp-task]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78199:multiplicity-table]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78199:multiplicity-table]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78199:multiplicity-table]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78199:multiplicity-table]: [16:27:31][STATE] RUNNING ---> READY
+[78199:multiplicity-table]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78199:multiplicity-table]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78199:multiplicity-table]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78195:tracks-extra-v002-converter]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78195:tracks-extra-v002-converter]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78199:multiplicity-table]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78199:multiplicity-table]: [16:27:31][STATE] IDLE ---> EXITING
+[78195:tracks-extra-v002-converter]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] RUNNING ---> READY
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] IDLE ---> EXITING
+[78196:tracks-extra-spawner]: [16:27:31][INFO] Received device shutdown request (signal 15).
+[78196:tracks-extra-spawner]: [16:27:31][INFO] Waiting for graceful device shutdown. Hit Ctrl-C again to abort immediately.
+[78199:multiplicity-table]: [16:27:31][STATE] Exiting FairMQ state machine
+[78196:tracks-extra-spawner]: [16:27:31][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78196:tracks-extra-spawner]: [16:27:31][STATE] RUNNING ---> READY
+[78196:tracks-extra-spawner]: [16:27:31][STATE] READY ---> RESETTING TASK
+[78196:tracks-extra-spawner]: [16:27:31][STATE] RESETTING TASK ---> DEVICE READY
+[78196:tracks-extra-spawner]: [16:27:31][STATE] DEVICE READY ---> RESETTING DEVICE
+[78196:tracks-extra-spawner]: [16:27:31][STATE] RESETTING DEVICE ---> IDLE
+[78196:tracks-extra-spawner]: [16:27:31][STATE] IDLE ---> EXITING
+[78187:internal-dpl-clock]: [16:27:31][STATE] Exiting FairMQ state machine
+[78190:internal-dpl-aod-index-builder]: [16:27:31][STATE] Exiting FairMQ state machine
+[78197:track-propagation]: [16:27:31][STATE] Exiting FairMQ state machine
+[78201:internal-dpl-aod-writer]: [16:27:31][STATE] Exiting FairMQ state machine
+[78193:bc-selection-task]: [16:27:31][STATE] Exiting FairMQ state machine
+[78198:event-selection-task]: [16:27:31][STATE] Exiting FairMQ state machine
+[78195:tracks-extra-v002-converter]: [16:27:31][STATE] Exiting FairMQ state machine
+[78196:tracks-extra-spawner]: [16:27:31][STATE] Exiting FairMQ state machine
+[78189:internal-dpl-aod-spawner]: [16:27:32][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] RUNNING ---> READY
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] READY ---> RESETTING TASK
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] RESETTING TASK ---> DEVICE READY
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] DEVICE READY ---> RESETTING DEVICE
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] RESETTING DEVICE ---> IDLE
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] IDLE ---> EXITING
+[78189:internal-dpl-aod-spawner]: [16:27:32][STATE] Exiting FairMQ state machine
+[78188:internal-dpl-aod-reader]: [16:27:33][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78192:timestamp-task]: Info in <TJAlienConnectionManager>: Opening connection to JCentral. Please wait
+[78192:timestamp-task]: Info in <TJAlienConnectionManager>: Opening connection to 128.142.249.52
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] RUNNING ---> READY
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] READY ---> RESETTING TASK
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] RESETTING TASK ---> DEVICE READY
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] DEVICE READY ---> RESETTING DEVICE
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] RESETTING DEVICE ---> IDLE
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] IDLE ---> EXITING
+[78188:internal-dpl-aod-reader]: [16:27:35][STATE] Exiting FairMQ state machine
+[78192:timestamp-task]: Info in <TJAlienConnectionManager>: Successfully connected to 128.142.249.52
+[78192:timestamp-task]: Info in <TJAlienFile::Open>: Accessing file /alice/data/CCDB/CTP/Calib/OrbitReset/08/03541/8e9235ed-63d1-11ee-8014-0aa140641b9a in SE <ALICE::KISTI_GSDC::EOS>
+[78192:timestamp-task]: [16:27:37][INFO] ccdb reads http://alice-ccdb.cern.ch/CTP/Calib/OrbitReset/1696546217987/8e9235ed-63d1-11ee-8014-0aa140641b9a for 1696549490855 (retrieve, agent_id: jinhyun-MacBook-Pro-2.local-1743146850-0q1vjZ), 
+[78192:timestamp-task]: [16:27:37][INFO] Add new run number 544116 with orbit-reset timestamp 1696546217986806, SOR: 1696549278654, EOR: 1696549703056 to cache
+[78192:timestamp-task]: [16:27:38][INFO] New state requested. No timeout set, quitting immediately as per --completion-policy
+[78192:timestamp-task]: [16:27:38][STATE] RUNNING ---> READY
+[78192:timestamp-task]: [16:27:38][STATE] READY ---> RESETTING TASK
+[78192:timestamp-task]: [16:27:38][STATE] RESETTING TASK ---> DEVICE READY
+[78192:timestamp-task]: [16:27:38][STATE] DEVICE READY ---> RESETTING DEVICE
+[78192:timestamp-task]: [16:27:38][STATE] RESETTING DEVICE ---> IDLE
+[78192:timestamp-task]: [16:27:38][STATE] IDLE ---> EXITING
+[78192:timestamp-task]: [16:27:38][STATE] Exiting FairMQ state machine
+[INFO] Dumping performance metrics to performanceMetrics.json file
+[INFO] ## Processes completed. Run summary:
+[INFO] ### Devices started: 17
+[INFO]  - Device internal-dpl-clock: pid 78187 (exit 0)
+[INFO]  - Device internal-dpl-aod-reader: pid 78188 (exit 0)
+[INFO]  - Device internal-dpl-aod-spawner: pid 78189 (exit 0)
+[INFO]  - Device internal-dpl-aod-index-builder: pid 78190 (exit 0)
+[INFO]  - Device mc-collision-converter: pid 78191 (exit 0)
+[INFO]  - Device timestamp-task: pid 78192 (exit 0)
+[INFO]  - Device bc-selection-task: pid 78193 (exit 0)
+[ERROR]  - Device pre-task: pid 78194 (exit 128)
+[INFO]    - First error:       ______      _    _______  _________ 
+[INFO]    - Last error: Backtrace complete.
+[INFO]  - Device tracks-extra-v002-converter: pid 78195 (exit 0)
+[INFO]  - Device tracks-extra-spawner: pid 78196 (exit 0)
+[INFO]  - Device track-propagation: pid 78197 (exit 0)
+[INFO]  - Device event-selection-task: pid 78198 (exit 0)
+[INFO]  - Device multiplicity-table: pid 78199 (exit 0)
+[INFO]  - Device example-seven: pid 78200 (exit 0)
+[INFO]  - Device internal-dpl-aod-writer: pid 78201 (exit 0)
+[INFO]  - Device internal-dpl-aod-global-analysis-file-sink: pid 78202 (exit 0)
+[INFO]  - Device internal-dpl-injected-dummy-sink: pid 78203 (exit 0)
+[INFO] ## Analysis Run Summary ##
+[INFO] Dumping used configuration in dpl-config.json
+[ERROR] SEVERE: Device pre-task (78194) returned with 128

@@ -139,6 +139,7 @@ struct HfTaskMiniCandidateSelectorD0 {
   Configurable<float> nSigmaTpc{"nSigmaTpc", 3., "Nsigma cut on TPC only"};
   // topological cuts
   Configurable<float> cpaMin{"cpaMin", 0.98, "Min. cosine of pointing angle"};
+  Configurable<float> dlenMin{"dlenMin", 0.01, "Min. decay length"};
   Configurable<float> massWindow{"massWindow", 0.4, "Half-width of the invariant-mass window"};
 
   HfHelper hfHelper;
@@ -166,6 +167,12 @@ struct HfTaskMiniCandidateSelectorD0 {
     if (candidate.pt() < ptCandMin || candidate.pt() >= ptCandMax) {
       return false;
     }
+
+	// decay length
+	if(candidate.decayLength() < dlenMin) {
+		return false;
+	}
+
     // cosine of pointing angle
     if (candidate.cpa() < cpaMin) {
       return false;
@@ -293,6 +300,7 @@ struct HfTaskMiniD0 {
     registry.add("hPtCand", strTitle + ";" + strPt + ";" + strEntries, {HistType::kTH1F, {{100, 0., 10.}}});
     registry.add("hMass", strTitle + ";" + "inv. mass (#pi K) (GeV/#it{c}^{2})" + ";" + strEntries, {HistType::kTH1F, {{500, 0., 5.}}});
     registry.add("hCpaVsPtCand", strTitle + ";" + "cosine of pointing angle" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{110, -1.1, 1.1}, {100, 0., 10.}}});
+    registry.add("hDlenVsPtCand", strTitle + ";" + "decay length" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
   }
 
   void process(soa::Join<aod::HfTCand2Prong, aod::HfTSelD0> const& /*candidates*/)
@@ -306,6 +314,7 @@ struct HfTaskMiniD0 {
       }
       registry.fill(HIST("hPtCand"), candidate.pt());
       registry.fill(HIST("hCpaVsPtCand"), candidate.cpa(), candidate.pt());
+      registry.fill(HIST("hDlenVsPtCand"), candidate.decayLength(), candidate.pt());
     }
   }
 };

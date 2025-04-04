@@ -3,16 +3,15 @@
 OPTIONS=(
 -b 
 #--aod-file /Users/jinhyunpark/npl/Analysis/ALICE/data/ao2d/O2Tutorial4.0/MC/AO2D.root
-#--aod-file /Users/jinhyunpark/npl/Analysis/ALICE/data/ao2d/MC/AO2D.root
---configuration json://dpl-config-ex9.json
-#--aod-memory-rate-limit 2000000000
-#--shm-segment-size 16000000000
-#--resources-monitoring 2
+--configuration json://dpl-config-ex9-ans.json
+--aod-memory-rate-limit 2000000000
+--shm-segment-size 100000000000 
+--resources-monitoring 2
 )
 
-LOGFILE="stdout-ex9.log"
+LOGFILE="stdout-ex9-ans.log"
 
-o2-hfo2hacktut-example9 "${OPTIONS[@]}" | \
+o2-hfo2hacktut-example9-ans "${OPTIONS[@]}" | \
 	o2-analysis-mccollision-converter "${OPTIONS[@]}" | \
 	o2-analysis-track-propagation "${OPTIONS[@]}" | \
 	o2-analysis-tracks-extra-v002-converter "${OPTIONS[@]}" | \

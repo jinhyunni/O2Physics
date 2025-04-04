@@ -25,7 +25,7 @@ LOGFILE="stdout.log"
 DIR_THIS="$(dirname "$(realpath "$0")")"
 
 # O2 configuration file (in the same directory)
-JSON="$DIR_THIS/dpl-config_skim.json"
+JSON="$DIR_THIS/dpl-config_skim_work.json"
 
 # command line options of O2 workflows
 OPTIONS=(

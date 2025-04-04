@@ -15,7 +15,30 @@ using namespace o2::aod;
 using namespace o2::framework;
 using namespace o2::framework::expressions;
 
-using CollisionWLabels = soa::Join<aod::Collisions, aod::McCollisionLabels>; //->Pre-definded tables 
+using CollisionsWMcLabelsFull = soa::Join<aod::Collisions, aod::McCollisionLabels>;
+
+using CollisionsWMcLabels = soa::SmallGroups<soa::Join<aod::Collisions, aod::McCollisionLabels>>; //-> Pre-definded tables
+																								  //-> Cannot be subscribed alone 
+using CollisionWMcLabels = CollisionsWMcLabels::iterator;
+
+#if 0
+// Make index table which connects McMults with McCollision tables
+namespace o2::aod
+{
+namespace idx
+{
+DECLARE_SOA_INDEX_COLUMN(CollisionWMcLabel, collision); // -> 's' is automatically added at the end
+DECLARE_SOA_INDEX_COLUMN(McCollision, mccollision); // -> This is needed because there it cannot be joined with Collisions table
+} // idx
+DECLARE_SOA_INDEX_TABLE_USER(MatchedMCRec, aod::McCollisions, "MMCR", idx::McCollisionId, idx::CollisionWLabelId);
+} // o2::aod
+#endif
+
+/*
+ *	Concept of this tutorial
+ *
+ *	Matching McCollisions with Collisions
+ */
 
 // Make McMults tables
 namespace o2::aod
@@ -27,74 +50,97 @@ DECLARE_SOA_COLUMN(MultGen, multgen, int);
 DECLARE_SOA_TABLE(MultsGen, "AOD", "Mult counted at generation level", multsgen::MultGen);
 } // o2::aod
 
-// Make index table which connects McMults with McCollision tables
-namespace o2::aod
-{
-namespace idx
-{
-DECLARE_SOA_INDEX_COLUMN(CollisionWLabel, collision); // -> 's' is automatically added at the end
-DECLARE_SOA_INDEX_COLUMN(McCollision, mccollision); // -> This is needed because there it cannot be joined with Collisions table
-} // idx
-DECLARE_SOA_INDEX_TABLE_USER(MatchedMCRec, aod::McCollisions, "MMCR", idx::McCollisionId, idx::CollisionWLabelId);
-} // o2::aod
+// Task to printout
+struct printouttable1{
+
+	void init(InitContext& cfgc){}
+
+	void process(aod::McCollisions const& collisions)
+	{
+		for( auto const& collision : collisions )
+		{
+			LOGP(info, "Check1 : McCollision global index : {}", collision.globalIndex());
+		}
+
+	}
+
+};
+
+// Task to printout
+struct printouttable2{
+
+	void init(InitContext& cfgc){}
+	
+	void process( aod::McCollision const& mcCollision,
+				  CollisionsWMcLabels const& collisions ) // -> SmallGroped table grouped by McCollision iterator
+	{
+		if( collisions.size() < 1 ){
+			LOGP(info, "! Generated event doesn't have any reconstructed events !");
+			return;
+		} else if ( collisions.size() > 2 ) {
+			LOGP(info, "! Generated event has multiple reconstructed event : {} !", collisions.size());
+		}
+
+
+
+		for( auto const& collision : collisions )
+		{
+			LOGP(info, "Check2 : McCollision's id via indexing {}", collision.mcCollisionId());
+		}
+	}
+
+};
 
 // Task to fill tables
+// Calculated multiplicites by only using the generated tracks which has corresponding reco
 struct filltable{
-
-	Builds<aod::MatchedMCRec> idx; // -> This builds index column
+	
 	Produces<aod::MultsGen> mcmults;
 
 	using v0mMcParticles = soa::Filtered<aod::McParticles>;
+
 	Filter v0mFilter
 		= (aod::mcparticle::eta > 2.7f and aod::mcparticle::eta < 5.1f)
 		or (aod::mcparticle::eta > -3.7f and aod::mcparticle::eta < -1.7f);
-
-	// Task to fill table
-	void process(aod::McCollision const& collision, v0mMcParticles const& particles)
-	{
-		int count = 0;
-		for( auto const& particle : particles )
-		{
-			if( particle.isPhysicalPrimary() ){
-				count++;
-			}
-		}
-
-		mcmults(count);
-	}
-};
-
-struct example9{
 
 	HistogramRegistry histos{"histos", {}};
 
 	void init(InitContext const& cfgc)
 	{
-		histos.add("mcmultMatched", "mcmultMatched", kTH1F, {{10000, 0, 10000}});
+		histos.add("FilledParticleEta", "FilledParticleEta", kTH1F, {{240, -6, 6}});
 	}
-
-	using MatchedMcCollisions = soa::Join<aod::McCollisions, aod::MultsGen, aod::MatchedMCRec>;
 	
-	void process( MatchedMcCollisions const& collisions )
+	// Task to fill table
+	void process(aod::McCollision const& GenCollision, CollisionsWMcLabels const& RecoCollisions, v0mMcParticles const& particles)
 	{
-		for(auto const& collision : collisions)
+		if( RecoCollisions.size() < 1 ){
+			return;
+		}
+
+		for( auto const& collision : RecoCollisions )
 		{
-			// If MatchedMcCollisions doens't have corresponding collision, then pass
-			if(!collision.has_collision()){
-				return;
+			// Print out
+			// LOGP(info, "GenCollision Id : {}/ Reco collision Id : {}", GenCollision.globalIndex(), collision.globalIndex());
+			int count=0;
+			for( auto const& particle : particles )
+			{
+				if( particle.isPhysicalPrimary() ){
+					histos.fill(HIST("FilledParticleEta"), particle.eta());
+					count++;
+				}
 			}
 
-			histos.fill(HIST("mcmultMatched"), collision.multgen());
+			mcmults(count);
 		}
 	}
-
 };
 
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
 	return WorkflowSpec
 	{
-		adaptAnalysisTask<filltable>(cfgc),
-		adaptAnalysisTask<example9>(cfgc),
+		adaptAnalysisTask<printouttable1>(cfgc),
+		adaptAnalysisTask<printouttable2>(cfgc),
+		adaptAnalysisTask<filltable>(cfgc)
 	};
 }

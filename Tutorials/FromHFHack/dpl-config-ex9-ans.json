@@ -13,16 +13,7 @@
     "internal-dpl-aod-spawner": "",
     "internal-dpl-aod-index-builder": "",
     "mc-collision-converter": "",
-    "timestamp-task": {
-        "fatalOnInvalidTimestamp": "false",
-        "verbose": "false",
-        "rct-path": "RCT\/Info\/RunInformation",
-        "orbit-reset-path": "CTP\/Calib\/OrbitReset",
-        "ccdb-url": "http:\/\/alice-ccdb.cern.ch",
-        "isRun2MC": "-1"
-    },
-    "printouttable1": "",
-    "printouttable2": "",
+    "timestamp-task": "",
     "bc-selection-task": {
         "triggerBcShift": "0",
         "ITSROFrameStartBorderMargin": "-1",
@@ -44,7 +35,7 @@
         "processRun2": "false",
         "processRun3": "true"
     },
-    "filltable": "",
+    "pre-task": "",
     "tracks-extra-v002-converter": {
         "processV000ToV002": "false",
         "processV001ToV002": "true"
@@ -243,6 +234,10 @@
         "processMC": "false",
         "processMC2Mults": "false",
         "processRun3MFT": "false"
+    },
+    "example-seven": {
+        "etaCut": "0.800000012",
+        "processMC": "false"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",

@@ -323,6 +323,7 @@
         "ptPidTpcMax": "10",
         "nSigmaTpc": "3",
         "cpaMin": "0.980000019",
+        "dlenMin": "0.0199999996",
         "massWindow": "0.400000006"
     },
     "hf-task-mini-d0": {
