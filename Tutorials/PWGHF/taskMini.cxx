@@ -286,7 +286,8 @@ struct HfTaskMiniD0 {
 
   HfHelper hfHelper;
 
-  Partition<soa::Join<aod::HfTCand2Prong, aod::HfTSelD0>> selectedD0Candidates = aod::hf_selcandidate_d0::isSelD0 >= selectionFlagD0 || aod::hf_selcandidate_d0::isSelD0bar >= selectionFlagD0bar;
+  //Partition<soa::Join<aod::HfTCand2Prong, aod::HfTSelD0>> selectedD0Candidates = aod::hf_selcandidate_d0::isSelD0 >= selectionFlagD0 || aod::hf_selcandidate_d0::isSelD0bar >= selectionFlagD0bar;
+  Filter d0Filter = aod::hf_selcandidate_d0::isSelD0 >= selectionFlagD0 || aod::hf_selcandidate_d0::isSelD0bar >= selectionFlagD0bar;
 
   HistogramRegistry registry{
     "registry",
@@ -301,11 +302,22 @@ struct HfTaskMiniD0 {
     registry.add("hMass", strTitle + ";" + "inv. mass (#pi K) (GeV/#it{c}^{2})" + ";" + strEntries, {HistType::kTH1F, {{500, 0., 5.}}});
     registry.add("hCpaVsPtCand", strTitle + ";" + "cosine of pointing angle" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{110, -1.1, 1.1}, {100, 0., 10.}}});
     registry.add("hDlenVsPtCand", strTitle + ";" + "decay length" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
+    registry.add("hDlenXyVsPtCand", strTitle + ";" + "decay lengthXY" + ";" + strPt + ";" + strEntries, {HistType::kTH2F, {{150, 0, 0.1}, {100, 0., 10.}}});
+    registry.add("hTracksPerCollision", strTitle + ";" + ";" + strPt + ";" + strEntries, {HistType::kTH1F, {{100, 0, 300}}});
+    registry.add("hCandPerCollision", strTitle + ";" + ";" + strPt + ";" + strEntries, {HistType::kTH1F, {{10, 0, 10}}});
+    registry.add("hColl", strTitle + ";" + ";" + strPt + ";" + strEntries, {HistType::kTH1F, {{1, 0, 2}}});
   }
 
-  void process(soa::Join<aod::HfTCand2Prong, aod::HfTSelD0> const& /*candidates*/)
+  //void process(soa::Join<aod::HfTCand2Prong, aod::HfTSelD0> const& /*candidates*/)
+  using selectedD0Candidates = soa::Filtered<soa::Join<aod::HfTCand2Prong, aod::HfTSelD0>>;
+  void process(aod::Collision const& collision, aod::Tracks const& tracks, selectedD0Candidates const& candidates)
   {
-    for (const auto& candidate : selectedD0Candidates) {
+	// Fill Tracks and candidiates per collision
+	registry.fill(HIST("hTracksPerCollision"), tracks.size());
+	registry.fill(HIST("hCandPerCollision"), candidates.size());
+	registry.fill(HIST("hColl"), 1);
+
+    for (const auto& candidate : candidates) {
       if (candidate.isSelD0() >= selectionFlagD0) {
         registry.fill(HIST("hMass"), hfHelper.invMassD0ToPiK(candidate));
       }
@@ -315,6 +327,7 @@ struct HfTaskMiniD0 {
       registry.fill(HIST("hPtCand"), candidate.pt());
       registry.fill(HIST("hCpaVsPtCand"), candidate.cpa(), candidate.pt());
       registry.fill(HIST("hDlenVsPtCand"), candidate.decayLength(), candidate.pt());
+	  registry.fill(HIST("hDlenXyVsPtCand"), candidate.decayLengthXY(), candidate.pt());
     }
   }
 };

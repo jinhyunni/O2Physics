@@ -100,3 +100,11 @@ Recap HFHackTut exampels and practices
 
 ## Example9.cxx
 	- Making derived table and consuming them
+	- Using MC information
+		-- Calculate forward multiplicity with generated collisions which has reconstructed collision(s)
+		-- Generated collision -> aod::McCollisions
+		-- Reconstructed collision -> aod::Collisions
+		-- Label which points to reconstructed collision to generated collision -> aod::McCollisionLabels
+		-- Labels which points backward(From generated collision to reco collision)? This is the subject of this practice
+		
+	

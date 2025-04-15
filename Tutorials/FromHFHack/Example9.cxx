@@ -15,10 +15,9 @@ using namespace o2::aod;
 using namespace o2::framework;
 using namespace o2::framework::expressions;
 
+// Alias for tables
 using CollisionsWMcLabelsFull = soa::Join<aod::Collisions, aod::McCollisionLabels>;
-
-using CollisionsWMcLabels = soa::SmallGroups<soa::Join<aod::Collisions, aod::McCollisionLabels>>; //-> Pre-definded tables
-																								  //-> Cannot be subscribed alone 
+using CollisionsWMcLabels = soa::SmallGroups<soa::Join<aod::Collisions, aod::McCollisionLabels>>; 
 using CollisionWMcLabels = CollisionsWMcLabels::iterator;
 
 #if 0
