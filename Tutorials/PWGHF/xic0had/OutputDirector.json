@@ -1,0 +1,12 @@
+{
+"OutputDirector": {
+"debug_mode": true,
+"resfile": "AO2D",
+"OutputDescriptors": [
+{
+"table": "AOD/HFTOXIPILITE/0"
+}
+],
+"ntfmerge": 1
+}
+}
