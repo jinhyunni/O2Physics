@@ -12,14 +12,7 @@
     },
     "internal-dpl-aod-spawner": "",
     "internal-dpl-aod-index-builder": "",
-    "timestamp-task": {
-        "fatalOnInvalidTimestamp": "false",
-        "verbose": "false",
-        "rct-path": "RCT\/Info\/RunInformation",
-        "orbit-reset-path": "CTP\/Calib\/OrbitReset",
-        "ccdb-url": "http:\/\/alice-ccdb.cern.ch",
-        "isRun2MC": "-1"
-    },
+    "timestamp-task": "",
     "bc-selection-task": {
         "triggerBcShift": "0",
         "ITSROFrameStartBorderMargin": "-1",
@@ -157,11 +150,6 @@
         "processRun2": "false",
         "processRun3": "true"
     },
-    "fill-index-table": {
-        "EtaCut": "1",
-        "dcaCut": "0.5",
-        "tpcCut": "70"
-    },
     "multiplicity-table": {
         "doVertexZeq": "1",
         "fractionOfEvents": "2",
@@ -246,19 +234,17 @@
         "processMC2Mults": "false",
         "processRun3MFT": "false"
     },
-    "consume-index-table": {
+    "example10": {
+        "switchAvgPtPerCollision": "true",
+        "switchPtVsMult": "true",
         "nBinPt": "100",
-        "ptLE": "0",
-        "ptHE": "10",
-        "nBinEta": "120",
-        "etaLE": "-3",
-        "etaHE": "3",
-        "nBinDca": "120",
-        "dcaLE": "-3",
-        "dcaHE": "3",
-        "nBinTpcNCls": "1000",
-        "tpcNClsLE": "0",
-        "tpcNClsHE": "200"
+        "pTLow": "0",
+        "pTHigh": "10",
+        "nBinMult": "1000",
+        "multLow": "0",
+        "multHigh": "100",
+        "processAvgPtPerCollision": "true",
+        "processPtVsMult": "true"
     },
     "internal-dpl-aod-writer": "",
     "internal-dpl-aod-global-analysis-file-sink": "",

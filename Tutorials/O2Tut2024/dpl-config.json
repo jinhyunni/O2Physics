@@ -39,7 +39,8 @@
             "nameFileQoverPt": "",
             "usePvRefitCorrections": "false",
             "qOverPtMC": "-1",
-            "qOverPtData": "-1"
+            "qOverPtData": "-1",
+            "nPhiBins": "0"
         },
         "ccdb-url": "http:\/\/alice-ccdb.cern.ch",
         "lutPath": "GLO\/Param\/MatLUT",
