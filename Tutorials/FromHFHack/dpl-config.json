@@ -158,6 +158,7 @@
         "processRun3": "true"
     },
     "fill-index-table": {
+        "collZCut": "3",
         "EtaCut": "1",
         "dcaCut": "0.5",
         "tpcCut": "70"
@@ -247,6 +248,9 @@
         "processRun3MFT": "false"
     },
     "consume-index-table": {
+        "nBinCollPosZ": "100",
+        "collPosZLe": "-10",
+        "collPosZHe": "10",
         "nBinPt": "100",
         "ptLE": "0",
         "ptHE": "10",

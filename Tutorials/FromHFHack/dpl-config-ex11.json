@@ -151,6 +151,7 @@
         "processRun3": "true"
     },
     "fill-index-table": {
+        "collZCut": "3.0",
         "EtaCut": "1",
         "dcaCut": "0.5",
         "tpcCut": "70"

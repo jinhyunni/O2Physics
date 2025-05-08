@@ -33,11 +33,13 @@ namespace o2::aod
 
 namespace goodtrack
 {
+DECLARE_SOA_INDEX_COLUMN_FULL(Collision, collision, int, aod::Collisions, ""); // -> Column name will be 'GoodTrack'Id
 DECLARE_SOA_INDEX_COLUMN_FULL(GoodTrack, goodTrack, int, aod::Tracks, "_goodtrk"); // -> Column name will be 'GoodTrack'Id
 }
 
 DECLARE_SOA_TABLE(GoodTracks, "AOD", "GOODTRACKS",
 		o2::soa::Index<>,
+		goodtrack::CollisionId,
 		goodtrack::GoodTrackId);
 }
 
@@ -47,6 +49,7 @@ struct fillIndexTable {
 
 	struct : ConfigurableGroup {
 	
+		Configurable<float> collZCut{"collZCut", 3.0, "collZCut"};
 		Configurable<float> etaCut{"EtaCut", 1.0, "EtaCut"};
 		Configurable<float> dcaCut{"dcaCut", 0.5, "dcaCut"};
 		Configurable<int> tpcCut{"tpcCut", 70, "tpcCut"};
@@ -67,15 +70,19 @@ struct fillIndexTable {
 				continue;
 			if (fabs(track.eta()) > configs.etaCut)
 				continue;
-			if (track.dcaXY() > configs.dcaCut)
+			if (fabs(track.dcaXY()) > configs.dcaCut)
 				continue;
 			if (track.tpcNClsCrossedRows() < configs.tpcCut)
 				continue;
 
-			cursor(track.globalIndex());
-
 			auto collision = track.collision_as<aod::Collisions>();
 			int collisionId = collision.globalIndex();
+
+			if (collision.posZ() > configs.collZCut)
+				continue;
+			
+			cursor(collisionId, track.globalIndex());
+
 			if (collisionId % 10000 == 0) {
 				if (track.globalIndex() % 10000 == 0) {
 					LOGP(info, "Collision {} processed : Track{}", collisionId, track.globalIndex());
@@ -92,6 +99,10 @@ struct consumeIndexTable {
 
 	struct : ConfigurableGroup {
 
+		Configurable<int> nBinCollPosZ{"nBinCollPosZ", 100, "nBinCollPosZ"};
+		Configurable<float> collPosZLe{"collPosZLe", -10.0, "collPosZLe"};
+		Configurable<float> collPosZHe{"collPosZHe", +10.0, "collPosZHe"};
+				 
 		Configurable<int> nBinPt{"nBinPt", 100, "nBinPt"};
 		Configurable<float> ptLe{"ptLE", 0.0, "ptLE"};
 		Configurable<float> ptHe{"ptHE", 10.0, "ptHE"};
@@ -112,6 +123,7 @@ struct consumeIndexTable {
 
 	void init(InitContext const&)
 	{
+		registry.add("collisionZPos", "collisionZPos", kTH1F, {{configs.nBinPt, configs.ptLe, configs.ptHe}});
 		registry.add("ptSkimmedTrack", "ptSkimmedTrack", kTH1F, {{configs.nBinPt, configs.ptLe, configs.ptHe}});
 		registry.add("etaSkimmedTrack", "etaSkimmedTrack", kTH1F, {{configs.nBinEta, configs.etaLe, configs.etaHe}});
 		registry.add("dcaSkimmedTrack", "dcaSkimmedTrack", kTH1F, {{configs.nBinDca, configs.dcaLe, configs.dcaHe}});
@@ -119,17 +131,29 @@ struct consumeIndexTable {
 	}
 
 	using AodFullTracks = soa::Join<aod::Tracks, aod::TracksDCA, aod::TracksExtra>;
+	Preslice<aod::GoodTracks> AodFullTracksPerCollision = aod::goodtrack::collisionId;
 
-	void process(aod::GoodTracks const& skimmedTracks, AodFullTracks const&)
+	void process(aod::Collisions const& collisions, aod::GoodTracks const& skimmedTracks, AodFullTracks const&)
 	{
-		for (auto const& skimmedTrack : skimmedTracks) {
-		
-			auto aodTrack = skimmedTrack.goodTrack_as<AodFullTracks>();
+		for (auto const& collision : collisions)
+		{
+			auto thisCollId = collision.globalIndex();
+			auto trackIndicesPerCollision = skimmedTracks.sliceBy(AodFullTracksPerCollision, thisCollId);	
 
-			registry.get<TH1>(HIST("ptSkimmedTrack")) -> Fill(aodTrack.pt());
-			registry.get<TH1>(HIST("etaSkimmedTrack")) -> Fill(aodTrack.eta());
-			registry.get<TH1>(HIST("dcaSkimmedTrack")) -> Fill(aodTrack.dcaXY());
-			registry.get<TH1>(HIST("tpcNClsSkimmedTrack")) -> Fill(aodTrack.tpcNClsCrossedRows());
+			//registry.get<TH1>(HIST("collisionZPos")) -> Fill(collision.posZ());
+
+			for (auto const& trackIndex : trackIndicesPerCollision) 
+			{
+				// Getting row which index points at with 'getter'_as<table::which::has::object::at::subscription>
+				auto aodTrack = trackIndex.goodTrack_as<AodFullTracks>();
+				auto aodCollision = aodTrack.collision_as<aod::Collisions>();
+
+				registry.get<TH1>(HIST("collisionZPos")) -> Fill(aodCollision.posZ());
+				registry.get<TH1>(HIST("ptSkimmedTrack")) -> Fill(aodTrack.pt());
+				registry.get<TH1>(HIST("etaSkimmedTrack")) -> Fill(aodTrack.eta());
+				registry.get<TH1>(HIST("dcaSkimmedTrack")) -> Fill(aodTrack.dcaXY());
+				registry.get<TH1>(HIST("tpcNClsSkimmedTrack")) -> Fill(aodTrack.tpcNClsCrossedRows());
+			}
 		}
 	};
 
