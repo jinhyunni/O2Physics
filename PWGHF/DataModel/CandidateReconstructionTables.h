@@ -2093,11 +2093,11 @@ DECLARE_SOA_DYNAMIC_COLUMN(PProng1, pProng1, //!
 // MC
 DECLARE_SOA_COLUMN(FlagMcMatchRec, flagMcMatchRec, int8_t); // -> Reconstruction level
 DECLARE_SOA_COLUMN(FlagMcMatchGen, flagMcMatchGen, int8_t); // -> Generation level
-DECLARE_SOA_COLUMN(DebugMcRec, debugMcRec, int8_t);			// -> Debug flog for miss-association
+DECLARE_SOA_COLUMN(DebugMcRec, debugMcRec, int8_t);         // -> Debug flog for miss-association
 DECLARE_SOA_COLUMN(DebugMcGen, debugMcGen, int8_t);
-DECLARE_SOA_COLUMN(OriginRec, originRec, int8_t);			// -> Prompt, non-prompt distinction
+DECLARE_SOA_COLUMN(OriginRec, originRec, int8_t); // -> Prompt, non-prompt distinction
 DECLARE_SOA_COLUMN(OriginGen, originGen, int8_t);
-}// end of namespace xic0
+} // end of namespace xic0
 
 namespace xicp
 {
@@ -2188,14 +2188,14 @@ DECLARE_SOA_DYNAMIC_COLUMN(PProng1, pProng1, //!
                            [](float px, float py, float pz) -> float { return RecoDecay::p(px, py, pz); });
 DECLARE_SOA_DYNAMIC_COLUMN(PProng2, pProng2, //!
                            [](float px, float py, float pz) -> float { return RecoDecay::p(px, py, pz); });
-}
+} // namespace xicp
 
 enum DecayTypeXic0 { Xic0ToXiPi = 0 };
 enum DecayTypeXicp { XicToXiPiPi = 0,      // Ξc± → Ξ∓ π± π±
-					 XicToXiResPiToXiPiPi, // Ξc± → Ξ(1530) π± → Ξ∓ π± π±
-					 NDecayType };
+                     XicToXiResPiToXiPiPi, // Ξc± → Ξ(1530) π± → Ξ∓ π± π±
+                     NDecayType };
 
-}// end of hf_cand_xic0_xicp_to_hadronic
+} // namespace hf_cand_xic0_xicp_to_hadronic
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // BaseTable
@@ -2205,66 +2205,66 @@ DECLARE_SOA_TABLE(HfCandXic0Base, "AOD", "HFCANDXIC0BASE",
                   hf_cand_xic0_xicp_to_hadronic::xic0::XPvErr, hf_cand_xic0_xicp_to_hadronic::xic0::YPvErr, hf_cand_xic0_xicp_to_hadronic::xic0::ZPvErr,
                   // 2-prong specific columns
                   cascdata::CascadeId,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::PiId,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::PiId,
                   cascdata::BachelorId,
-				  cascdata::PosTrackId,
-				  cascdata::NegTrackId,
+                  cascdata::PosTrackId,
+                  cascdata::NegTrackId,
                   hf_cand::XSecondaryVertex,
-				  hf_cand::YSecondaryVertex,
-				  hf_cand::ZSecondaryVertex,
+                  hf_cand::YSecondaryVertex,
+                  hf_cand::ZSecondaryVertex,
                   hf_cand_xic0_xicp_to_hadronic::xic0::XSvErr,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::YSvErr,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::ZSvErr,
-				  hf_cand::ErrorDecayLength,
-				  hf_cand::ErrorDecayLengthXY,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::YSvErr,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::ZSvErr,
+                  hf_cand::ErrorDecayLength,
+                  hf_cand::ErrorDecayLengthXY,
                   hf_cand::Chi2PCA,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::InvMassXic0,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CascSign,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::InvMassXic0,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CascSign,
                   hf_cand::PxProng0,
-				  hf_cand::PyProng0,
-				  hf_cand::PzProng0,
+                  hf_cand::PyProng0,
+                  hf_cand::PzProng0,
                   hf_cand::PxProng1,
-				  hf_cand::PyProng1,
-				  hf_cand::PzProng1,
+                  hf_cand::PyProng1,
+                  hf_cand::PzProng1,
                   hf_cand::ImpactParameter0,
-				  hf_cand::ImpactParameter1,
+                  hf_cand::ImpactParameter1,
                   hf_cand::ErrorImpactParameter0,
-				  hf_cand::ErrorImpactParameter1,
+                  hf_cand::ErrorImpactParameter1,
                   // cascade specific columns
                   hf_cand_xic0_xicp_to_hadronic::xic0::PBachelorPi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::PPiFromLambda,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::PPrFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::PPiFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::PPrFromLambda,
                   hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYXi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaLambda,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYLambda,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaLambdaToXi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYLambdaToXi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYXi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaLambdaToXi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::CosPaXYLambdaToXi,
                   hf_cand_xic0_xicp_to_hadronic::xic0::InvMassXi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::InvMassLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::InvMassLambda,
                   // DCA
                   hf_cand_xic0_xicp_to_hadronic::xic0::DcaXiDaughters,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaV0Daughters,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaPosToPV,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaNegToPV,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaBachelorToPV,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaXYCascToPV,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::DcaZCascToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaV0Daughters,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaPosToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaNegToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaBachelorToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaXYCascToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaZCascToPV,
                   // PID
                   hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcPiFromXic0,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcBachelorPi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcPiFromLambda,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcPrFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcBachelorPi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcPiFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTpcPrFromLambda,
                   hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofPiFromXic0,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofBachelorPi,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofPiFromLambda,
-				  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofPrFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofBachelorPi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofPiFromLambda,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::NSigTofPrFromLambda,
                   /* dynamic columns */
                   hf_cand::DecayLength<collision::PosX, collision::PosY, collision::PosZ,
-				  					hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex>,
+                                       hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex>,
                   hf_cand::DecayLengthXY<collision::PosX, collision::PosY, hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex>,
                   hf_cand::DecayLengthNormalised<collision::PosX, collision::PosY, collision::PosZ, hf_cand::XSecondaryVertex,
-				  hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex, hf_cand::ErrorDecayLength>,
+                                                 hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex, hf_cand::ErrorDecayLength>,
                   hf_cand::DecayLengthXYNormalised<collision::PosX, collision::PosY, hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ErrorDecayLengthXY>,
                   hf_cand::ImpactParameterNormalised0<hf_cand::ImpactParameter0, hf_cand::ErrorImpactParameter0>,
                   hf_cand::ImpactParameterNormalised1<hf_cand::ImpactParameter1, hf_cand::ErrorImpactParameter1>,
@@ -2279,58 +2279,56 @@ DECLARE_SOA_TABLE(HfCandXic0Base, "AOD", "HFCANDXIC0BASE",
                   hf_cand::P<hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand::PVector<hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand::Cpa<collision::PosX, collision::PosY, collision::PosZ,
-				  				hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
-								hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
+                               hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
+                               hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand::CpaXY<collision::PosX, collision::PosY,
-				  				hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex,
-								hf_cand_2prong::Px, hf_cand_2prong::Py>,
+                                 hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex,
+                                 hf_cand_2prong::Px, hf_cand_2prong::Py>,
                   hf_cand::Ct<collision::PosX, collision::PosY, collision::PosZ,
-				 			 hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
-							 hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
+                              hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
+                              hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand::ImpactParameterXY<collision::PosX, collision::PosY, collision::PosZ,
-				  							hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
-											hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
+                                             hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ZSecondaryVertex,
+                                             hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand_2prong::MaxNormalisedDeltaIP<collision::PosX, collision::PosY,
-				  									hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ErrorDecayLengthXY,
-													hf_cand_2prong::Px, hf_cand_2prong::Py,
-													hf_cand::ImpactParameter0, hf_cand::ErrorImpactParameter0,
-													hf_cand::ImpactParameter1, hf_cand::ErrorImpactParameter1,
-													hf_cand::PxProng0, hf_cand::PyProng0,
-													hf_cand::PxProng1, hf_cand::PyProng1>,
+                                                       hf_cand::XSecondaryVertex, hf_cand::YSecondaryVertex, hf_cand::ErrorDecayLengthXY,
+                                                       hf_cand_2prong::Px, hf_cand_2prong::Py,
+                                                       hf_cand::ImpactParameter0, hf_cand::ErrorImpactParameter0,
+                                                       hf_cand::ImpactParameter1, hf_cand::ErrorImpactParameter1,
+                                                       hf_cand::PxProng0, hf_cand::PyProng0,
+                                                       hf_cand::PxProng1, hf_cand::PyProng1>,
                   hf_cand::Eta<hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>,
                   hf_cand::Phi<hf_cand_2prong::Px, hf_cand_2prong::Py>,
                   hf_cand::Y<hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz>);
 
-
 DECLARE_SOA_TABLE(HfCandXic0KF, "AOD", "HFCANDXIC0KF",
-		cascdata::KFCascadeChi2,
-		cascdata::KFV0Chi2,
-		hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLength,
-		hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthNormalized,
-		hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthXY,
-		hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthXYNormalized,
-		hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXic0ToPVBeforeConstraint,
-		hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXic0ToPV,
-		hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXiToXic0BeforeConstraint,
-		hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXiToXic0,
-		hf_cand_xic0_xicp_to_hadronic::xic0::DcaXYPiXi,
-		hf_cand_xic0_xicp_to_hadronic::xic0::DcaPiXi);
+                  cascdata::KFCascadeChi2,
+                  cascdata::KFV0Chi2,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLength,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthNormalized,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthXY,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::KfDecayLengthXYNormalized,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXic0ToPVBeforeConstraint,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXic0ToPV,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXiToXic0BeforeConstraint,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::Chi2TopoXiToXic0,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaXYPiXi,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DcaPiXi);
 
 DECLARE_SOA_EXTENDED_TABLE_USER(HfCandXic0Ext, HfCandXic0Base, "HFCANDXIC0EXT",
-							hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz);
+                                hf_cand_2prong::Px, hf_cand_2prong::Py, hf_cand_2prong::Pz);
 
 using HfCandXic0 = HfCandXic0Ext;
 
 DECLARE_SOA_TABLE(HfCandXic0McRec, "AOD", "HFCANDXIC0MCREC",
-				hf_cand_xic0_xicp_to_hadronic::xic0::FlagMcMatchRec,
-				hf_cand_xic0_xicp_to_hadronic::xic0::DebugMcRec,
-				hf_cand_xic0_xicp_to_hadronic::xic0::OriginRec);
+                  hf_cand_xic0_xicp_to_hadronic::xic0::FlagMcMatchRec,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DebugMcRec,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::OriginRec);
 
 DECLARE_SOA_TABLE(HfCandXic0McGen, "AOD", "HFCANDXIC0MCGEN",
-				hf_cand_xic0_xicp_to_hadronic::xic0::FlagMcMatchGen,
-				hf_cand_xic0_xicp_to_hadronic::xic0::DebugMcGen,
-				hf_cand_xic0_xicp_to_hadronic::xic0::OriginGen);
-
+                  hf_cand_xic0_xicp_to_hadronic::xic0::FlagMcMatchGen,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::DebugMcGen,
+                  hf_cand_xic0_xicp_to_hadronic::xic0::OriginGen);
 
 DECLARE_SOA_TABLE(HfCandXicpBase, "AOD", "HFCANDXICPBASE",
                   hf_cand::CollisionId,
