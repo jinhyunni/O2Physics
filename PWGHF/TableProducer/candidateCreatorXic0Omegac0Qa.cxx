@@ -348,7 +348,7 @@ struct HfCandidateCreatorXic0Omegac0Qa {
           continue;
         }
 
-        massCasc = (decayChannel == 0) ? casc.mXi() : casc.mOmega();
+        massCasc = (decayChannel == hf_cand_casc_lf::DecayType2Prong::XiczeroOmegaczeroToXiPi) ? casc.mXi() : casc.mOmega();
         if (std::abs(massCasc - massOfCascades[decayChannel]) > configs.massToleranceCascade) {
           continue;
         }
@@ -369,7 +369,7 @@ struct HfCandidateCreatorXic0Omegac0Qa {
       df.setBz(bz);
 
       //------------------------------Info of V0 and cascade tracks from LF table------------------------------
-      // -> This quantities are used for physical properties of selected candidates
+      // -> This quantities are used to store physical properties of selected candidates
       // -> Not used for candidate creation
       std::array<float, 3> vertexV0 = {casc.xlambda(), casc.ylambda(), casc.zlambda()};
       std::array<float, 3> pVecV0 = {casc.pxlambda(), casc.pylambda(), casc.pzlambda()};
@@ -678,7 +678,7 @@ struct HfCandidateCreatorXic0Omegac0Qa {
       if (!cascAodElement.has_kfCascData()) {
         continue;
       }
-      auto casc = cascAodElement.kfCascData_as<KFCascFull>(); // -> Need to understand this
+      auto casc = cascAodElement.kfCascData_as<KFCascFull>();
       auto chargeCasc = casc.sign() > 0 ? 1 : -1;
       float massCasc = (decayChannel == 0) ? casc.mXi() : casc.mOmega();
 
