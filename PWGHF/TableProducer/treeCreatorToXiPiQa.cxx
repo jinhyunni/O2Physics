@@ -157,6 +157,7 @@ DECLARE_SOA_COLUMN(NTpcRowsPiFromCasc, nTpcRowsPiFromCasc, int16_t);
 DECLARE_SOA_COLUMN(NTpcRowsPosV0Dau, nTpcRowsPosV0Dau, int16_t);
 DECLARE_SOA_COLUMN(NTpcRowsNegV0Dau, nTpcRowsNegV0Dau, int16_t);
 // from creator - MC
+DECLARE_SOA_COLUMN(FlagMcMatchGen, flagMcMatchGen, int8_t); // generation level
 DECLARE_SOA_COLUMN(FlagMcMatchRec, flagMcMatchRec, int8_t); // reconstruction level
 DECLARE_SOA_COLUMN(DebugMcRec, debugMcRec, int8_t);         // debug flag for mis-association reconstruction level
 DECLARE_SOA_COLUMN(OriginRec, originRec, int8_t);
@@ -325,7 +326,7 @@ DECLARE_SOA_TABLE(HfCandToXiPiGen, "AOD", "HFCANDTOXIPIGEN",
                   full::EtaCharmBaryon,
                   full::PhiCharmBaryon,
                   full::YCharmBaryon,
-                  full::FlagMcMatchRec,
+                  full::FlagMcMatchGen,
                   full::OriginRec,
                   full::ParticlePdg,
                   full::PtGenB,
@@ -347,7 +348,8 @@ struct HfTreeCreatorToXiPiQa {
   Produces<o2::aod::HfToXiPiEvs> rowEv;
 
   Configurable<float> zPvCut{"zPvCut", 10., "Cut on absolute value of primary vertex z coordinate"};
-  Configurable<int8_t> genSelection{"genSelection", o2::aod::hf_cand_xic0_omegac0::DecayType::XiczeroToXiPi, "Decay channel to be used to match particle information"};
+  Configurable<int8_t> genSelection{"genSelection", o2::aod::hf_cand_xic0_omegac0::DecayType::XiczeroToXiPi, "Decay chain which will be saved"};
+  Configurable<bool> saveGenBkg{"saveGenBkg", false, "Switch to choose whether or not to save gen bkg or gen sig"};
   Configurable<bool> fillGenTable{"fillGenTable", true, "Fill generated MC information if requested"};
 
   using MyTrackTable = soa::Join<aod::Tracks, aod::TrackSelection, aod::TracksExtra>;
@@ -367,7 +369,7 @@ struct HfTreeCreatorToXiPiQa {
   using McCollisionsCentFT0Cs = soa::Join<aod::McCollisions, aod::McCentFT0Cs>;
   using McCollisionsCentFT0Ms = soa::Join<aod::McCollisions, aod::McCentFT0Ms>;
 
-  Filter filterGenXiPi = nabs(aod::hf_cand_mc_flag::flagMcMatchGen) == static_cast<int8_t>(BIT(genSelection));
+  Filter filterGenXiPi = (saveGenBkg && nabs(aod::hf_cand_mc_flag::flagMcMatchGen) == int8_t{0}) || (!saveGenBkg && nabs(aod::hf_cand_mc_flag::flagMcMatchGen) == static_cast<int8_t>(BIT(genSelection)));
 
   PresliceUnsorted<MyEventTableWithMcLabels> colPerMcCollision = aod::mccollisionlabel::mcCollisionId;
 
@@ -375,6 +377,10 @@ struct HfTreeCreatorToXiPiQa {
   {
     if ((doprocessMcLiteXic0 && doprocessMcLiteOmegac0) || (doprocessMcFullXic0 && doprocessMcFullOmegac0)) {
       LOGF(fatal, "Both Xic0 and Omegac0 MC processes enabled, please choose ONLY one!");
+    }
+
+    if (saveGenBkg) {
+      LOGF(info, "Only bkg entries will be filled at gen table");
     }
   }
 
